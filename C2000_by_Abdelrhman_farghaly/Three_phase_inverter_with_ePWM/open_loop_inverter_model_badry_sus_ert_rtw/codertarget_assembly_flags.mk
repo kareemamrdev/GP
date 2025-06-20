@@ -1,0 +1,21 @@
+ASFLAGS_ADDITIONAL = --float_support=fpu32
+CCSINSTALLDIR = C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS
+CCSSCRIPTINGDIR = G:/DSP/CodeComposer/ccs/ccs_base/scripting
+CONTROLSUITEINSTALLDIR = G:/DSP/controlSuite/controlSUITE
+C2000WAREINSTALLDIR = G:/DSP/C2000Ware/C2000Ware_5_04_00_00
+CCSARMINSTALLDIR = C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIARMC~1.INS/TI-CGT~1.LTS
+DSP28M35x_INSTALLDIR = G:/DSP/controlSuite/controlSUITE/device_support/f28m35x/v208
+DSP28M36x_INSTALLDIR = G:/DSP/controlSuite/controlSUITE/device_support/f28m36x/v208
+DSP2834x_INSTALLDIR = G:/DSP/controlSuite/controlSUITE/device_support/c2834x/v112
+DSP2802x_INSTALLDIR = G:/DSP/controlSuite/controlSUITE/device_support/f2802x/v230
+DSP2803x_INSTALLDIR = G:/DSP/controlSuite/controlSUITE/device_support/f2803x/v130
+DSP2805x_INSTALLDIR = G:/DSP/controlSuite/controlSUITE/device_support/f2805x/v104
+DSP2806x_INSTALLDIR = G:/DSP/controlSuite/controlSUITE/device_support/f2806x/v151
+CLAMATHLIB_INSTALLDIR = G:/DSP/controlSuite/controlSUITE/libs/math/CLAmath/v4_00_01_00
+DSP2804x_INSTALLDIR = C:/tidcs/c28/DSP2804x/v130/
+DSP280x_INSTALLDIR = C:/tidcs/c28/DSP280x/v170/
+DSP281x_INSTALLDIR = C:/tidcs/c28/DSP281x/v120/
+TARGET_LOAD_CMD = 
+TARGET_LOAD_CMD_ARGS = 
+TARGET_PKG_INSTALLDIR = G:/Matlab/Matlab/toolbox/c2b/tic2000
+STACK_SIZE = 1024

@@ -1,0 +1,917 @@
+Plecs {
+  Name          "TESST_1"
+  Version       "4.9"
+  CircuitModel  "DiscStateSpace"
+  StartTime     "0.0"
+  TimeSpan      "1.0"
+  Timeout       ""
+  Solver        "FixedStepDiscrete"
+  MaxStep       "1e-3"
+  InitStep      "-1"
+  FixedStep     "1e-3"
+  Refine        "1"
+  ZCStepSize    "1e-9"
+  RelTol        "1e-3"
+  AbsTol        "-1"
+  TurnOnThreshold "0"
+  NonIdealSwitchResistance "1"
+  SyncFixedStepTasks "2"
+  UseSingleCommonBaseRate "2"
+  LossVariableLimitExceededMsg "3"
+  NegativeSwitchLossMsg "3"
+  DivisionByZeroMsg "3"
+  DatatypeOverflowMsg "3"
+  DatatypeInheritanceConflictMsg "2"
+  ContSampleTimeConflictMsg "2"
+  StiffnessDetectionMsg "2"
+  MaxConsecutiveZCs "1000"
+  AlgebraicLoopWithStateMachineMsg "3"
+  AssertionAction "1"
+  FixedPointDatatypeOverride "1"
+  InitializationCommands ""
+  InitialState  "1"
+  SystemState   ""
+  TaskingMode   "1"
+  TaskConfigurations ""
+  CodeGenParameterInlining "2"
+  CodeGenFloatingPointFormat "2"
+  CodeGenAbsTimeUsageMsg "3"
+  CodeGenBaseName ""
+  CodeGenOutputDir ""
+  CodeGenExtraOpts ""
+  CodeGenTarget "TI2837x"
+  CodeGenTargetSettings "AAAAfwAAAAAbQ29kZUdlblRhcmdldDo6U2V0dGluZ3NNYXAAAAAAA"
+"QAAAA4AVABJADIAOAAzADcAeAAAAFwAAAAiAEEAbgBUAHIAaQBwADEAQQBkAGMAQwBoAGEAbgBuAG"
+"UAbAAAAAIAMAAAABwAQQBuAFQAcgBpAHAAMQBBAGQAYwBVAG4AaQB0AAAAAgAxAAAAGgBBAG4AVAB"
+"yAGkAcAAxAEUAbgBhAGIAbABlAAAAAgAwAAAAGgBBAG4AVAByAGkAcAAxAFMAaQBnAG4AYQBsAAAA"
+"AgAxAAAAKABBAG4AVAByAGkAcAAxAFQAaAByAGUAcwBoAG8AbABkAEgAaQBnAGgAAAACADAAAAAmA"
+"EEAbgBUAHIAaQBwADEAVABoAHIAZQBzAGgAbwBsAGQATABvAHcAAAACADAAAAAiAEEAbgBUAHIAaQ"
+"BwADIAQQBkAGMAQwBoAGEAbgBuAGUAbAAAAAIAMAAAABwAQQBuAFQAcgBpAHAAMgBBAGQAYwBVAG4"
+"AaQB0AAAAAgAxAAAAGgBBAG4AVAByAGkAcAAyAEUAbgBhAGIAbABlAAAAAgAwAAAAGgBBAG4AVABy"
+"AGkAcAAyAFMAaQBnAG4AYQBsAAAAAgAxAAAAKABBAG4AVAByAGkAcAAyAFQAaAByAGUAcwBoAG8Ab"
+"ABkAEgAaQBnAGgAAAACADAAAAAmAEEAbgBUAHIAaQBwADIAVABoAHIAZQBzAGgAbwBsAGQATABvAH"
+"cAAAACADAAAAAiAEEAbgBUAHIAaQBwADMAQQBkAGMAQwBoAGEAbgBuAGUAbAAAAAIAMAAAABwAQQB"
+"uAFQAcgBpAHAAMwBBAGQAYwBVAG4AaQB0AAAAAgAxAAAAGgBBAG4AVAByAGkAcAAzAEUAbgBhAGIA"
+"bABlAAAAAgAwAAAAGgBBAG4AVAByAGkAcAAzAFMAaQBnAG4AYQBsAAAAAgAxAAAAKABBAG4AVAByA"
+"GkAcAAzAFQAaAByAGUAcwBoAG8AbABkAEgAaQBnAGgAAAACADAAAAAmAEEAbgBUAHIAaQBwADMAVA"
+"BoAHIAZQBzAGgAbwBsAGQATABvAHcAAAACADAAAAAiAEEAbgBUAHIAaQBwADQAQQBkAGMAQwBoAGE"
+"AbgBuAGUAbAAAAAIAMAAAABwAQQBuAFQAcgBpAHAANABBAGQAYwBVAG4AaQB0AAAAAgAxAAAAGgBB"
+"AG4AVAByAGkAcAA0AEUAbgBhAGIAbABlAAAAAgAwAAAAGgBBAG4AVAByAGkAcAA0AFMAaQBnAG4AY"
+"QBsAAAAAgAxAAAAKABBAG4AVAByAGkAcAA0AFQAaAByAGUAcwBoAG8AbABkAEgAaQBnAGgAAAACAD"
+"AAAAAmAEEAbgBUAHIAaQBwADQAVABoAHIAZQBzAGgAbwBsAGQATABvAHcAAAACADAAAAAaAEUAWAB"
+"UAEUAUgBOAEEATABfAE0ATwBEAEUAAAACADAAAAAmAEcARQBOAEUAUgBBAFQARQBfAFAASQBMAF8A"
+"UABSAE8AQgBFAFMAAAACADAAAAAiAEwAaQBuAGsAZQByAEMAbwBtAG0AYQBuAGQARgBpAGwAZQAAA"
+"AAAAAAUAFAAdwBtADEAMABBAEcAcABpAG8AAAAEADEAOAAAABQAUAB3AG0AMQAwAEIARwBwAGkAbw"
+"AAAAQAMQA5AAAAFgBQAHcAbQAxADAARwBwAGkAbwBFAG4AAAACADAAAAAUAFAAdwBtADEAMQBBAEc"
+"AcABpAG8AAAAEADIAMAAAABQAUAB3AG0AMQAxAEIARwBwAGkAbwAAAAQAMgAxAAAAFgBQAHcAbQAx"
+"ADEARwBwAGkAbwBFAG4AAAACADAAAAAUAFAAdwBtADEAMgBBAEcAcABpAG8AAAAEADIAMgAAABQAU"
+"AB3AG0AMQAyAEIARwBwAGkAbwAAAAQAMgAzAAAAFgBQAHcAbQAxADIARwBwAGkAbwBFAG4AAAACAD"
+"AAAAASAFAAdwBtADEAQQBHAHAAaQBvAAAAAgAwAAAAEgBQAHcAbQAxAEIARwBwAGkAbwAAAAIAMQA"
+"AABQAUAB3AG0AMQBHAHAAaQBvAEUAbgAAAAIAMAAAABIAUAB3AG0AMgBBAEcAcABpAG8AAAACADIA"
+"AAASAFAAdwBtADIAQgBHAHAAaQBvAAAAAgAzAAAAFABQAHcAbQAyAEcAcABpAG8ARQBuAAAAAgAwA"
+"AAAEgBQAHcAbQAzAEEARwBwAGkAbwAAAAIANAAAABIAUAB3AG0AMwBCAEcAcABpAG8AAAACADUAAA"
+"AUAFAAdwBtADMARwBwAGkAbwBFAG4AAAACADAAAAASAFAAdwBtADQAQQBHAHAAaQBvAAAAAgA2AAA"
+"AEgBQAHcAbQA0AEIARwBwAGkAbwAAAAIANwAAABQAUAB3AG0ANABHAHAAaQBvAEUAbgAAAAIAMAAA"
+"ABIAUAB3AG0ANQBBAEcAcABpAG8AAAACADgAAAASAFAAdwBtADUAQgBHAHAAaQBvAAAAAgA5AAAAF"
+"ABQAHcAbQA1AEcAcABpAG8ARQBuAAAAAgAwAAAAEgBQAHcAbQA2AEEARwBwAGkAbwAAAAQAMQAwAA"
+"AAEgBQAHcAbQA2AEIARwBwAGkAbwAAAAQAMQAxAAAAFABQAHcAbQA2AEcAcABpAG8ARQBuAAAAAgA"
+"wAAAAEgBQAHcAbQA3AEEARwBwAGkAbwAAAAQAMQAyAAAAEgBQAHcAbQA3AEIARwBwAGkAbwAAAAQA"
+"MQAzAAAAFABQAHcAbQA3AEcAcABpAG8ARQBuAAAAAgAwAAAAEgBQAHcAbQA4AEEARwBwAGkAbwAAA"
+"AQAMQA0AAAAEgBQAHcAbQA4AEIARwBwAGkAbwAAAAQAMQA1AAAAFABQAHcAbQA4AEcAcABpAG8ARQ"
+"BuAAAAAgAwAAAAEgBQAHcAbQA5AEEARwBwAGkAbwAAAAQAMQA2AAAAEgBQAHcAbQA5AEIARwBwAGk"
+"AbwAAAAQAMQA3AAAAFABQAHcAbQA5AEcAcABpAG8ARQBuAAAAAgAwAAAAIABTAGEAbQBwAGwAZQBU"
+"AGkAbQBlAFIAZQBsAFQAbwBsAAAABAAxADAAAAAYAFMAZQByAGkAYQBsAE4AdQBtAGIAZQByAAAAA"
+"AAAACoAUwBlAHIAaQBhAGwATgB1AG0AYgBlAHIAUwBwAGUAYwBpAGYAaQBlAGQAAAACADAAAAAaAF"
+"QAQQBSAEcARQBUAF8ARABFAFYASQBDAEX/////AAAAEgBUAHoAMQBFAG4AYQBiAGwAZQAAAAIAMAA"
+"AAA4AVAB6ADEARwBwAGkAbwAAAAIAMAAAABIAVAB6ADIARQBuAGEAYgBsAGUAAAACADAAAAAOAFQA"
+"egAyAEcAcABpAG8AAAACADAAAAASAFQAegAzAEUAbgBhAGIAbABlAAAAAgAwAAAADgBUAHoAMwBHA"
+"HAAaQBvAAAAAgAwAAAASgBVAFMARQBfAEQAQQBUAEEAXwBUAFkAUABFAFMAXwBGAE8AUgBfAFQAVQ"
+"BOAEEAQgBMAEUAXwBQAEEAUgBBAE0ARQBUAEUAUgBTAAAAAgAxAAAANABVAFMARQBfAFMAVABBAFI"
+"AVABfAFQASQBNAEUAXwBJAE4AXwBJAE4ASQBUAF8ARgBDAE4AAAACADAAAAAQAFYAcgBlAGYAQQBk"
+"AGMAQQAAAAYAMwAuADAAAAAQAFYAcgBlAGYAQQBkAGMAQgAAAAYAMwAuADAAAAAQAFYAcgBlAGYAQ"
+"QBkAGMAQwAAAAYAMwAuADAAAAAQAFYAcgBlAGYAQQBkAGMARAAAAAYAMwAuADAAAAAKAGIAbwBhAH"
+"IAZAAAAAIAMQAAABYAYgB1AGkAbABkAEMAbwBuAGYAaQBnAAAAAgAxAAAACABjAGgAaQBwAAAAAgA"
+"xAAAAEgBlAHgAdABDAGwAawBNAEgAegAAAAQAMwAwAAAAIgBlAHgAdABNAG8AZABlAEIAdQBmAGYA"
+"ZQByAFMAaQB6AGUAAAAIADEAMAAwADAAAAAcAGUAeAB0AE0AbwBkAGUAUwBjAGkAUABpAG4AcwAAA"
+"A4AWwA0ADMALAA0ADIAXQAAAA4AZwBlAG4ATwBuAGwAeQAAAAIAMgAAABQAaQBuAHMAdABhAGwAbA"
+"BEAGkAcgAAAAAAAAAcAGkAbgBzAHQAYQBsAGwARABpAHIAQwBwAHUAMgAAAAAAAAASAHMAeQBzAEM"
+"AbABrAE0ASAB6AAAABgAxADkAMAAAABYAdABhAHMAawBGAHIAZQBxAFQAbwBsAAAAAgAxAAAAGAB1"
+"AG4AaQBmAGwAYQBzAGgARgBpAGwAZQAAAAAAAAASAHUAcwBlAEkAbgB0AE8AcwBjAAAAAgAx"
+  ExtendedMatrixPrecision "1"
+  MatrixSignificanceCheck "2"
+  RemoveUnusedStateSpaceOutputs "2"
+  EnableStateSpaceSplitting "2"
+  DisplayStateSpaceSplitting "1"
+  DiscretizationMethod "2"
+  ExternalModeSettings ""
+  AlgebraicLoopMethod "1"
+  AlgebraicLoopTolerance "1e-6"
+  ScriptsDialogGeometry ""
+  ScriptsDialogSplitterPos "0"
+  Terminal {
+    Type          Output
+    Index         "1"
+  }
+  Terminal {
+    Type          Output
+    Index         "2"
+  }
+  Terminal {
+    Type          Output
+    Index         "3"
+  }
+  Schematic {
+    Location      [0, 23; 1536, 773]
+    ZoomFactor    1
+    SliderPosition [0, 0]
+    ShowBrowser   off
+    BrowserWidth  100
+    Component {
+      Type          Reference
+      SrcComponent  "TIC2000_Lib/PWM"
+      Name          "PWM1"
+      Show          on
+      Position      [945, 225]
+      Direction     up
+      Flipped       off
+      LabelPosition south
+      Frame         [-30, -50; 30, 50]
+      Parameter {
+        Variable      "PwmUnit"
+        Value         "[2]"
+        Show          off
+      }
+      Parameter {
+        Variable      "CarrierType"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "CarrierFreq"
+        Value         "15e3"
+        Show          off
+      }
+      Parameter {
+        Variable      "CarrierFreqTol"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "Phase"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "OutMode"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "VariableDeadTime"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "FixedDeadTime"
+        Value         "1e-6"
+        Show          off
+      }
+      Parameter {
+        Variable      "MinDeadTime"
+        Value         "1e-6"
+        Show          off
+      }
+      Parameter {
+        Variable      "Polarity"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "Sequence"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "SequenceAq"
+        Value         "[0]"
+        Show          off
+      }
+      Parameter {
+        Variable      "ShowEnable"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "CmpShadowMode"
+        Value         "3"
+        Show          off
+      }
+      Parameter {
+        Variable      "RedShadowMode"
+        Value         "3"
+        Show          off
+      }
+      Parameter {
+        Variable      "FedShadowMode"
+        Value         "3"
+        Show          off
+      }
+      Parameter {
+        Variable      "AllowProtection"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "SyncSrc"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "SyncOut"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "PeripheralSyncMode"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "AdcTriggerMode"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "AdcTriggerDivider"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "TaskTriggerMode"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "TaskTriggerDivider"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "OfflinePwmTclkOrigin"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "OfflinePwmTclk"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "tz1mode"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "tz2mode"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "tz3mode"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "TargetPortIndices"
+        Value         "1"
+        Show          off
+      }
+      Terminal {
+        Type          Input
+        Position      [-30, 0]
+        Direction     left
+      }
+      Terminal {
+        Type          EventOutput
+        Position      [34, 20]
+        Direction     right
+      }
+      Terminal {
+        Type          EventOutput
+        Position      [34, -20]
+        Direction     right
+      }
+      Terminal {
+        Type          Input
+        Position      [-30, -20]
+        Direction     left
+      }
+      Terminal {
+        Type          Input
+        Position      [-30, -30]
+        Direction     left
+      }
+      Terminal {
+        Type          Input
+        Position      [-30, 30]
+        Direction     left
+      }
+      Terminal {
+        Type          Input
+        Position      [-30, -10]
+        Direction     left
+      }
+      Terminal {
+        Type          Input
+        Position      [-30, 5]
+        Direction     left
+      }
+      Terminal {
+        Type          EventInput
+        Position      [0, -50]
+        Direction     up
+      }
+      Terminal {
+        Type          EventOutput
+        Position      [34, 0]
+        Direction     right
+      }
+      Terminal {
+        Type          Input
+        Position      [-30, -20]
+        Direction     left
+      }
+      Terminal {
+        Type          EventOutput
+        Position      [34, -35]
+        Direction     right
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "TIC2000_Lib/PWM"
+      Name          "PWM2"
+      Show          on
+      Position      [1030, 305]
+      Direction     up
+      Flipped       off
+      LabelPosition south
+      Frame         [-30, -50; 30, 50]
+      Parameter {
+        Variable      "PwmUnit"
+        Value         "[3]"
+        Show          off
+      }
+      Parameter {
+        Variable      "CarrierType"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "CarrierFreq"
+        Value         "15e3"
+        Show          off
+      }
+      Parameter {
+        Variable      "CarrierFreqTol"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "Phase"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "OutMode"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "VariableDeadTime"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "FixedDeadTime"
+        Value         "1e-6"
+        Show          off
+      }
+      Parameter {
+        Variable      "MinDeadTime"
+        Value         "1e-6"
+        Show          off
+      }
+      Parameter {
+        Variable      "Polarity"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "Sequence"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "SequenceAq"
+        Value         "[0]"
+        Show          off
+      }
+      Parameter {
+        Variable      "ShowEnable"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "CmpShadowMode"
+        Value         "3"
+        Show          off
+      }
+      Parameter {
+        Variable      "RedShadowMode"
+        Value         "3"
+        Show          off
+      }
+      Parameter {
+        Variable      "FedShadowMode"
+        Value         "3"
+        Show          off
+      }
+      Parameter {
+        Variable      "AllowProtection"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "SyncSrc"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "SyncOut"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "PeripheralSyncMode"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "AdcTriggerMode"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "AdcTriggerDivider"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "TaskTriggerMode"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "TaskTriggerDivider"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "OfflinePwmTclkOrigin"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "OfflinePwmTclk"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "tz1mode"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "tz2mode"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "tz3mode"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "TargetPortIndices"
+        Value         "2"
+        Show          off
+      }
+      Terminal {
+        Type          Input
+        Position      [-30, 0]
+        Direction     left
+      }
+      Terminal {
+        Type          EventOutput
+        Position      [34, 20]
+        Direction     right
+      }
+      Terminal {
+        Type          EventOutput
+        Position      [34, -20]
+        Direction     right
+      }
+      Terminal {
+        Type          Input
+        Position      [-30, -20]
+        Direction     left
+      }
+      Terminal {
+        Type          Input
+        Position      [-30, -30]
+        Direction     left
+      }
+      Terminal {
+        Type          Input
+        Position      [-30, 30]
+        Direction     left
+      }
+      Terminal {
+        Type          Input
+        Position      [-30, -10]
+        Direction     left
+      }
+      Terminal {
+        Type          Input
+        Position      [-30, 5]
+        Direction     left
+      }
+      Terminal {
+        Type          EventInput
+        Position      [0, -50]
+        Direction     up
+      }
+      Terminal {
+        Type          EventOutput
+        Position      [34, 0]
+        Direction     right
+      }
+      Terminal {
+        Type          Input
+        Position      [-30, -20]
+        Direction     left
+      }
+      Terminal {
+        Type          EventOutput
+        Position      [34, -35]
+        Direction     right
+      }
+    }
+    Component {
+      Type          Reference
+      SrcComponent  "TIC2000_Lib/PWM"
+      Name          "PWM3"
+      Show          on
+      Position      [865, 145]
+      Direction     up
+      Flipped       off
+      LabelPosition south
+      Frame         [-30, -50; 30, 50]
+      Parameter {
+        Variable      "PwmUnit"
+        Value         "[1]"
+        Show          off
+      }
+      Parameter {
+        Variable      "CarrierType"
+        Value         "2"
+        Show          off
+      }
+      Parameter {
+        Variable      "CarrierFreq"
+        Value         "15e3"
+        Show          off
+      }
+      Parameter {
+        Variable      "CarrierFreqTol"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "Phase"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "OutMode"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "VariableDeadTime"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "FixedDeadTime"
+        Value         "1e-6"
+        Show          off
+      }
+      Parameter {
+        Variable      "MinDeadTime"
+        Value         "1e-6"
+        Show          off
+      }
+      Parameter {
+        Variable      "Polarity"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "Sequence"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "SequenceAq"
+        Value         "[0]"
+        Show          off
+      }
+      Parameter {
+        Variable      "ShowEnable"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "CmpShadowMode"
+        Value         "3"
+        Show          off
+      }
+      Parameter {
+        Variable      "RedShadowMode"
+        Value         "3"
+        Show          off
+      }
+      Parameter {
+        Variable      "FedShadowMode"
+        Value         "3"
+        Show          off
+      }
+      Parameter {
+        Variable      "AllowProtection"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "SyncSrc"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "SyncOut"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "PeripheralSyncMode"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "AdcTriggerMode"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "AdcTriggerDivider"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "TaskTriggerMode"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "TaskTriggerDivider"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "OfflinePwmTclkOrigin"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "OfflinePwmTclk"
+        Value         ""
+        Show          off
+      }
+      Parameter {
+        Variable      "tz1mode"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "tz2mode"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "tz3mode"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
+        Variable      "TargetPortIndices"
+        Value         "3"
+        Show          off
+      }
+      Terminal {
+        Type          Input
+        Position      [-30, 0]
+        Direction     left
+      }
+      Terminal {
+        Type          EventOutput
+        Position      [34, 20]
+        Direction     right
+      }
+      Terminal {
+        Type          EventOutput
+        Position      [34, -20]
+        Direction     right
+      }
+      Terminal {
+        Type          Input
+        Position      [-30, -20]
+        Direction     left
+      }
+      Terminal {
+        Type          Input
+        Position      [-30, -30]
+        Direction     left
+      }
+      Terminal {
+        Type          Input
+        Position      [-30, 30]
+        Direction     left
+      }
+      Terminal {
+        Type          Input
+        Position      [-30, -10]
+        Direction     left
+      }
+      Terminal {
+        Type          Input
+        Position      [-30, 5]
+        Direction     left
+      }
+      Terminal {
+        Type          EventInput
+        Position      [0, -50]
+        Direction     up
+      }
+      Terminal {
+        Type          EventOutput
+        Position      [34, 0]
+        Direction     right
+      }
+      Terminal {
+        Type          Input
+        Position      [-30, -20]
+        Direction     left
+      }
+      Terminal {
+        Type          EventOutput
+        Position      [34, -35]
+        Direction     right
+      }
+    }
+    Component {
+      Type          SineGenerator
+      Name          "Sine Wave"
+      Show          on
+      Position      [670, 145]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Amplitude"
+        Value         "0.5"
+        Show          off
+      }
+      Parameter {
+        Variable      "Bias"
+        Value         "0.5"
+        Show          off
+      }
+      Parameter {
+        Variable      "Frequency"
+        Value         "50"
+        Show          off
+      }
+      Parameter {
+        Variable      "Phase"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
+        Variable      "Units"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          SineGenerator
+      Name          "Sine Wave1"
+      Show          on
+      Position      [735, 225]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Amplitude"
+        Value         "0.5"
+        Show          off
+      }
+      Parameter {
+        Variable      "Bias"
+        Value         "0.5"
+        Show          off
+      }
+      Parameter {
+        Variable      "Frequency"
+        Value         "50"
+        Show          off
+      }
+      Parameter {
+        Variable      "Phase"
+        Value         "2*pi/3"
+        Show          off
+      }
+      Parameter {
+        Variable      "Units"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          SineGenerator
+      Name          "Sine Wave2"
+      Show          on
+      Position      [735, 305]
+      Direction     right
+      Flipped       off
+      LabelPosition southSouthwest
+      Parameter {
+        Variable      "Amplitude"
+        Value         "0.5"
+        Show          off
+      }
+      Parameter {
+        Variable      "Bias"
+        Value         "0.5"
+        Show          off
+      }
+      Parameter {
+        Variable      "Frequency"
+        Value         "50"
+        Show          off
+      }
+      Parameter {
+        Variable      "Phase"
+        Value         "4*pi/3"
+        Show          off
+      }
+      Parameter {
+        Variable      "Units"
+        Value         "1"
+        Show          off
+      }
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Sine Wave"
+      SrcTerminal   1
+      DstComponent  "PWM3"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Sine Wave1"
+      SrcTerminal   1
+      DstComponent  "PWM1"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Sine Wave2"
+      SrcTerminal   1
+      DstComponent  "PWM2"
+      DstTerminal   1
+    }
+  }
+}
+DemoSignature "NPscyjgf37DdKSkSDqlgN/00VxqSdL6W53SGaJKZ8Lw="

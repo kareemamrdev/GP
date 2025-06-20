@@ -1,0 +1,31 @@
+/*
+ * File: CAN_send_types.h
+ *
+ * Code generated for Simulink model 'CAN_send'.
+ *
+ * Model version                  : 1.2
+ * Simulink Coder version         : 24.1 (R2024a) 19-Nov-2023
+ * C/C++ source code generated on : Fri Jun 20 09:34:45 2025
+ *
+ * Target selection: ert.tlc
+ * Embedded hardware selection: Texas Instruments->C2000
+ * Code generation objectives: Unspecified
+ * Validation result: Not run
+ */
+
+#ifndef CAN_send_types_h_
+#define CAN_send_types_h_
+
+/* Parameters (default storage) */
+typedef struct P_CAN_send_T_ P_CAN_send_T;
+
+/* Forward declaration for rtModel */
+typedef struct tag_RTM_CAN_send_T RT_MODEL_CAN_send_T;
+
+#endif                                 /* CAN_send_types_h_ */
+
+/*
+ * File trailer for generated code.
+ *
+ * [EOF]
+ */

@@ -1,0 +1,22 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "CCS Debug",
+            "type": "ccs-debug",
+            "request": "launch"
+        },
+        {
+            "name": "ADC.ccxml",
+            "type": "ccs-debug",
+            "request": "launch",
+            "targetConfig": "/c:/Users/karin/ti/CCSTargetConfigurations/ADC.ccxml"
+        },
+        {
+            "name": "F28379D_LaunchPad.ccxml",
+            "type": "ccs-debug",
+            "request": "launch",
+            "targetConfig": "/c:/Users/karin/ti/CCSTargetConfigurations/F28379D_LaunchPad.ccxml"
+        }
+    ]
+}

@@ -1,0 +1,5 @@
+the mcp pins from right to left facing down vcc gnd cs so si sck int
+pin and spi change 
+the voltage divider
+every time you reconnect is a restart
+the values appear on the scope as two levels when 0x09 but as one level when 0xFF
