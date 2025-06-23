@@ -133,6 +133,9 @@ void init_board (void)
   DevCfgRegs.CPUSEL0.bit.EPWM2 = 0U;
   DevCfgRegs.CPUSEL0.bit.EPWM3 = 0U;
 
+  /* Assign used eQEP modules to CPU1 */
+  DevCfgRegs.CPUSEL2.bit.EQEP2 = 0U;
+
 #if MW_EXTMODE_SCIMODULE == 0
 
   DevCfgRegs.CPUSEL5.bit.SCI_A = 0U;

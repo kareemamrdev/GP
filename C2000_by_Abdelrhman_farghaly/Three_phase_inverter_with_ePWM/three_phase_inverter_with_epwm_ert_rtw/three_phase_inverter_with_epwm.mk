@@ -2,7 +2,7 @@
 ## Makefile generated for component 'three_phase_inverter_with_epwm'. 
 ## 
 ## Makefile     : three_phase_inverter_with_epwm.mk
-## Generated on : Wed Jun 18 18:06:30 2025
+## Generated on : Fri Jun 20 16:25:38 2025
 ## Final product: $(RELATIVE_PATH_TO_ANCHOR)/three_phase_inverter_with_epwm.out
 ## Product type : executable
 ## 
@@ -207,12 +207,12 @@ INCLUDES = $(INCLUDES_BUILDINFO)
 ## DEFINES
 ###########################################################################
 
-DEFINES_ = -D__MW_TARGET_USE_HARDWARE_RESOURCES_H__
-DEFINES_BUILD_ARGS = -DCLASSIC_INTERFACE=0 -DALLOCATIONFCN=0 -DTERMFCN=1 -DONESTEPFCN=1 -DMAT_FILE=0 -DMULTI_INSTANCE_CODE=0 -DINTEGER_CODE=0 -DMT=1
+DEFINES_ = -DMW_DAC_CHANNEL_A -D__MW_TARGET_USE_HARDWARE_RESOURCES_H__
+DEFINES_BUILD_ARGS = -DCLASSIC_INTERFACE=0 -DALLOCATIONFCN=0 -DTERMFCN=1 -DONESTEPFCN=1 -DMAT_FILE=0 -DMULTI_INSTANCE_CODE=0 -DINTEGER_CODE=0 -DMT=0
 DEFINES_CUSTOM = 
 DEFINES_OPTS = -DTID01EQ=0
 DEFINES_SKIPFORSIL = -DXCP_CUSTOM_PLATFORM -DEXTMODE_DISABLE_ARGS_PROCESSING=1 -DMW_PIL_SCIFIFOLEN=16 -DF2837X_REG_FORMAT -DMW_F2837XD -DSTACK_SIZE=1024 -DRT -DF28379D -DCPU1 -DBOOT_FROM_FLASH=1 -DCPU_RAMLS_PROG_START=0x8000 -DCPU_RAMLS_PROG_LENGTH=0x1800 -DCLA_RAMLS_PROG_START=0xA000 -DCLA_RAMLS_PROG_LENGTH=0x1000 -DCLA_RAMLS_DATA_START=0x9800 -DCLA_RAMLS_DATA_LENGTH=0x800
-DEFINES_STANDARD = -DMODEL=three_phase_inverter_with_epwm -DNUMST=2 -DNCSTATES=0 -DHAVESTDIO -DMODEL_HAS_DYNAMICALLY_LOADED_SFCNS=0
+DEFINES_STANDARD = -DMODEL=three_phase_inverter_with_epwm -DNUMST=1 -DNCSTATES=0 -DHAVESTDIO -DMODEL_HAS_DYNAMICALLY_LOADED_SFCNS=0
 
 DEFINES = $(DEFINES_) $(DEFINES_BUILD_ARGS) $(DEFINES_CUSTOM) $(DEFINES_OPTS) $(DEFINES_SKIPFORSIL) $(DEFINES_STANDARD)
 
@@ -220,7 +220,7 @@ DEFINES = $(DEFINES_) $(DEFINES_BUILD_ARGS) $(DEFINES_CUSTOM) $(DEFINES_OPTS) $(
 ## SOURCE FILES
 ###########################################################################
 
-SRCS = $(START_DIR)/three_phase_inverter_with_epwm_ert_rtw/MW_c28xx_csl.c $(START_DIR)/three_phase_inverter_with_epwm_ert_rtw/MW_c28xx_board.c $(START_DIR)/three_phase_inverter_with_epwm_ert_rtw/MW_c28xx_pwm.c $(START_DIR)/three_phase_inverter_with_epwm_ert_rtw/three_phase_inverter_with_epwm.c $(START_DIR)/three_phase_inverter_with_epwm_ert_rtw/three_phase_inverter_with_epwm_data.c G:/DSP/C2000Ware/C2000Ware_5_04_00_00/driverlib/f2837xd/driverlib/sysctl.c $(MATLAB_ROOT)/toolbox/c2b/tic2000_shared/src/c2837xDBoard_Realtime_Support.c $(MATLAB_ROOT)/toolbox/c2b/tic2000_shared/src/MW_c28xGlobalInterrupts.c $(MATLAB_ROOT)/toolbox/c2b/tic2000/src/c2837xDInit.c G:/DSP/C2000Ware/C2000Ware_5_04_00_00/driverlib/f2837xd/driverlib/dma.c G:/DSP/C2000Ware/C2000Ware_5_04_00_00/device_support/f2837xd/common/source/F2837xD_CpuTimers.c G:/DSP/C2000Ware/C2000Ware_5_04_00_00/device_support/f2837xd/common/source/F2837xD_DefaultISR.c G:/DSP/C2000Ware/C2000Ware_5_04_00_00/device_support/f2837xd/headers/source/F2837xD_GlobalVariableDefs.c G:/DSP/C2000Ware/C2000Ware_5_04_00_00/device_support/f2837xd/common/source/F2837xD_PieCtrl.c G:/DSP/C2000Ware/C2000Ware_5_04_00_00/device_support/f2837xd/common/source/F2837xD_PieVect.c G:/DSP/C2000Ware/C2000Ware_5_04_00_00/device_support/f2837xd/common/source/F2837xD_SysCtrl.c G:/DSP/C2000Ware/C2000Ware_5_04_00_00/device_support/f2837xd/common/source/F2837xD_usDelay.asm G:/DSP/C2000Ware/C2000Ware_5_04_00_00/device_support/f2837xd/common/source/F2837xD_CodeStartBranch.asm G:/DSP/C2000Ware/C2000Ware_5_04_00_00/device_support/f2837xd/common/source/F2837xD_Dma.c G:/DSP/C2000Ware/C2000Ware_5_04_00_00/device_support/f2837xd/common/source/F2837xD_Adc.c G:/DSP/C2000Ware/C2000Ware_5_04_00_00/device_support/f2837xd/common/source/F2837xD_Gpio.c G:/DSP/C2000Ware/C2000Ware_5_04_00_00/device_support/f2837xd/common/source/F2837xD_Ipc_Driver_Lite.c $(MATLAB_ROOT)/toolbox/c2b/tic2000/src/c2000HardwareTimerConfig.c $(MATLAB_ROOT)/toolbox/c2b/tic2000_shared/src/MW_c28xGPIO.c G:/DSP/C2000Ware/C2000Ware_5_04_00_00/driverlib/f2837xd/driverlib/clb.c G:/DSP/C2000Ware/C2000Ware_5_04_00_00/libraries/dsp/FPU/c28/source/fpu32/utility/memcpy_fast.asm $(MATLAB_ROOT)/toolbox/c2b/tic2000_shared/src/c2837xDSchedulerTimer0.c $(MATLAB_ROOT)/toolbox/c2b/tic2000_soc/src/mw_soc_c2000_ipc.c
+SRCS = $(MATLAB_ROOT)/toolbox/c2b/tic2000/src/MW_c2000DAC.c $(START_DIR)/three_phase_inverter_with_epwm_ert_rtw/MW_c28xx_csl.c $(START_DIR)/three_phase_inverter_with_epwm_ert_rtw/MW_c28xx_board.c $(START_DIR)/three_phase_inverter_with_epwm_ert_rtw/MW_c28xx_adc.c $(START_DIR)/three_phase_inverter_with_epwm_ert_rtw/MW_c28xx_pwm.c $(START_DIR)/three_phase_inverter_with_epwm_ert_rtw/MW_c28xx_qep.c $(START_DIR)/three_phase_inverter_with_epwm_ert_rtw/rtGetInf.c $(START_DIR)/three_phase_inverter_with_epwm_ert_rtw/rtGetNaN.c $(START_DIR)/three_phase_inverter_with_epwm_ert_rtw/rt_nonfinite.c $(START_DIR)/three_phase_inverter_with_epwm_ert_rtw/three_phase_inverter_with_epwm.c $(START_DIR)/three_phase_inverter_with_epwm_ert_rtw/three_phase_inverter_with_epwm_data.c G:/DSP/C2000Ware/C2000Ware_5_04_00_00/driverlib/f2837xd/driverlib/sysctl.c $(MATLAB_ROOT)/toolbox/c2b/tic2000_shared/src/c2837xDBoard_Realtime_Support.c $(MATLAB_ROOT)/toolbox/c2b/tic2000_shared/src/MW_c28xGlobalInterrupts.c $(MATLAB_ROOT)/toolbox/c2b/tic2000/src/c2837xDInit.c G:/DSP/C2000Ware/C2000Ware_5_04_00_00/driverlib/f2837xd/driverlib/dma.c G:/DSP/C2000Ware/C2000Ware_5_04_00_00/device_support/f2837xd/common/source/F2837xD_CpuTimers.c G:/DSP/C2000Ware/C2000Ware_5_04_00_00/device_support/f2837xd/common/source/F2837xD_DefaultISR.c G:/DSP/C2000Ware/C2000Ware_5_04_00_00/device_support/f2837xd/headers/source/F2837xD_GlobalVariableDefs.c G:/DSP/C2000Ware/C2000Ware_5_04_00_00/device_support/f2837xd/common/source/F2837xD_PieCtrl.c G:/DSP/C2000Ware/C2000Ware_5_04_00_00/device_support/f2837xd/common/source/F2837xD_PieVect.c G:/DSP/C2000Ware/C2000Ware_5_04_00_00/device_support/f2837xd/common/source/F2837xD_SysCtrl.c G:/DSP/C2000Ware/C2000Ware_5_04_00_00/device_support/f2837xd/common/source/F2837xD_usDelay.asm G:/DSP/C2000Ware/C2000Ware_5_04_00_00/device_support/f2837xd/common/source/F2837xD_CodeStartBranch.asm G:/DSP/C2000Ware/C2000Ware_5_04_00_00/device_support/f2837xd/common/source/F2837xD_Dma.c G:/DSP/C2000Ware/C2000Ware_5_04_00_00/device_support/f2837xd/common/source/F2837xD_Adc.c G:/DSP/C2000Ware/C2000Ware_5_04_00_00/device_support/f2837xd/common/source/F2837xD_Gpio.c G:/DSP/C2000Ware/C2000Ware_5_04_00_00/device_support/f2837xd/common/source/F2837xD_Ipc_Driver_Lite.c $(MATLAB_ROOT)/toolbox/c2b/tic2000/src/c2000HardwareTimerConfig.c $(MATLAB_ROOT)/toolbox/c2b/tic2000_shared/src/MW_c28xGPIO.c G:/DSP/C2000Ware/C2000Ware_5_04_00_00/driverlib/f2837xd/driverlib/clb.c G:/DSP/C2000Ware/C2000Ware_5_04_00_00/libraries/dsp/FPU/c28/source/fpu32/utility/memcpy_fast.asm $(MATLAB_ROOT)/toolbox/c2b/tic2000_shared/src/c2837xDSchedulerTimer0.c $(MATLAB_ROOT)/toolbox/c2b/tic2000_soc/src/mw_soc_c2000_ipc.c
 
 MAIN_SRC = $(START_DIR)/three_phase_inverter_with_epwm_ert_rtw/ert_main.c
 
@@ -230,7 +230,7 @@ ALL_SRCS = $(SRCS) $(MAIN_SRC)
 ## OBJECTS
 ###########################################################################
 
-OBJS = MW_c28xx_csl.obj MW_c28xx_board.obj MW_c28xx_pwm.obj three_phase_inverter_with_epwm.obj three_phase_inverter_with_epwm_data.obj sysctl.obj c2837xDBoard_Realtime_Support.obj MW_c28xGlobalInterrupts.obj c2837xDInit.obj dma.obj F2837xD_CpuTimers.obj F2837xD_DefaultISR.obj F2837xD_GlobalVariableDefs.obj F2837xD_PieCtrl.obj F2837xD_PieVect.obj F2837xD_SysCtrl.obj F2837xD_usDelay.obj F2837xD_CodeStartBranch.obj F2837xD_Dma.obj F2837xD_Adc.obj F2837xD_Gpio.obj F2837xD_Ipc_Driver_Lite.obj c2000HardwareTimerConfig.obj MW_c28xGPIO.obj clb.obj memcpy_fast.obj c2837xDSchedulerTimer0.obj mw_soc_c2000_ipc.obj
+OBJS = MW_c2000DAC.obj MW_c28xx_csl.obj MW_c28xx_board.obj MW_c28xx_adc.obj MW_c28xx_pwm.obj MW_c28xx_qep.obj rtGetInf.obj rtGetNaN.obj rt_nonfinite.obj three_phase_inverter_with_epwm.obj three_phase_inverter_with_epwm_data.obj sysctl.obj c2837xDBoard_Realtime_Support.obj MW_c28xGlobalInterrupts.obj c2837xDInit.obj dma.obj F2837xD_CpuTimers.obj F2837xD_DefaultISR.obj F2837xD_GlobalVariableDefs.obj F2837xD_PieCtrl.obj F2837xD_PieVect.obj F2837xD_SysCtrl.obj F2837xD_usDelay.obj F2837xD_CodeStartBranch.obj F2837xD_Dma.obj F2837xD_Adc.obj F2837xD_Gpio.obj F2837xD_Ipc_Driver_Lite.obj c2000HardwareTimerConfig.obj MW_c28xGPIO.obj clb.obj memcpy_fast.obj c2837xDSchedulerTimer0.obj mw_soc_c2000_ipc.obj
 
 MAIN_OBJ = ert_main.obj
 
@@ -541,6 +541,10 @@ $(PRODUCT) : $(OBJS) $(PREBUILT_OBJS) $(LIBS) $(MAIN_OBJ)
 	$(CPP) $(CPPFLAGS) --output_file="$@" "$<"
 
 
+MW_c2000DAC.obj : $(MATLAB_ROOT)/toolbox/c2b/tic2000/src/MW_c2000DAC.c
+	$(CC) $(CFLAGS) --output_file="$@" "$<"
+
+
 MW_c28xx_csl.obj : $(START_DIR)/three_phase_inverter_with_epwm_ert_rtw/MW_c28xx_csl.c
 	$(CC) $(CFLAGS) --output_file="$@" "$<"
 
@@ -549,11 +553,31 @@ MW_c28xx_board.obj : $(START_DIR)/three_phase_inverter_with_epwm_ert_rtw/MW_c28x
 	$(CC) $(CFLAGS) --output_file="$@" "$<"
 
 
+MW_c28xx_adc.obj : $(START_DIR)/three_phase_inverter_with_epwm_ert_rtw/MW_c28xx_adc.c
+	$(CC) $(CFLAGS) --output_file="$@" "$<"
+
+
 MW_c28xx_pwm.obj : $(START_DIR)/three_phase_inverter_with_epwm_ert_rtw/MW_c28xx_pwm.c
 	$(CC) $(CFLAGS) --output_file="$@" "$<"
 
 
+MW_c28xx_qep.obj : $(START_DIR)/three_phase_inverter_with_epwm_ert_rtw/MW_c28xx_qep.c
+	$(CC) $(CFLAGS) --output_file="$@" "$<"
+
+
 ert_main.obj : $(START_DIR)/three_phase_inverter_with_epwm_ert_rtw/ert_main.c
+	$(CC) $(CFLAGS) --output_file="$@" "$<"
+
+
+rtGetInf.obj : $(START_DIR)/three_phase_inverter_with_epwm_ert_rtw/rtGetInf.c
+	$(CC) $(CFLAGS) --output_file="$@" "$<"
+
+
+rtGetNaN.obj : $(START_DIR)/three_phase_inverter_with_epwm_ert_rtw/rtGetNaN.c
+	$(CC) $(CFLAGS) --output_file="$@" "$<"
+
+
+rt_nonfinite.obj : $(START_DIR)/three_phase_inverter_with_epwm_ert_rtw/rt_nonfinite.c
 	$(CC) $(CFLAGS) --output_file="$@" "$<"
 
 

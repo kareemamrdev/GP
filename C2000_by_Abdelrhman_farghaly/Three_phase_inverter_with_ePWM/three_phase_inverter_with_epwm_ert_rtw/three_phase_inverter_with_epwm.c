@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'three_phase_inverter_with_epwm'.
  *
- * Model version                  : 1.8
+ * Model version                  : 1.10
  * Simulink Coder version         : 24.1 (R2024a) 19-Nov-2023
- * C/C++ source code generated on : Wed Jun 18 19:31:34 2025
+ * C/C++ source code generated on : Fri Jun 20 16:25:24 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
@@ -15,9 +15,13 @@
 
 #include "three_phase_inverter_with_epwm.h"
 #include <math.h>
+#include "rt_nonfinite.h"
 #include "rtwtypes.h"
 #include "three_phase_inverter_with_epwm_private.h"
 #include <string.h>
+
+/* Block signals (default storage) */
+B_three_phase_inverter_with_e_T three_phase_inverter_with_epw_B;
 
 /* Block states (default storage) */
 DW_three_phase_inverter_with__T three_phase_inverter_with_ep_DW;
@@ -26,193 +30,538 @@ DW_three_phase_inverter_with__T three_phase_inverter_with_ep_DW;
 static RT_MODEL_three_phase_inverter_T three_phase_inverter_with_ep_M_;
 RT_MODEL_three_phase_inverter_T *const three_phase_inverter_with_ep_M =
   &three_phase_inverter_with_ep_M_;
-static void rate_monotonic_scheduler(void);
 
-/*
- * Set which subrates need to run this base step (base rate always runs).
- * This function must be called prior to calling the model step function
- * in order to remember which rates need to run this base step.  The
- * buffering of events allows for overlapping preemption.
- */
-void three_phase_inverter_with_epwm_SetEventsForThisBaseStep(boolean_T
-  *eventFlags)
-{
-  /* Task runs when its counter is zero, computed via rtmStepTask macro */
-  eventFlags[1] = ((boolean_T)rtmStepTask(three_phase_inverter_with_ep_M, 1));
-}
+#ifndef __TMS320C28XX_CLA__
 
-/*
- *         This function updates active task flag for each subrate
- *         and rate transition flags for tasks that exchange data.
- *         The function assumes rate-monotonic multitasking scheduler.
- *         The function must be called at model base rate so that
- *         the generated code self-manages all its subrates and rate
- *         transition flags.
- */
-static void rate_monotonic_scheduler(void)
+uint16_T MW_adcBInitFlag = 0;
+
+#endif
+
+#ifndef __TMS320C28XX_CLA__
+
+uint16_T MW_adcCInitFlag = 0;
+
+#endif
+
+/* Model step function */
+void three_phase_inverter_with_epwm_step(void)
 {
-  /* Compute which subrates run during the next base time step.  Subrates
-   * are an integer multiple of the base rate counter.  Therefore, the subtask
-   * counter is reset when it reaches its limit (zero means run).
+  real_T Subtract;
+  real_T rtb_Gain1;
+  real_T rtb_Gain2;
+  real_T rtb_Gain2_e;
+  real_T rtb_Gain2_tmp;
+  real_T rtb_Product_o;
+  real_T rtb_Switch;
+  real_T rtb_alpha;
+  uint32_T Subsystem2_ELAPS_T_idx_0;
+  uint16_T rtb_Merge;
+  uint16_T rtb_Sum3;
+  boolean_T tmp;
+
+  /* S-Function (fcgen): '<Root>/Function-Call Generator' incorporates:
+   *  SubSystem: '<Root>/Subsystem'
    */
-  (three_phase_inverter_with_ep_M->Timing.TaskCounters.TID[1])++;
-  if ((three_phase_inverter_with_ep_M->Timing.TaskCounters.TID[1]) > 19) {/* Sample time: [0.0002s, 0.0s] */
-    three_phase_inverter_with_ep_M->Timing.TaskCounters.TID[1] = 0;
-  }
-}
+  /* S-Function (c2802xadc): '<S2>/ADC' */
+  {
+    /*  Internal Reference Voltage : Fixed scale 0 to 3.3 V range.  */
+    /*  External Reference Voltage : Allowable ranges of VREFHI(ADCINA0) = 3.3 and VREFLO(tied to ground) = 0  */
+    AdcbRegs.ADCSOCFRC1.bit.SOC0 = 1U;
 
-/* Model step function for TID0 */
-void three_phase_inverter_with_epwm_step0(void) /* Sample time: [1.0E-5s, 0.0s] */
-{
-  {                                    /* Sample time: [1.0E-5s, 0.0s] */
-    rate_monotonic_scheduler();
-  }
-}
+    /* Wait for the period of Sampling window and EOC result to be latched after trigger */
+#ifndef __TMS320C28XX_CLA__
 
-/* Model step function for TID1 */
-void three_phase_inverter_with_epwm_step1(void) /* Sample time: [0.0002s, 0.0s] */
-{
-  real_T rtb_Fcn2;
+    asm(" RPT #75|| NOP");
 
-  /* Sin: '<Root>/Sine Wave' */
-  if (three_phase_inverter_with_ep_DW.systemEnable != 0L) {
-    rtb_Fcn2 = three_phase_inverter_with_epw_P.SineWave_Freq *
-      ((three_phase_inverter_with_ep_M->Timing.clockTick1) * 0.0002);
-    three_phase_inverter_with_ep_DW.lastSin = sin(rtb_Fcn2);
-    three_phase_inverter_with_ep_DW.lastCos = cos(rtb_Fcn2);
-    three_phase_inverter_with_ep_DW.systemEnable = 0L;
+#endif
+
+#ifdef __TMS320C28XX_CLA__
+
+    real32_T wait_index;
+    for (wait_index= 12; wait_index > 0; wait_index--)
+      __mnop();
+
+#endif
+
+    three_phase_inverter_with_epw_B.ADC = (AdcbResultRegs.ADCRESULT0);
   }
 
-  /* Fcn: '<Root>/Fcn' incorporates:
-   *  Sin: '<Root>/Sine Wave'
+  /* S-Function (c2802xadc): '<S2>/ADC1' */
+  {
+    /*  Internal Reference Voltage : Fixed scale 0 to 3.3 V range.  */
+    /*  External Reference Voltage : Allowable ranges of VREFHI(ADCINA0) = 3.3 and VREFLO(tied to ground) = 0  */
+    AdccRegs.ADCSOCFRC1.bit.SOC0 = 1U;
+
+    /* Wait for the period of Sampling window and EOC result to be latched after trigger */
+#ifndef __TMS320C28XX_CLA__
+
+    asm(" RPT #75|| NOP");
+
+#endif
+
+#ifdef __TMS320C28XX_CLA__
+
+    real32_T wait_index;
+    for (wait_index= 12; wait_index > 0; wait_index--)
+      __mnop();
+
+#endif
+
+    three_phase_inverter_with_epw_B.ADC1 = (AdccResultRegs.ADCRESULT0);
+  }
+
+  /* DiscreteTransferFcn: '<S2>/Discrete Transfer Fcn' */
+  rtb_Gain2 = three_phase_inverter_with_epw_P.DiscreteTransferFcn_NumCoef *
+    three_phase_inverter_with_ep_DW.DiscreteTransferFcn_states;
+
+  /* DiscreteTransferFcn: '<S2>/Discrete Transfer Fcn1' */
+  rtb_alpha = three_phase_inverter_with_epw_P.DiscreteTransferFcn1_NumCoef *
+    three_phase_inverter_with_ep_DW.DiscreteTransferFcn1_states;
+
+  /* Sum: '<S2>/Subtract' incorporates:
+   *  DiscreteTransferFcn: '<S2>/Discrete Transfer Fcn'
+   *  DiscreteTransferFcn: '<S2>/Discrete Transfer Fcn1'
    */
-  rtb_Fcn2 = ((((three_phase_inverter_with_ep_DW.lastSin *
-                 three_phase_inverter_with_epw_P.SineWave_PCos +
-                 three_phase_inverter_with_ep_DW.lastCos *
-                 three_phase_inverter_with_epw_P.SineWave_PSin) *
-                three_phase_inverter_with_epw_P.SineWave_HCos +
-                (three_phase_inverter_with_ep_DW.lastCos *
-                 three_phase_inverter_with_epw_P.SineWave_PCos -
-                 three_phase_inverter_with_ep_DW.lastSin *
-                 three_phase_inverter_with_epw_P.SineWave_PSin) *
-                three_phase_inverter_with_epw_P.SineWave_Hsin) *
-               three_phase_inverter_with_epw_P.SineWave_Amp +
-               three_phase_inverter_with_epw_P.SineWave_Bias) + 1.0) * 5000.0;
+  Subtract = (0.0 - rtb_alpha) - rtb_Gain2;
 
-  /* S-Function (c2802xpwm): '<Root>/ePWM' */
+  /* Update for DiscreteTransferFcn: '<S2>/Discrete Transfer Fcn' incorporates:
+   *  Constant: '<S2>/Constant'
+   *  Gain: '<S2>/Gain3'
+   *  Gain: '<S2>/Gain4'
+   *  Sum: '<S2>/Add'
+   */
+  three_phase_inverter_with_ep_DW.DiscreteTransferFcn_states =
+    ((three_phase_inverter_with_epw_P.Gain3_Gain *
+      three_phase_inverter_with_epw_B.ADC -
+      three_phase_inverter_with_epw_P.Constant_Value) *
+     three_phase_inverter_with_epw_P.Gain4_Gain -
+     three_phase_inverter_with_epw_P.DiscreteTransferFcn_DenCoef[1L] *
+     three_phase_inverter_with_ep_DW.DiscreteTransferFcn_states) /
+    three_phase_inverter_with_epw_P.DiscreteTransferFcn_DenCoef[0];
+
+  /* Update for DiscreteTransferFcn: '<S2>/Discrete Transfer Fcn1' incorporates:
+   *  Constant: '<S2>/Constant2'
+   *  Gain: '<S2>/Gain5'
+   *  Gain: '<S2>/Gain6'
+   *  Sum: '<S2>/Add1'
+   */
+  three_phase_inverter_with_ep_DW.DiscreteTransferFcn1_states =
+    ((three_phase_inverter_with_epw_P.Gain5_Gain *
+      three_phase_inverter_with_epw_B.ADC1 -
+      three_phase_inverter_with_epw_P.Constant2_Value) *
+     three_phase_inverter_with_epw_P.Gain6_Gain -
+     three_phase_inverter_with_epw_P.DiscreteTransferFcn1_DenCoef[1L] *
+     three_phase_inverter_with_ep_DW.DiscreteTransferFcn1_states) /
+    three_phase_inverter_with_epw_P.DiscreteTransferFcn1_DenCoef[0];
+
+  /* S-Function (fcgen): '<Root>/Function-Call Generator' incorporates:
+   *  SubSystem: '<Root>/Subsystem6'
+   */
+  /* S-Function (c280xqep): '<S7>/eQEP' */
+  {
+    three_phase_inverter_with_epw_B.eQEP_o1 = EQep2Regs.QPOSCNT;/*eQEP Position Counter*/
+    three_phase_inverter_with_epw_B.eQEP_o2 = EQep2Regs.QPOSILAT;
+         /* The position-counter value is latched into this register on an IEL*/
+  }
+
+  /* If: '<S23>/If1' incorporates:
+   *  Constant: '<S23>/ResetMode'
+   */
+  if (three_phase_inverter_with_epw_P.ResetMode_Value > 0) {
+    /* Outputs for IfAction SubSystem: '<S23>/PositionNoReset' incorporates:
+     *  ActionPort: '<S33>/Action Port'
+     */
+    /* Sum: '<S33>/Sum3' */
+    rtb_Sum3 = three_phase_inverter_with_epw_B.eQEP_o1 -
+      three_phase_inverter_with_epw_B.eQEP_o2;
+
+    /* Sum: '<S33>/Sum7' incorporates:
+     *  Constant: '<S38>/Constant'
+     */
+    rtb_Merge = rtb_Sum3 + three_phase_inverter_with_epw_P.Constant_Value_o;
+
+    /* MinMax: '<S33>/MinMax' */
+    if (rtb_Sum3 <= rtb_Merge) {
+      rtb_Merge = rtb_Sum3;
+    }
+
+    /* End of MinMax: '<S33>/MinMax' */
+    /* End of Outputs for SubSystem: '<S23>/PositionNoReset' */
+  } else {
+    /* Outputs for IfAction SubSystem: '<S23>/PositionResetAtIndex' incorporates:
+     *  ActionPort: '<S34>/Action Port'
+     */
+    /* SignalConversion generated from: '<S34>/Count' */
+    rtb_Merge = three_phase_inverter_with_epw_B.eQEP_o1;
+
+    /* End of Outputs for SubSystem: '<S23>/PositionResetAtIndex' */
+  }
+
+  /* End of If: '<S23>/If1' */
+
+  /* Product: '<S23>/Product' incorporates:
+   *  Constant: '<S39>/Constant'
+   *  DataTypeConversion: '<S36>/DTC'
+   */
+  rtb_Product_o = (real_T)rtb_Merge *
+    three_phase_inverter_with_epw_P.Constant_Value_j;
+
+  /* Switch: '<S25>/Switch' incorporates:
+   *  Constant: '<S22>/ReplaceInport_Offset'
+   *  Constant: '<S25>/Constant'
+   *  Constant: '<S25>/Constant1'
+   */
+  if (three_phase_inverter_with_epw_P.Constant_Value_jr >
+      three_phase_inverter_with_epw_P.Switch_Threshold) {
+    rtb_Switch = three_phase_inverter_with_epw_P.Constant1_Value;
+  } else {
+    rtb_Switch = three_phase_inverter_with_epw_P.ReplaceInport_Offset_Value;
+  }
+
+  /* End of Switch: '<S25>/Switch' */
+
+  /* If: '<S26>/If' incorporates:
+   *  Constant: '<S28>/Constant'
+   *  Gain: '<S31>/Number of pole pairs'
+   *  Sum: '<S28>/Add'
+   *  Sum: '<S29>/Add'
+   */
+  if (rtb_Product_o <= rtb_Switch) {
+    /* Outputs for IfAction SubSystem: '<S26>/If Action Subsystem' incorporates:
+     *  ActionPort: '<S28>/Action Port'
+     */
+    rtb_Product_o = (rtb_Product_o +
+                     three_phase_inverter_with_epw_P.Constant_Value_l) -
+      rtb_Switch;
+
+    /* End of Outputs for SubSystem: '<S26>/If Action Subsystem' */
+  } else {
+    /* Outputs for IfAction SubSystem: '<S26>/If Action Subsystem1' incorporates:
+     *  ActionPort: '<S29>/Action Port'
+     */
+    rtb_Product_o -= rtb_Switch;
+
+    /* End of Outputs for SubSystem: '<S26>/If Action Subsystem1' */
+  }
+
+  rtb_Product_o *=
+    three_phase_inverter_with_epw_P.MechanicaltoElectricalPosition_;
+
+  /* End of If: '<S26>/If' */
+
+  /* Sum: '<S27>/Add' incorporates:
+   *  Gain: '<S27>/Multiply'
+   *  Gain: '<S27>/Multiply1'
+   *  Rounding: '<S27>/Floor'
+   */
+  rtb_Product_o -= floor(three_phase_inverter_with_epw_P.Multiply_Gain *
+    rtb_Product_o) * three_phase_inverter_with_epw_P.Multiply1_Gain;
+
+  /* MATLABSystem: '<S7>/DAC' incorporates:
+   *  Gain: '<S7>/Gain1'
+   */
+  MW_C2000DACSat(0U, three_phase_inverter_with_epw_P.Gain1_Gain * rtb_Product_o);
+
+  /* S-Function (fcgen): '<Root>/Function-Call Generator' incorporates:
+   *  SubSystem: '<Root>/Subsystem4'
+   */
+  /* S-Function (fcgen): '<Root>/Function-Call Generator' incorporates:
+   *  SubSystem: '<Root>/Subsystem'
+   */
+  /* Gain: '<S5>/Gain2' incorporates:
+   *  DiscreteTransferFcn: '<S2>/Discrete Transfer Fcn1'
+   *  Gain: '<S5>/Gain'
+   *  Gain: '<S5>/Gain1'
+   *  Sum: '<S5>/Add2'
+   */
+  rtb_alpha = ((rtb_alpha - three_phase_inverter_with_epw_P.Gain_Gain * Subtract)
+               - three_phase_inverter_with_epw_P.Gain1_Gain_d * rtb_Product_o) *
+    three_phase_inverter_with_epw_P.Gain2_Gain;
+
+  /* Gain: '<S5>/Gain5' incorporates:
+   *  Gain: '<S5>/Gain3'
+   *  Gain: '<S5>/Gain4'
+   *  Sum: '<S5>/Add3'
+   */
+  Subtract = (three_phase_inverter_with_epw_P.Gain3_Gain_b * Subtract -
+              three_phase_inverter_with_epw_P.Gain4_Gain_e * rtb_Product_o) *
+    three_phase_inverter_with_epw_P.Gain5_Gain_k;
+
+  /* S-Function (fcgen): '<Root>/Function-Call Generator' incorporates:
+   *  SubSystem: '<Root>/Subsystem2'
+   */
+  if (three_phase_inverter_with_ep_DW.Subsystem2_RESET_ELAPS_T) {
+    Subsystem2_ELAPS_T_idx_0 = 0UL;
+  } else {
+    Subsystem2_ELAPS_T_idx_0 = three_phase_inverter_with_ep_M->Timing.clockTick0
+      - three_phase_inverter_with_ep_DW.Subsystem2_PREV_T[0];
+  }
+
+  three_phase_inverter_with_ep_DW.Subsystem2_PREV_T[0L] =
+    three_phase_inverter_with_ep_M->Timing.clockTick0;
+  three_phase_inverter_with_ep_DW.Subsystem2_PREV_T[1L] =
+    three_phase_inverter_with_ep_M->Timing.clockTickH0;
+  three_phase_inverter_with_ep_DW.Subsystem2_RESET_ELAPS_T = false;
+
+  /* S-Function (fcgen): '<Root>/Function-Call Generator' incorporates:
+   *  SubSystem: '<Root>/Subsystem4'
+   */
+  /* S-Function (fcgen): '<Root>/Function-Call Generator' incorporates:
+   *  SubSystem: '<Root>/Subsystem'
+   */
+  /* Trigonometry: '<S5>/Cosine1' incorporates:
+   *  DiscreteTransferFcn: '<S2>/Discrete Transfer Fcn'
+   *  Trigonometry: '<S5>/Cosine'
+   */
+  rtb_Switch = cos(rtb_Gain2);
+
+  /* Trigonometry: '<S5>/Sin1' incorporates:
+   *  DiscreteTransferFcn: '<S2>/Discrete Transfer Fcn'
+   *  Trigonometry: '<S5>/Sin'
+   */
+  rtb_Gain2_tmp = sin(rtb_Gain2);
+
+  /* S-Function (fcgen): '<Root>/Function-Call Generator' incorporates:
+   *  SubSystem: '<Root>/Subsystem2'
+   */
+  /* Sum: '<S3>/Sum' incorporates:
+   *  Constant: '<S3>/Constant4'
+   *  Gain: '<S3>/Gain2'
+   *  Product: '<S5>/Product2'
+   *  Product: '<S5>/Product3'
+   *  Sum: '<S5>/Add1'
+   *  Trigonometry: '<S5>/Cosine1'
+   *  Trigonometry: '<S5>/Sin1'
+   */
+  rtb_Gain2 = 2.0 / (3.0 * three_phase_inverter_with_epw_P.lambda *
+                     three_phase_inverter_with_epw_P.p) *
+    three_phase_inverter_with_epw_P.Constant4_Value - (rtb_Switch * Subtract -
+    rtb_alpha * rtb_Gain2_tmp);
+
+  /* Gain: '<S9>/Gain1' */
+  rtb_Gain1 = three_phase_inverter_with_epw_P.Kp * rtb_Gain2;
+
+  /* DiscreteIntegrator: '<S9>/Discrete-Time Integrator1' */
+  if (three_phase_inverter_with_ep_DW.DiscreteTimeIntegrator1_SYSTEM_ == 0U) {
+    /* DiscreteIntegrator: '<S9>/Discrete-Time Integrator1' */
+    three_phase_inverter_with_ep_DW.DiscreteTimeIntegrator1_DSTATE +=
+      three_phase_inverter_with_epw_P.DiscreteTimeIntegrator1_gainval * (real_T)
+      Subsystem2_ELAPS_T_idx_0 *
+      three_phase_inverter_with_ep_DW.DiscreteTimeIntegrator1_PREV_U;
+  }
+
+  /* End of DiscreteIntegrator: '<S9>/Discrete-Time Integrator1' */
+
+  /* Gain: '<S9>/Gain2' */
+  rtb_Gain2_e = three_phase_inverter_with_epw_P.Ki * rtb_Gain2;
+
+  /* End of Outputs for S-Function (fcgen): '<Root>/Function-Call Generator' */
+
+  /* S-Function (fcgen): '<Root>/Function-Call Generator' incorporates:
+   *  SubSystem: '<Root>/Subsystem4'
+   */
+  /* Sum: '<S3>/Sum1' incorporates:
+   *  Constant: '<S3>/Constant1'
+   *  Product: '<S5>/Product'
+   *  Product: '<S5>/Product1'
+   *  Sum: '<S5>/Add'
+   */
+  rtb_Gain2 = three_phase_inverter_with_epw_P.Constant1_Value_o - (rtb_alpha *
+    rtb_Switch + rtb_Gain2_tmp * Subtract);
+
+  /* DiscreteIntegrator: '<S8>/Discrete-Time Integrator1' */
+  if (three_phase_inverter_with_ep_DW.DiscreteTimeIntegrator1_SYSTE_l == 0U) {
+    /* DiscreteIntegrator: '<S8>/Discrete-Time Integrator1' */
+    three_phase_inverter_with_ep_DW.DiscreteTimeIntegrator1_DSTAT_o +=
+      three_phase_inverter_with_epw_P.DiscreteTimeIntegrator1_gainv_l * (real_T)
+      Subsystem2_ELAPS_T_idx_0 *
+      three_phase_inverter_with_ep_DW.DiscreteTimeIntegrator1_PREV__g;
+  }
+
+  /* End of DiscreteIntegrator: '<S8>/Discrete-Time Integrator1' */
+
+  /* Update for DiscreteIntegrator: '<S9>/Discrete-Time Integrator1' incorporates:
+   *  Product: '<S9>/Product'
+   */
+  three_phase_inverter_with_ep_DW.DiscreteTimeIntegrator1_SYSTEM_ = 0U;
+  three_phase_inverter_with_ep_DW.DiscreteTimeIntegrator1_PREV_U = 0.0 *
+    rtb_Gain2_e;
+
+  /* Update for DiscreteIntegrator: '<S8>/Discrete-Time Integrator1' incorporates:
+   *  Gain: '<S8>/Gain2'
+   *  Product: '<S8>/Product'
+   */
+  three_phase_inverter_with_ep_DW.DiscreteTimeIntegrator1_SYSTE_l = 0U;
+  three_phase_inverter_with_ep_DW.DiscreteTimeIntegrator1_PREV__g =
+    three_phase_inverter_with_epw_P.Ki * rtb_Gain2 * 0.0;
+
+  /* End of Outputs for S-Function (fcgen): '<Root>/Function-Call Generator' */
+
+  /* S-Function (fcgen): '<Root>/Function-Call Generator' incorporates:
+   *  SubSystem: '<Root>/Decoupling'
+   */
+  /* Sum: '<S1>/Add' incorporates:
+   *  Constant: '<S1>/Constant1'
+   *  Constant: '<S1>/Constant2'
+   *  Product: '<S1>/Product'
+   *  Product: '<S1>/Product1'
+   *  Sum: '<S9>/Sum1'
+   */
+  rtb_alpha = (0.0 * three_phase_inverter_with_epw_P.lambda + 0.0 *
+               three_phase_inverter_with_epw_P.L) + (rtb_Gain1 +
+    three_phase_inverter_with_ep_DW.DiscreteTimeIntegrator1_DSTATE);
+
+  /* Sum: '<S1>/Add1' incorporates:
+   *  Constant: '<S1>/Constant3'
+   *  Gain: '<S8>/Gain1'
+   *  Product: '<S1>/Product2'
+   *  Sum: '<S8>/Sum1'
+   */
+  rtb_Gain2 = (three_phase_inverter_with_epw_P.Kp * rtb_Gain2 +
+               three_phase_inverter_with_ep_DW.DiscreteTimeIntegrator1_DSTAT_o)
+    - 0.0 * three_phase_inverter_with_epw_P.L;
+
+  /* S-Function (fcgen): '<Root>/Function-Call Generator' incorporates:
+   *  SubSystem: '<Root>/Subsystem3'
+   */
+  /* Trigonometry: '<S4>/Cosine' incorporates:
+   *  Trigonometry: '<S4>/Sin1'
+   */
+  Subtract = cos(rtb_Product_o);
+
+  /* Trigonometry: '<S4>/Sin' incorporates:
+   *  Trigonometry: '<S4>/Cosine1'
+   */
+  rtb_Switch = sin(rtb_Product_o);
+
+  /* Sum: '<S4>/Add' incorporates:
+   *  Product: '<S4>/Product'
+   *  Product: '<S4>/Product1'
+   *  Trigonometry: '<S4>/Cosine'
+   *  Trigonometry: '<S4>/Sin'
+   */
+  rtb_Product_o = rtb_Switch * rtb_Gain2 + Subtract * rtb_alpha;
+
+  /* Gain: '<S4>/Gain' incorporates:
+   *  Product: '<S4>/Product2'
+   *  Product: '<S4>/Product3'
+   *  Sum: '<S4>/Add1'
+   */
+  rtb_alpha = (Subtract * rtb_Gain2 - rtb_alpha * rtb_Switch) *
+    three_phase_inverter_with_epw_P.Gain_Gain_g;
+
+  /* Gain: '<S4>/Gain1' incorporates:
+   *  Sum: '<S4>/Add2'
+   */
+  rtb_Gain2 = ((0.0 - rtb_alpha) - rtb_Product_o) *
+    three_phase_inverter_with_epw_P.Gain1_Gain_e;
+
+  /* Gain: '<S4>/Gain2' incorporates:
+   *  Sum: '<S4>/Add3'
+   */
+  rtb_alpha = (rtb_alpha - rtb_Product_o) *
+    three_phase_inverter_with_epw_P.Gain2_Gain_n;
+
+  /* S-Function (fcgen): '<Root>/Function-Call Generator' incorporates:
+   *  SubSystem: '<Root>/Subsystem5'
+   */
+  /* MinMax: '<S10>/Max' incorporates:
+   *  MinMax: '<S10>/Min'
+   */
+  tmp = rtIsNaN(rtb_alpha);
+  if ((rtb_Product_o >= rtb_alpha) || tmp) {
+    Subtract = rtb_Product_o;
+  } else {
+    Subtract = rtb_alpha;
+  }
+
+  /* MinMax: '<S10>/Min' */
+  if ((rtb_Product_o <= rtb_alpha) || tmp) {
+    rtb_Switch = rtb_Product_o;
+  } else {
+    rtb_Switch = rtb_alpha;
+  }
+
+  /* MinMax: '<S10>/Max' incorporates:
+   *  MinMax: '<S10>/Min'
+   */
+  tmp = !rtIsNaN(rtb_Gain2);
+  if ((!(Subtract >= rtb_Gain2)) && tmp) {
+    Subtract = rtb_Gain2;
+  }
+
+  /* MinMax: '<S10>/Min' */
+  if ((!(rtb_Switch <= rtb_Gain2)) && tmp) {
+    rtb_Switch = rtb_Gain2;
+  }
+
+  /* Gain: '<S10>/one_by_two' incorporates:
+   *  MinMax: '<S10>/Max'
+   *  MinMax: '<S10>/Min'
+   *  Sum: '<S10>/Add'
+   */
+  Subtract = (Subtract + rtb_Switch) *
+    three_phase_inverter_with_epw_P.one_by_two_Gain;
+
+  /* Sum: '<S6>/Add3' */
+  rtb_Switch = rtb_alpha + Subtract;
+
+  /* Fcn: '<S6>/Fcn' incorporates:
+   *  Gain: '<S6>/Gain'
+   *  Sum: '<S6>/Add5'
+   */
+  rtb_alpha = ((rtb_Product_o + Subtract) *
+               three_phase_inverter_with_epw_P.Gain_Gain_a + 1.0) * 5000.0;
+
+  /* S-Function (c2802xpwm): '<S6>/ePWM' */
 
   /*-- Update CMPA value for ePWM1 --*/
   {
-    EPwm1Regs.CMPA.bit.CMPA = (uint16_T)(rtb_Fcn2);
+    EPwm1Regs.CMPA.bit.CMPA = (uint16_T)(rtb_alpha);
   }
 
-  /* Sin: '<Root>/Sine Wave1' */
-  if (three_phase_inverter_with_ep_DW.systemEnable_b != 0L) {
-    rtb_Fcn2 = three_phase_inverter_with_epw_P.SineWave1_Freq *
-      ((three_phase_inverter_with_ep_M->Timing.clockTick1) * 0.0002);
-    three_phase_inverter_with_ep_DW.lastSin_i = sin(rtb_Fcn2);
-    three_phase_inverter_with_ep_DW.lastCos_i = cos(rtb_Fcn2);
-    three_phase_inverter_with_ep_DW.systemEnable_b = 0L;
-  }
-
-  /* Fcn: '<Root>/Fcn1' incorporates:
-   *  Sin: '<Root>/Sine Wave1'
+  /* Fcn: '<S6>/Fcn1' incorporates:
+   *  Gain: '<S6>/Gain'
    */
-  rtb_Fcn2 = ((((three_phase_inverter_with_ep_DW.lastSin_i *
-                 three_phase_inverter_with_epw_P.SineWave1_PCos +
-                 three_phase_inverter_with_ep_DW.lastCos_i *
-                 three_phase_inverter_with_epw_P.SineWave1_PSin) *
-                three_phase_inverter_with_epw_P.SineWave1_HCos +
-                (three_phase_inverter_with_ep_DW.lastCos_i *
-                 three_phase_inverter_with_epw_P.SineWave1_PCos -
-                 three_phase_inverter_with_ep_DW.lastSin_i *
-                 three_phase_inverter_with_epw_P.SineWave1_PSin) *
-                three_phase_inverter_with_epw_P.SineWave1_Hsin) *
-               three_phase_inverter_with_epw_P.SineWave1_Amp +
-               three_phase_inverter_with_epw_P.SineWave1_Bias) + 1.0) * 5000.0;
+  rtb_alpha = (three_phase_inverter_with_epw_P.Gain_Gain_a * rtb_Switch + 1.0) *
+    5000.0;
 
-  /* S-Function (c2802xpwm): '<Root>/ePWM1' */
+  /* S-Function (c2802xpwm): '<S6>/ePWM1' */
 
   /*-- Update CMPA value for ePWM2 --*/
   {
-    EPwm2Regs.CMPA.bit.CMPA = (uint16_T)(rtb_Fcn2);
+    EPwm2Regs.CMPA.bit.CMPA = (uint16_T)(rtb_alpha);
   }
 
-  /* Sin: '<Root>/Sine Wave2' */
-  if (three_phase_inverter_with_ep_DW.systemEnable_c != 0L) {
-    rtb_Fcn2 = three_phase_inverter_with_epw_P.SineWave2_Freq *
-      ((three_phase_inverter_with_ep_M->Timing.clockTick1) * 0.0002);
-    three_phase_inverter_with_ep_DW.lastSin_a = sin(rtb_Fcn2);
-    three_phase_inverter_with_ep_DW.lastCos_j = cos(rtb_Fcn2);
-    three_phase_inverter_with_ep_DW.systemEnable_c = 0L;
-  }
-
-  /* Fcn: '<Root>/Fcn2' incorporates:
-   *  Sin: '<Root>/Sine Wave2'
+  /* Fcn: '<S6>/Fcn2' incorporates:
+   *  Gain: '<S6>/Gain'
+   *  Sum: '<S6>/Add4'
    */
-  rtb_Fcn2 = ((((three_phase_inverter_with_ep_DW.lastSin_a *
-                 three_phase_inverter_with_epw_P.SineWave2_PCos +
-                 three_phase_inverter_with_ep_DW.lastCos_j *
-                 three_phase_inverter_with_epw_P.SineWave2_PSin) *
-                three_phase_inverter_with_epw_P.SineWave2_HCos +
-                (three_phase_inverter_with_ep_DW.lastCos_j *
-                 three_phase_inverter_with_epw_P.SineWave2_PCos -
-                 three_phase_inverter_with_ep_DW.lastSin_a *
-                 three_phase_inverter_with_epw_P.SineWave2_PSin) *
-                three_phase_inverter_with_epw_P.SineWave2_Hsin) *
-               three_phase_inverter_with_epw_P.SineWave2_Amp +
-               three_phase_inverter_with_epw_P.SineWave2_Bias) + 1.0) * 5000.0;
+  rtb_alpha = ((Subtract + rtb_Gain2) *
+               three_phase_inverter_with_epw_P.Gain_Gain_a + 1.0) * 5000.0;
 
-  /* S-Function (c2802xpwm): '<Root>/ePWM2' */
+  /* S-Function (c2802xpwm): '<S6>/ePWM2' */
 
   /*-- Update CMPA value for ePWM3 --*/
   {
-    EPwm3Regs.CMPA.bit.CMPA = (uint16_T)(rtb_Fcn2);
+    EPwm3Regs.CMPA.bit.CMPA = (uint16_T)(rtb_alpha);
   }
 
-  /* Update for Sin: '<Root>/Sine Wave' */
-  rtb_Fcn2 = three_phase_inverter_with_ep_DW.lastSin;
-  three_phase_inverter_with_ep_DW.lastSin =
-    three_phase_inverter_with_ep_DW.lastSin *
-    three_phase_inverter_with_epw_P.SineWave_HCos +
-    three_phase_inverter_with_ep_DW.lastCos *
-    three_phase_inverter_with_epw_P.SineWave_Hsin;
-  three_phase_inverter_with_ep_DW.lastCos =
-    three_phase_inverter_with_ep_DW.lastCos *
-    three_phase_inverter_with_epw_P.SineWave_HCos - rtb_Fcn2 *
-    three_phase_inverter_with_epw_P.SineWave_Hsin;
+  /* End of Outputs for S-Function (fcgen): '<Root>/Function-Call Generator' */
 
-  /* Update for Sin: '<Root>/Sine Wave1' */
-  rtb_Fcn2 = three_phase_inverter_with_ep_DW.lastSin_i;
-  three_phase_inverter_with_ep_DW.lastSin_i =
-    three_phase_inverter_with_ep_DW.lastSin_i *
-    three_phase_inverter_with_epw_P.SineWave1_HCos +
-    three_phase_inverter_with_ep_DW.lastCos_i *
-    three_phase_inverter_with_epw_P.SineWave1_Hsin;
-  three_phase_inverter_with_ep_DW.lastCos_i =
-    three_phase_inverter_with_ep_DW.lastCos_i *
-    three_phase_inverter_with_epw_P.SineWave1_HCos - rtb_Fcn2 *
-    three_phase_inverter_with_epw_P.SineWave1_Hsin;
-
-  /* Update for Sin: '<Root>/Sine Wave2' */
-  rtb_Fcn2 = three_phase_inverter_with_ep_DW.lastSin_a;
-  three_phase_inverter_with_ep_DW.lastSin_a =
-    three_phase_inverter_with_ep_DW.lastSin_a *
-    three_phase_inverter_with_epw_P.SineWave2_HCos +
-    three_phase_inverter_with_ep_DW.lastCos_j *
-    three_phase_inverter_with_epw_P.SineWave2_Hsin;
-  three_phase_inverter_with_ep_DW.lastCos_j =
-    three_phase_inverter_with_ep_DW.lastCos_j *
-    three_phase_inverter_with_epw_P.SineWave2_HCos - rtb_Fcn2 *
-    three_phase_inverter_with_epw_P.SineWave2_Hsin;
-
-  /* Update absolute time */
-  /* The "clockTick1" counts the number of times the code of this task has
-   * been executed. The resolution of this integer timer is 0.0002, which is the step size
-   * of the task. Size of "clockTick1" ensures timer will not overflow during the
+  /* Update absolute time for base rate */
+  /* The "clockTick0" counts the number of times the code of this task has
+   * been executed. The resolution of this integer timer is 1.0E-5, which is the step size
+   * of the task. Size of "clockTick0" ensures timer will not overflow during the
    * application lifespan selected.
+   * Timer of this task consists of two 32 bit unsigned integers.
+   * The two integers represent the low bits Timing.clockTick0 and the high bits
+   * Timing.clockTickH0. When the low bit overflows to 0, the high bits increment.
    */
-  three_phase_inverter_with_ep_M->Timing.clockTick1++;
+  three_phase_inverter_with_ep_M->Timing.clockTick0++;
+  if (!three_phase_inverter_with_ep_M->Timing.clockTick0) {
+    three_phase_inverter_with_ep_M->Timing.clockTickH0++;
+  }
 }
 
 /* Model initialize function */
@@ -220,15 +569,77 @@ void three_phase_inverter_with_epwm_initialize(void)
 {
   /* Registration code */
 
+  /* initialize non-finites */
+  rt_InitInfAndNaN(sizeof(real_T));
+
   /* initialize real-time model */
   (void) memset((void *)three_phase_inverter_with_ep_M, 0,
                 sizeof(RT_MODEL_three_phase_inverter_T));
+
+  /* block I/O */
+  (void) memset(((void *) &three_phase_inverter_with_epw_B), 0,
+                sizeof(B_three_phase_inverter_with_e_T));
 
   /* states (dwork) */
   (void) memset((void *)&three_phase_inverter_with_ep_DW, 0,
                 sizeof(DW_three_phase_inverter_with__T));
 
-  /* Start for S-Function (c2802xpwm): '<Root>/ePWM' */
+  /* SystemInitialize for S-Function (fcgen): '<Root>/Function-Call Generator' incorporates:
+   *  SubSystem: '<Root>/Subsystem'
+   */
+  /* Start for S-Function (c2802xadc): '<S2>/ADC' */
+  if (MW_adcBInitFlag == 0U) {
+    InitAdcB();
+    MW_adcBInitFlag = 1U;
+  }
+
+  config_ADCB_SOC0 ();
+
+  /* Start for S-Function (c2802xadc): '<S2>/ADC1' */
+  if (MW_adcCInitFlag == 0U) {
+    InitAdcC();
+    MW_adcCInitFlag = 1U;
+  }
+
+  config_ADCC_SOC0 ();
+
+  /* InitializeConditions for DiscreteTransferFcn: '<S2>/Discrete Transfer Fcn' */
+  three_phase_inverter_with_ep_DW.DiscreteTransferFcn_states =
+    three_phase_inverter_with_epw_P.DiscreteTransferFcn_InitialStat;
+
+  /* InitializeConditions for DiscreteTransferFcn: '<S2>/Discrete Transfer Fcn1' */
+  three_phase_inverter_with_ep_DW.DiscreteTransferFcn1_states =
+    three_phase_inverter_with_epw_P.DiscreteTransferFcn1_InitialSta;
+
+  /* SystemInitialize for S-Function (fcgen): '<Root>/Function-Call Generator' incorporates:
+   *  SubSystem: '<Root>/Subsystem6'
+   */
+  /* Start for S-Function (c280xqep): '<S7>/eQEP' */
+  config_QEP_eQEP2((uint32_T)30000U,(uint32_T)0, (uint32_T)0, (uint32_T)0,
+                   (uint16_T)0, (uint16_T)448, (uint16_T)8232, (uint16_T)32768,
+                   (uint16_T)119,(uint16_T)0);
+
+  /* Start for MATLABSystem: '<S7>/DAC' */
+  MW_ConfigureDACA();
+
+  /* SystemInitialize for S-Function (fcgen): '<Root>/Function-Call Generator' incorporates:
+   *  SubSystem: '<Root>/Subsystem2'
+   */
+  /* InitializeConditions for DiscreteIntegrator: '<S9>/Discrete-Time Integrator1' */
+  three_phase_inverter_with_ep_DW.DiscreteTimeIntegrator1_DSTATE =
+    three_phase_inverter_with_epw_P.DiscreteTimeIntegrator1_IC;
+  three_phase_inverter_with_ep_DW.DiscreteTimeIntegrator1_PREV_U = 0.0;
+
+  /* InitializeConditions for DiscreteIntegrator: '<S8>/Discrete-Time Integrator1' */
+  three_phase_inverter_with_ep_DW.DiscreteTimeIntegrator1_DSTAT_o =
+    three_phase_inverter_with_epw_P.DiscreteTimeIntegrator1_IC_p;
+  three_phase_inverter_with_ep_DW.DiscreteTimeIntegrator1_PREV__g = 0.0;
+
+  /* SystemInitialize for S-Function (fcgen): '<Root>/Function-Call Generator' incorporates:
+   *  SubSystem: '<Root>/Subsystem5'
+   */
+
+  /* Start for S-Function (c2802xpwm): '<S6>/ePWM' */
 
   /*** Initialize ePWM1 modules ***/
   {
@@ -448,7 +859,7 @@ void three_phase_inverter_with_epwm_initialize(void)
     EDIS;
   }
 
-  /* Start for S-Function (c2802xpwm): '<Root>/ePWM1' */
+  /* Start for S-Function (c2802xpwm): '<S6>/ePWM1' */
 
   /*** Initialize ePWM2 modules ***/
   {
@@ -668,7 +1079,7 @@ void three_phase_inverter_with_epwm_initialize(void)
     EDIS;
   }
 
-  /* Start for S-Function (c2802xpwm): '<Root>/ePWM2' */
+  /* Start for S-Function (c2802xpwm): '<S6>/ePWM2' */
 
   /*** Initialize ePWM3 modules ***/
   {
@@ -888,14 +1299,20 @@ void three_phase_inverter_with_epwm_initialize(void)
     EDIS;
   }
 
-  /* Enable for Sin: '<Root>/Sine Wave' */
-  three_phase_inverter_with_ep_DW.systemEnable = 1L;
+  /* End of SystemInitialize for S-Function (fcgen): '<Root>/Function-Call Generator' */
 
-  /* Enable for Sin: '<Root>/Sine Wave1' */
-  three_phase_inverter_with_ep_DW.systemEnable_b = 1L;
+  /* Enable for S-Function (fcgen): '<Root>/Function-Call Generator' incorporates:
+   *  SubSystem: '<Root>/Subsystem2'
+   */
+  three_phase_inverter_with_ep_DW.Subsystem2_RESET_ELAPS_T = true;
 
-  /* Enable for Sin: '<Root>/Sine Wave2' */
-  three_phase_inverter_with_ep_DW.systemEnable_c = 1L;
+  /* Enable for DiscreteIntegrator: '<S9>/Discrete-Time Integrator1' */
+  three_phase_inverter_with_ep_DW.DiscreteTimeIntegrator1_SYSTEM_ = 1U;
+
+  /* Enable for DiscreteIntegrator: '<S8>/Discrete-Time Integrator1' */
+  three_phase_inverter_with_ep_DW.DiscreteTimeIntegrator1_SYSTE_l = 1U;
+
+  /* End of Enable for S-Function (fcgen): '<Root>/Function-Call Generator' */
 }
 
 /* Model terminate function */

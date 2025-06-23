@@ -1,10 +1,10 @@
 ******************************************************************************
              TMS320C2000 Linker PC v22.6.0                     
 ******************************************************************************
->> Linked Tue May  6 16:46:04 2025
+>> Linked Fri Jun 20 15:14:30 2025
 
 OUTPUT FILE NAME:   <../untitled.out>
-ENTRY POINT SYMBOL: "_c_int00"  address: 00084fbd
+ENTRY POINT SYMBOL: "_c_int00"  address: 0008445a
 
 
 MEMORY CONFIGURATION
@@ -15,7 +15,7 @@ PAGE 0:
   BEGIN                 00000000   00000002  00000000  00000002  RWIX
   RAMLS_PROG            00008000   00002000  000000ab  00001f55  RWIX
   BEGIN_FLASH           00080000   00000002  00000002  00000000  RWIX
-  FLASHA_N              00080002   0003fffe  00005870  0003a78e  RWIX
+  FLASHA_N              00080002   0003fffe  00004cb0  0003b34e  RWIX
   RESET                 003fffc0   00000002  00000000  00000002  RWIX
 
 PAGE 1:
@@ -113,7 +113,7 @@ PAGE 1:
   RAMD0D1               0000b000   00001000  00000000  00001000  RWIX
   RAMGS_IPCBuffCPU1     0000c000   00001000  00000000  00001000  RWIX
   RAMGS_IPCBuffCPU2     0000d000   00001000  00000000  00001000  RWIX
-  RAMGS_DATA            0000e000   00007000  00001300  00005d00  RWIX
+  RAMGS_DATA            0000e000   00007000  00000702  000068fe  RWIX
   CPU2TOCPU1RAM         0003f800   00000400  00000000  00000400  RWIX
   CPU1TOCPU2RAM         0003fc00   00000400  00000000  00000400  RWIX
   EMIF1                 00047000   00000800  00000028  000007d8  RWIX
@@ -594,110 +594,112 @@ CpuSysRegsFile
 *          1    0005d300    00000082     UNINITIALIZED
                   0005d300    00000082     F2837xD_GlobalVariableDefs.obj (CpuSysRegsFile)
 
-.cinit     0    00085314    000002b3     
-                  00085314    00000147     untitled_data.obj (.cinit)
-                  0008545b    0000005b     xcp_ext_classic_trigger.obj (.cinit)
-                  000854b6    0000004c     xcp_ext_common.obj (.cinit)
-                  00085502    0000001e     xcp_daq.obj (.cinit)
-                  00085520    00000014     xcp.obj (.cinit)
-                  00085534    00000014     xcp_frame_serial.obj (.cinit)
-                  00085548    0000000f     c2837xDBoard_Realtime_Support.obj (.cinit)
-                  00085557    0000000f     xcp_standard.obj (.cinit)
-                  00085566    0000000e     rts2800_fpu32.lib : exit.c.obj (.cinit)
-                  00085574    00000009     xcp_mem_default.obj (.cinit:_xcpMemMainBlockSizes)
-                  0008557d    00000009     xcp_mem_default.obj (.cinit:_xcpMemMainBlocksNumber)
-                  00085586    00000008     xcp_drv_rtiostream.obj (.cinit)
-                  0008558e    00000008     xcp_transport.obj (.cinit)
-                  00085596    00000005     rts2800_fpu32.lib : _lock.c.obj (.cinit:__lock)
-                  0008559b    00000005                       : _lock.c.obj (.cinit:__unlock)
-                  000855a0    00000005     ert_main.obj (.cinit:_isRateRunning)
-                  000855a5    00000005     ert_main.obj (.cinit:_need2runFlags)
-                  000855aa    00000005     xcp_ext_common.obj (.cinit:_xcpCurrentSimulationTimeInTicks)
-                  000855af    00000005     rtiostream_serial_c28x.obj (.cinit)
-                  000855b4    00000005     xcp_calibration.obj (.cinit)
-                  000855b9    00000004     MW_c28xGPIO.obj (.cinit)
-                  000855bd    00000004     MW_c28xGlobalInterrupts.obj (.cinit)
-                  000855c1    00000004     ert_main.obj (.cinit)
-                  000855c5    00000002     --HOLE-- [fill = 0]
+.cinit     0    00084a58    00000200     
+                  00084a58    0000008d     untitled_data.obj (.cinit)
+                  00084ae5    0000005b     xcp_ext_classic_trigger.obj (.cinit)
+                  00084b40    0000004c     xcp_ext_common.obj (.cinit)
+                  00084b8c    0000001e     xcp_daq.obj (.cinit)
+                  00084baa    00000014     xcp.obj (.cinit)
+                  00084bbe    00000014     xcp_frame_serial.obj (.cinit)
+                  00084bd2    0000000f     c2837xDBoard_Realtime_Support.obj (.cinit)
+                  00084be1    0000000f     xcp_standard.obj (.cinit)
+                  00084bf0    0000000e     rts2800_fpu32.lib : exit.c.obj (.cinit)
+                  00084bfe    00000009     MW_c2000DAC.obj (.cinit:_MW_DAC_PTR)
+                  00084c07    00000009     xcp_mem_default.obj (.cinit:_xcpMemMainBlockSizes)
+                  00084c10    00000009     xcp_mem_default.obj (.cinit:_xcpMemMainBlocksNumber)
+                  00084c19    00000008     ert_main.obj (.cinit)
+                  00084c21    00000008     xcp_drv_rtiostream.obj (.cinit)
+                  00084c29    00000008     xcp_transport.obj (.cinit)
+                  00084c31    00000005     rts2800_fpu32.lib : _lock.c.obj (.cinit:__lock)
+                  00084c36    00000005                       : _lock.c.obj (.cinit:__unlock)
+                  00084c3b    00000005     xcp_ext_common.obj (.cinit:_xcpCurrentSimulationTimeInTicks)
+                  00084c40    00000005     rtiostream_serial_c28x.obj (.cinit)
+                  00084c45    00000005     xcp_calibration.obj (.cinit)
+                  00084c4a    00000004     MW_c2000DAC.obj (.cinit)
+                  00084c4e    00000004     MW_c28xGPIO.obj (.cinit)
+                  00084c52    00000004     MW_c28xGlobalInterrupts.obj (.cinit)
+                  00084c56    00000002     --HOLE-- [fill = 0]
 
 .pinit     0    00080004    00000000     UNINITIALIZED
 
-.text      0    00080004    00005264     
-                  00080004    000013b8     untitled.obj (.text)
-                  000813bc    00000c2e     xcp_daq.obj (.text)
-                  00081fea    00000585     F2837xD_DefaultISR.obj (.text:retain)
-                  0008256f    000004aa     F2837xD_SysCtrl.obj (.text)
-                  00082a19    0000047a     xcp_mem_default.obj (.text)
-                  00082e93    000003bd     xcp.obj (.text)
-                  00083250    000002ea     xcp_transport.obj (.text)
-                  0008353a    000002da     F2837xD_Ipc_Driver_Lite.obj (.text)
-                  00083814    0000029b     c2837xDBoard_Realtime_Support.obj (.text)
-                  00083aaf    00000244     F2837xD_Gpio.obj (.text)
-                  00083cf3    0000022a     xcp_standard.obj (.text)
-                  00083f1d    0000020f     xcp_frame_serial.obj (.text)
-                  0008412c    000001b6     xcp_ext_classic_trigger.obj (.text)
-                  000842e2    00000186     xcp_ext_common.obj (.text)
-                  00084468    0000016f     xcp_ext_mode.obj (.text)
-                  000845d7    00000168     xcp_drv_rtiostream.obj (.text)
-                  0008473f    00000151     rtiostream_serial_c28x.obj (.text)
-                  00084890    0000011b     ert_main.obj (.text)
-                  000849ab    000000f0     c2837xDBoard_Realtime_Support.obj (.text:retain)
-                  00084a9b    000000d4     xcp_calibration.obj (.text)
-                  00084b6f    000000b9     datamodify_xcp.obj (.text)
-                  00084c28    000000ae     MW_c28xx_board.obj (.text)
-                  00084cd6    00000092     rt_nonfinite.obj (.text)
-                  00084d68    0000007c     F2837xD_CpuTimers.obj (.text)
-                  00084de4    0000006f     c2837xDSchedulerTimer0.obj (.text)
-                  00084e53    0000005f     xcp_fifo.obj (.text)
-                  00084eb2    0000005a     xcp_utils.obj (.text)
-                  00084f0c    00000059     rts2800_fpu32.lib : s_floorf.c.obj (.text)
-                  00084f65    00000058                       : s_ceilf.c.obj (.text)
-                  00084fbd    00000056                       : boot28.asm.obj (.text)
-                  00085013    00000048     MW_c28xx_pwm.obj (.text)
-                  0008505b    00000044     c2837xDSchedulerTimer0.obj (.text:retain)
-                  0008509f    00000044     rtGetInf.obj (.text)
-                  000850e3    00000031     MW_c28xGPIO.obj (.text)
-                  00085114    0000002a     rtGetNaN.obj (.text)
-                  0008513e    00000029     rts2800_fpu32.lib : exit.c.obj (.text)
-                  00085167    00000028     F2837xD_PieCtrl.obj (.text)
-                  0008518f    00000026     F2837xD_PieVect.obj (.text)
-                  000851b5    00000024     rts2800_fpu32.lib : cpy_tbl.c.obj (.text)
-                  000851d9    0000001f     xcp_ext_param_default_serial.obj (.text)
-                  000851f8    0000001d     rts2800_fpu32.lib : memcpy.c.obj (.text)
-                  00085215    00000014     MW_c28xGlobalInterrupts.obj (.text)
-                  00085229    00000012     rts2800_fpu32.lib : args_main.c.obj (.text)
-                  0008523b    0000000b                       : u_div28.asm.obj (.text)
-                  00085246    00000009                       : _lock.c.obj (.text)
-                  0008524f    00000008     F2837xD_CodeStartBranch.obj (.text)
-                  00085257    00000007     memcpy_fast.obj (.text)
-                  0008525e    00000007     rts2800_fpu32.lib : memset.c.obj (.text)
-                  00085265    00000002                       : pre_init.c.obj (.text)
-                  00085267    00000001                       : startup.c.obj (.text)
+.text      0    00080004    00004759     
+                  00080004    00000c27     xcp_daq.obj (.text)
+                  00080c2b    0000078f     untitled.obj (.text)
+                  000813ba    00000585     F2837xD_DefaultISR.obj (.text:retain)
+                  0008193f    000004aa     F2837xD_SysCtrl.obj (.text)
+                  00081de9    00000477     xcp_mem_default.obj (.text)
+                  00082260    000003bd     xcp.obj (.text)
+                  0008261d    000002ea     xcp_transport.obj (.text)
+                  00082907    000002da     F2837xD_Ipc_Driver_Lite.obj (.text)
+                  00082be1    0000029b     c2837xDBoard_Realtime_Support.obj (.text)
+                  00082e7c    00000244     F2837xD_Gpio.obj (.text)
+                  000830c0    0000022a     xcp_standard.obj (.text)
+                  000832ea    0000020f     xcp_frame_serial.obj (.text)
+                  000834f9    000001b6     xcp_ext_classic_trigger.obj (.text)
+                  000836af    00000193     xcp_ext_common.obj (.text)
+                  00083842    0000016f     xcp_ext_mode.obj (.text)
+                  000839b1    00000168     xcp_drv_rtiostream.obj (.text)
+                  00083b19    00000151     rtiostream_serial_c28x.obj (.text)
+                  00083c6a    00000107     rts2800_fpu32.lib : ll_div28.asm.obj (.text)
+                  00083d71    000000f0     c2837xDBoard_Realtime_Support.obj (.text:retain)
+                  00083e61    000000d4     xcp_calibration.obj (.text)
+                  00083f35    000000c6     ert_main.obj (.text)
+                  00083ffb    000000b9     datamodify_xcp.obj (.text)
+                  000840b4    000000b2     MW_c28xx_board.obj (.text)
+                  00084166    00000092     rt_nonfinite.obj (.text)
+                  000841f8    0000007c     F2837xD_CpuTimers.obj (.text)
+                  00084274    0000006f     c2837xDSchedulerTimer0.obj (.text)
+                  000842e3    00000065     MW_c2000DAC.obj (.text)
+                  00084348    0000005f     xcp_fifo.obj (.text)
+                  000843a7    0000005a     xcp_utils.obj (.text)
+                  00084401    00000059     rts2800_fpu32.lib : s_floorf.c.obj (.text)
+                  0008445a    00000056                       : boot28.asm.obj (.text)
+                  000844b0    00000048     MW_c28xx_pwm.obj (.text)
+                  000844f8    00000044     MW_c28xx_qep.obj (.text)
+                  0008453c    00000044     c2837xDSchedulerTimer0.obj (.text:retain)
+                  00084580    00000044     rtGetInf.obj (.text)
+                  000845c4    00000031     MW_c28xGPIO.obj (.text)
+                  000845f5    0000002a     rtGetNaN.obj (.text)
+                  0008461f    00000029     rts2800_fpu32.lib : exit.c.obj (.text)
+                  00084648    00000028     F2837xD_PieCtrl.obj (.text)
+                  00084670    00000026     F2837xD_PieVect.obj (.text)
+                  00084696    00000024     rts2800_fpu32.lib : cpy_tbl.c.obj (.text)
+                  000846ba    0000001f     xcp_ext_param_default_serial.obj (.text)
+                  000846d9    0000001d     rts2800_fpu32.lib : memcpy.c.obj (.text)
+                  000846f6    00000014     MW_c28xGlobalInterrupts.obj (.text)
+                  0008470a    00000014     rts2800_fpu32.lib : ll_mpy28.asm.obj (.text)
+                  0008471e    00000012                       : args_main.c.obj (.text)
+                  00084730    0000000b                       : u_div28.asm.obj (.text)
+                  0008473b    00000009                       : _lock.c.obj (.text)
+                  00084744    00000008     F2837xD_CodeStartBranch.obj (.text)
+                  0008474c    00000007     memcpy_fast.obj (.text)
+                  00084753    00000007     rts2800_fpu32.lib : memset.c.obj (.text)
+                  0008475a    00000002                       : pre_init.c.obj (.text)
+                  0008475c    00000001                       : startup.c.obj (.text)
 
-ramfuncs   0    00085268    0000006c     RUN ADDR = 00008000
-                  00085268    00000043     rtiostream_serial_c28x.obj (ramfuncs:retain)
-                  000852ab    00000029     datamodify_xcp.obj (ramfuncs)
+ramfuncs   0    00084760    0000006c     RUN ADDR = 00008000
+                  00084760    00000043     rtiostream_serial_c28x.obj (ramfuncs:retain)
+                  000847a3    00000029     datamodify_xcp.obj (ramfuncs)
 
 .TI.ramfunc 
-*          0    000852d4    0000003f     RUN ADDR = 0000806c
-                  000852d4    00000037     F2837xD_SysCtrl.obj (.TI.ramfunc)
-                  0008530b    00000004     F2837xD_usDelay.obj (.TI.ramfunc)
-                  0008530f    00000004     sysctl.obj (.TI.ramfunc)
+*          0    000847cc    0000003f     RUN ADDR = 0000806c
+                  000847cc    00000037     F2837xD_SysCtrl.obj (.TI.ramfunc)
+                  00084803    00000004     F2837xD_usDelay.obj (.TI.ramfunc)
+                  00084807    00000004     sysctl.obj (.TI.ramfunc)
 
-.econst    0    000855c8    0000024e     
-                  000855c8    000001c0     F2837xD_PieVect.obj (.econst:_PieVectTableInit)
-                  00085788    0000004e     xcp_daq.obj (.econst:_daqSupportedRxPacket)
-                  000857d6    0000002a     xcp_standard.obj (.econst:_standardSupportedRxPacket)
-                  00085800    0000000c     xcp_calibration.obj (.econst:_calibrationSupportedRxPacket)
-                  0008580c    00000004     untitled.obj (.econst)
-                  00085810    00000002     rtGetNaN.obj (.econst:_$P$T0$1)
-                  00085812    00000002     rts2800_fpu32.lib : s_ceilf.c.obj (.econst)
-                  00085814    00000002                       : s_floorf.c.obj (.econst)
+.econst    0    0008480c    0000024c     
+                  0008480c    000001c0     F2837xD_PieVect.obj (.econst:_PieVectTableInit)
+                  000849cc    0000004e     xcp_daq.obj (.econst:_daqSupportedRxPacket)
+                  00084a1a    0000002a     xcp_standard.obj (.econst:_standardSupportedRxPacket)
+                  00084a44    0000000c     xcp_calibration.obj (.econst:_calibrationSupportedRxPacket)
+                  00084a50    00000004     untitled.obj (.econst)
+                  00084a54    00000002     rtGetNaN.obj (.econst:_$P$T0$1)
+                  00084a56    00000002     rts2800_fpu32.lib : s_floorf.c.obj (.econst)
 
-.switch    0    00085818    00000060     
-                  00085818    00000024     c2837xDBoard_Realtime_Support.obj (.switch:_CPU02toCPU01IPC0IntHandler)
-                  0008583c    00000020     xcp.obj (.switch:_genericOutputPacketHandler)
-                  0008585c    0000001c     c2837xDBoard_Realtime_Support.obj (.switch:_setInXBARForCPU2)
+.switch    0    00084c58    00000060     
+                  00084c58    00000024     c2837xDBoard_Realtime_Support.obj (.switch:_CPU02toCPU01IPC0IntHandler)
+                  00084c7c    00000020     xcp.obj (.switch:_genericOutputPacketHandler)
+                  00084c9c    0000001c     c2837xDBoard_Realtime_Support.obj (.switch:_setInXBARForCPU2)
 
 .stack     1    00000122    00000400     UNINITIALIZED
                   00000122    00000400     --HOLE--
@@ -730,47 +732,44 @@ UidRegsFile
 *          1    00000002    00000010     UNINITIALIZED
                   00000002    00000010     F2837xD_GlobalVariableDefs.obj (UidRegsFile)
 
-.ebss.1    1    0000e000    000012be     UNINITIALIZED
-                  0000e000    00000c4d     xcp_mem_default.obj (.ebss:_xcpMemReservedPoolsChunk)
-                  0000ec4d    00000001     MW_c28xGPIO.obj (.ebss)
-                  0000ec4e    0000001e     untitled.obj (.ebss:_systemRan$3)
-                  0000ec6c    0000000c     rt_nonfinite.obj (.ebss)
-                  0000ec78    00000008     xcp.obj (.ebss:_groupPacketLookup)
-                  0000ec80    0000029b     xcp_mem_default.obj (.ebss:_xcpMemMainChunk)
-                  0000ef1b    00000001     MW_c28xGlobalInterrupts.obj (.ebss)
-                  0000ef1c    0000001e     xcp_ext_common.obj (.ebss)
-                  0000ef3a    00000006     xcp_ext_mode.obj (.ebss:_xcpCustomTriggerFunction)
-                  0000ef40    0000014c     untitled.obj (.ebss)
-                  0000f08c    0000001c     xcp_ext_classic_trigger.obj (.ebss)
-                  0000f0a8    00000018     F2837xD_CpuTimers.obj (.ebss)
-                  0000f0c0    00000144     untitled_data.obj (.ebss)
-                  0000f204    00000018     xcp_daq.obj (.ebss)
-                  0000f21c    00000008     xcp_transport.obj (.ebss:_txFifo)
-                  0000f224    00000008     c2837xDBoard_Realtime_Support.obj (.ebss)
-                  0000f22c    00000008     xcp_standard.obj (.ebss)
-                  0000f234    00000006     xcp_mem_default.obj (.ebss:_xcpMemMainBlockSizes)
-                  0000f23a    00000006     xcp_mem_default.obj (.ebss:_xcpMemMainBlocksNumber)
-                  0000f240    00000048     xcp_mem_default.obj (.ebss:_xcpMemPoolDescriptors)
-                  0000f288    00000006     rts2800_fpu32.lib : exit.c.obj (.ebss)
-                  0000f28e    00000005     xcp.obj (.ebss)
-                  0000f293    00000005     xcp_frame_serial.obj (.ebss)
-                  0000f298    00000004     xcp_transport.obj (.ebss:_rxFifo)
-                  0000f29c    00000004     xcp_ext_common.obj (.ebss:_xcpCurrentSimulationTimeInTicks)
-                  0000f2a0    00000004     xcp_mem_default.obj (.ebss:_xcpMemCustomPoolDescriptors)
-                  0000f2a4    00000004     xcp_mem_default.obj (.ebss)
-                  0000f2a8    00000004     xcp_transport.obj (.ebss)
-                  0000f2ac    00000003     ert_main.obj (.ebss)
-                  0000f2af    00000001     --HOLE--
-                  0000f2b0    00000002     rts2800_fpu32.lib : _lock.c.obj (.ebss:__lock)
-                  0000f2b2    00000002                       : _lock.c.obj (.ebss:__unlock)
-                  0000f2b4    00000002     ert_main.obj (.ebss:_isRateRunning)
-                  0000f2b6    00000002     ert_main.obj (.ebss:_need2runFlags)
-                  0000f2b8    00000002     rtiostream_serial_c28x.obj (.ebss)
-                  0000f2ba    00000002     xcp_calibration.obj (.ebss)
-                  0000f2bc    00000002     xcp_drv_rtiostream.obj (.ebss)
-
-.ebss.2    1    0000f2c0    00000042     UNINITIALIZED
-                  0000f2c0    00000042     datamodify_xcp.obj (.ebss)
+.ebss      1    0000e000    00000702     UNINITIALIZED
+                  0000e000    00000416     xcp_mem_default.obj (.ebss:_xcpMemReservedPoolsChunk)
+                  0000e416    0000001e     xcp_ext_common.obj (.ebss)
+                  0000e434    0000000c     rt_nonfinite.obj (.ebss)
+                  0000e440    00000097     xcp_mem_default.obj (.ebss:_xcpMemMainChunk)
+                  0000e4d7    00000001     MW_c2000DAC.obj (.ebss)
+                  0000e4d8    0000001c     xcp_ext_classic_trigger.obj (.ebss)
+                  0000e4f4    00000008     xcp.obj (.ebss:_groupPacketLookup)
+                  0000e4fc    00000004     xcp_transport.obj (.ebss:_rxFifo)
+                  0000e500    0000008a     untitled_data.obj (.ebss)
+                  0000e58a    00000018     F2837xD_CpuTimers.obj (.ebss)
+                  0000e5a2    00000018     xcp_daq.obj (.ebss)
+                  0000e5ba    00000006     MW_c2000DAC.obj (.ebss:_MW_DAC_PTR)
+                  0000e5c0    0000005c     untitled.obj (.ebss)
+                  0000e61c    00000010     untitled.obj (.ebss:_systemRan$3)
+                  0000e62c    00000008     xcp_transport.obj (.ebss:_txFifo)
+                  0000e634    00000008     c2837xDBoard_Realtime_Support.obj (.ebss)
+                  0000e63c    00000004     xcp_ext_common.obj (.ebss:_xcpCurrentSimulationTimeInTicks)
+                  0000e640    00000042     datamodify_xcp.obj (.ebss)
+                  0000e682    0000003c     xcp_mem_default.obj (.ebss:_xcpMemPoolDescriptors)
+                  0000e6be    00000002     rts2800_fpu32.lib : _lock.c.obj (.ebss:__lock)
+                  0000e6c0    00000008     xcp_standard.obj (.ebss)
+                  0000e6c8    00000006     xcp_mem_default.obj (.ebss:_xcpMemMainBlockSizes)
+                  0000e6ce    00000006     xcp_mem_default.obj (.ebss:_xcpMemMainBlocksNumber)
+                  0000e6d4    00000006     rts2800_fpu32.lib : exit.c.obj (.ebss)
+                  0000e6da    00000005     xcp.obj (.ebss)
+                  0000e6df    00000005     xcp_frame_serial.obj (.ebss)
+                  0000e6e4    00000004     xcp_ext_mode.obj (.ebss:_xcpCustomTriggerFunction)
+                  0000e6e8    00000004     xcp_mem_default.obj (.ebss:_xcpMemCustomPoolDescriptors)
+                  0000e6ec    00000004     ert_main.obj (.ebss)
+                  0000e6f0    00000004     xcp_mem_default.obj (.ebss)
+                  0000e6f4    00000004     xcp_transport.obj (.ebss)
+                  0000e6f8    00000002     rts2800_fpu32.lib : _lock.c.obj (.ebss:__unlock)
+                  0000e6fa    00000002     rtiostream_serial_c28x.obj (.ebss)
+                  0000e6fc    00000002     xcp_calibration.obj (.ebss)
+                  0000e6fe    00000002     xcp_drv_rtiostream.obj (.ebss)
+                  0000e700    00000001     MW_c28xGPIO.obj (.ebss)
+                  0000e701    00000001     MW_c28xGlobalInterrupts.obj (.ebss)
 
 MODULE SUMMARY
 
@@ -778,35 +777,37 @@ MODULE SUMMARY
        ------                              ----    ----------------   ------------------
     <current directory>
        F2837xD_GlobalVariableDefs.obj      0       0                  9870              
-       untitled.obj                        5048    4                  362               
-       xcp_mem_default.obj                 1146    18                 3908              
-       xcp_daq.obj                         3118    108                24                
+       xcp_daq.obj                         3111    108                24                
+       xcp_mem_default.obj                 1143    18                 1277              
+       untitled.obj                        1935    4                  108               
        F2837xD_DefaultISR.obj              1413    0                  0                 
        F2837xD_SysCtrl.obj                 1304    0                  0                 
        xcp.obj                             957     52                 13                
        c2837xDBoard_Realtime_Support.obj   907     79                 8                 
        xcp_transport.obj                   746     8                  16                
        F2837xD_Ipc_Driver_Lite.obj         730     0                  0                 
-       untitled_data.obj                   0       327                324               
        xcp_standard.obj                    554     57                 8                 
        F2837xD_Gpio.obj                    580     0                  0                 
        xcp_ext_classic_trigger.obj         438     91                 28                
        xcp_frame_serial.obj                527     20                 5                 
-       xcp_ext_common.obj                  390     81                 34                
+       xcp_ext_common.obj                  403     81                 34                
        F2837xD_PieVect.obj                 38      448                0                 
        rtiostream_serial_c28x.obj          471     5                  2                 
-       xcp_ext_mode.obj                    367     0                  6                 
+       xcp_ext_mode.obj                    367     0                  4                 
        xcp_drv_rtiostream.obj              360     8                  2                 
        datamodify_xcp.obj                  267     0                  66                
-       ert_main.obj                        283     14                 7                 
+       untitled_data.obj                   0       141                138               
        xcp_calibration.obj                 212     17                 2                 
+       ert_main.obj                        198     8                  4                 
        c2837xDSchedulerTimer0.obj          179     0                  0                 
-       MW_c28xx_board.obj                  174     0                  0                 
+       MW_c28xx_board.obj                  178     0                  0                 
        rt_nonfinite.obj                    146     0                  12                
        F2837xD_CpuTimers.obj               124     0                  24                
+       MW_c2000DAC.obj                     101     13                 7                 
        xcp_fifo.obj                        95      0                  0                 
        xcp_utils.obj                       90      0                  0                 
        MW_c28xx_pwm.obj                    72      0                  0                 
+       MW_c28xx_qep.obj                    68      0                  0                 
        rtGetInf.obj                        68      0                  0                 
        MW_c28xGPIO.obj                     49      4                  1                 
        rtGetNaN.obj                        42      2                  0                 
@@ -818,27 +819,28 @@ MODULE SUMMARY
        sysctl.obj                          8       0                  0                 
        memcpy_fast.obj                     7       0                  0                 
     +--+-----------------------------------+-------+------------------+--------------------+
-       Total:                              21019   1347               14723             
+       Total:                              17997   1168               11654             
                                                                                         
     C:/PROGRA~3/MATLAB/tic2000/3P778C~1.INS/TIC28X~1.INS/TI-CGT~1.LTS/lib/rts2800_fpu32.lib
+       ll_div28.asm.obj                    263     0                  0                 
        s_floorf.c.obj                      89      2                  0                 
-       s_ceilf.c.obj                       88      2                  0                 
        boot28.asm.obj                      86      0                  0                 
        exit.c.obj                          41      14                 6                 
        cpy_tbl.c.obj                       36      0                  0                 
        memcpy.c.obj                        29      0                  0                 
        _lock.c.obj                         9       10                 4                 
+       ll_mpy28.asm.obj                    20      0                  0                 
        args_main.c.obj                     18      0                  0                 
        u_div28.asm.obj                     11      0                  0                 
        memset.c.obj                        7       0                  0                 
        pre_init.c.obj                      2       0                  0                 
        startup.c.obj                       1       0                  0                 
     +--+-----------------------------------+-------+------------------+--------------------+
-       Total:                              417     28                 10                
+       Total:                              612     26                 10                
                                                                                         
        Stack:                              0       0                  1024              
     +--+-----------------------------------+-------+------------------+--------------------+
-       Grand Total:                        21436   1375               15757             
+       Grand Total:                        18609   1194               12688             
 
 
 GLOBAL DATA SYMBOLS: SORTED BY DATA PAGE
@@ -999,69 +1001,69 @@ address     data page           name
 
 00007f00     1fc (00007f00)     _GpioDataRegs
 
-0000ec4d     3b1 (0000ec40)     _GPIO_oneTimeInit
-0000ec6c     3b1 (0000ec40)     _rtInf
-0000ec6e     3b1 (0000ec40)     _rtMinusInf
-0000ec70     3b1 (0000ec40)     _rtNaN
-0000ec72     3b1 (0000ec40)     _rtInfF
-0000ec74     3b1 (0000ec40)     _rtMinusInfF
-0000ec76     3b1 (0000ec40)     _rtNaNF
+0000e416     390 (0000e400)     _xcpModelStartRequest
+0000e417     390 (0000e400)     _xcpModelStopRequest
+0000e418     390 (0000e400)     _xcpModelStatus
+0000e419     390 (0000e400)     _xcpExtmodeSimulationComplete
+0000e41c     390 (0000e400)     _xcpModelChecksum0
+0000e41e     390 (0000e400)     _xcpModelChecksum1
+0000e420     390 (0000e400)     _xcpModelChecksum2
+0000e422     390 (0000e400)     _xcpModelChecksum3
+0000e424     390 (0000e400)     _xcpModelIntegerCode
+0000e426     390 (0000e400)     _xcpExtmodeFinalSimulationTime
+0000e428     390 (0000e400)     _xcpDummyDoubleVariable
+0000e434     390 (0000e400)     _rtInf
+0000e436     390 (0000e400)     _rtMinusInf
+0000e438     390 (0000e400)     _rtNaN
+0000e43a     390 (0000e400)     _rtInfF
+0000e43c     390 (0000e400)     _rtMinusInfF
+0000e43e     390 (0000e400)     _rtNaNF
 
-0000ef1b     3bc (0000ef00)     _MW_InterruptDisableLock
-0000ef1c     3bc (0000ef00)     _xcpModelStartRequest
-0000ef1d     3bc (0000ef00)     _xcpModelStopRequest
-0000ef1e     3bc (0000ef00)     _xcpModelStatus
-0000ef1f     3bc (0000ef00)     _xcpExtmodeSimulationComplete
-0000ef22     3bc (0000ef00)     _xcpModelChecksum0
-0000ef24     3bc (0000ef00)     _xcpModelChecksum1
-0000ef26     3bc (0000ef00)     _xcpModelChecksum2
-0000ef28     3bc (0000ef00)     _xcpModelChecksum3
-0000ef2a     3bc (0000ef00)     _xcpModelIntegerCode
-0000ef2c     3bc (0000ef00)     _xcpExtmodeFinalSimulationTime
-0000ef2e     3bc (0000ef00)     _xcpDummyDoubleVariable
+0000e4d8     393 (0000e4c0)     _xcpClassicTriggerEventId
+0000e4d9     393 (0000e4c0)     _xcpClassicTriggerSignalAddressExtension
+0000e4da     393 (0000e4c0)     _xcpClassicTriggerDirection
+0000e4db     393 (0000e4c0)     _xcpClassicTriggerArmRequest
+0000e4dc     393 (0000e4c0)     _xcpClassicTriggerCancelRequest
+0000e4dd     393 (0000e4c0)     _xcpClassicTriggerSource
+0000e4de     393 (0000e4c0)     _xcpClassicTriggerMode
+0000e4df     393 (0000e4c0)     _xcpClassicTriggerStatus
+0000e4e6     393 (0000e4c0)     _xcpClassicTriggerSignalAddress
+0000e4e8     393 (0000e4c0)     _xcpClassicTriggerLevel
+0000e4ea     393 (0000e4c0)     _xcpClassicTriggerDuration
+0000e4ec     393 (0000e4c0)     _xcpClassicTriggerHoldOff
+0000e4ee     393 (0000e4c0)     _xcpClassicTriggerDelay
 
-0000ef80     3be (0000ef80)     _untitled_B
+0000e500     394 (0000e500)     _untitled_P
 
-0000f000     3c0 (0000f000)     _untitled_DW
+0000e58a     396 (0000e580)     _CpuTimer0
+0000e592     396 (0000e580)     _CpuTimer1
+0000e59a     396 (0000e580)     _CpuTimer2
+0000e5ba     396 (0000e580)     _MW_DAC_PTR
 
-0000f08c     3c2 (0000f080)     _xcpClassicTriggerEventId
-0000f08d     3c2 (0000f080)     _xcpClassicTriggerSignalAddressExtension
-0000f08e     3c2 (0000f080)     _xcpClassicTriggerDirection
-0000f08f     3c2 (0000f080)     _xcpClassicTriggerArmRequest
-0000f090     3c2 (0000f080)     _xcpClassicTriggerCancelRequest
-0000f091     3c2 (0000f080)     _xcpClassicTriggerSource
-0000f092     3c2 (0000f080)     _xcpClassicTriggerMode
-0000f093     3c2 (0000f080)     _xcpClassicTriggerStatus
-0000f09a     3c2 (0000f080)     _xcpClassicTriggerSignalAddress
-0000f09c     3c2 (0000f080)     _xcpClassicTriggerLevel
-0000f09e     3c2 (0000f080)     _xcpClassicTriggerDuration
-0000f0a0     3c2 (0000f080)     _xcpClassicTriggerHoldOff
-0000f0a2     3c2 (0000f080)     _xcpClassicTriggerDelay
-0000f0a8     3c2 (0000f080)     _CpuTimer0
-0000f0b0     3c2 (0000f080)     _CpuTimer1
-0000f0b8     3c2 (0000f080)     _CpuTimer2
+0000e5ca     397 (0000e5c0)     _untitled_B
 
-0000f0c0     3c3 (0000f0c0)     _untitled_P
+0000e600     398 (0000e600)     _untitled_DW
+0000e634     398 (0000e600)     _ErrorFlag
+0000e636     398 (0000e600)     _CIPC0_INT_fptr
+0000e638     398 (0000e600)     _mwInitStart
+0000e63a     398 (0000e600)     _mwInitEnd
+0000e63c     398 (0000e600)     _xcpCurrentSimulationTimeInTicks
 
-0000f224     3c8 (0000f200)     _ErrorFlag
-0000f226     3c8 (0000f200)     _CIPC0_INT_fptr
-0000f228     3c8 (0000f200)     _mwInitStart
-0000f22a     3c8 (0000f200)     _mwInitEnd
+0000e640     399 (0000e640)     _queRx
 
-0000f288     3ca (0000f280)     ___TI_enable_exit_profile_output
-0000f28a     3ca (0000f280)     ___TI_cleanup_ptr
-0000f28c     3ca (0000f280)     ___TI_dtors_ptr
-0000f29c     3ca (0000f280)     _xcpCurrentSimulationTimeInTicks
-0000f2ac     3ca (0000f280)     _IsrOverrun
-0000f2ad     3ca (0000f280)     _stopRequested
-0000f2ae     3ca (0000f280)     _runModel
-0000f2b0     3ca (0000f280)     __lock
-0000f2b2     3ca (0000f280)     __unlock
-0000f2b4     3ca (0000f280)     _isRateRunning
-0000f2b6     3ca (0000f280)     _need2runFlags
-0000f2b8     3ca (0000f280)     _MW_SCI_PTR
+0000e6be     39a (0000e680)     __lock
 
-0000f2c0     3cb (0000f2c0)     _queRx
+0000e6d4     39b (0000e6c0)     ___TI_enable_exit_profile_output
+0000e6d6     39b (0000e6c0)     ___TI_cleanup_ptr
+0000e6d8     39b (0000e6c0)     ___TI_dtors_ptr
+0000e6ec     39b (0000e6c0)     _IsrOverrun
+0000e6ee     39b (0000e6c0)     _stopRequested
+0000e6ef     39b (0000e6c0)     _runModel
+0000e6f8     39b (0000e6c0)     __unlock
+0000e6fa     39b (0000e6c0)     _MW_SCI_PTR
+
+0000e700     39c (0000e700)     _GPIO_oneTimeInit
+0000e701     39c (0000e700)     _MW_InterruptDisableLock
 
 00047000    11c0 (00047000)     _Emif1Regs
 
@@ -1104,9 +1106,9 @@ address     data page           name
 
 0005fb00    17ec (0005fb00)     _Flash0EccRegs
 
-000855c8    2157 (000855c0)     _PieVectTableInit
+0008480c    2120 (00084800)     _PieVectTableInit
 
-0008580e    2160 (00085800)     _untitled_M
+00084a52    2129 (00084a40)     _untitled_M
 
 
 GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
@@ -1114,30 +1116,35 @@ GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name
 page  address   name                                            
 ----  -------   ----                                            
 0     00080004  .text                                           
-0     0008513e  C$$EXIT                                         
-0     0008523b  U$$DIV                                          
-0     00085240  U$$MOD                                          
-0     000820a8  _ADCA1_ISR                                      
-0     00082328  _ADCA2_ISR                                      
-0     00082332  _ADCA3_ISR                                      
-0     0008233c  _ADCA4_ISR                                      
-0     0008231e  _ADCA_EVT_ISR                                   
-0     000820b2  _ADCB1_ISR                                      
-0     00082350  _ADCB2_ISR                                      
-0     0008235a  _ADCB3_ISR                                      
-0     00082364  _ADCB4_ISR                                      
-0     00082346  _ADCB_EVT_ISR                                   
-0     000820bc  _ADCC1_ISR                                      
-0     000824b8  _ADCC2_ISR                                      
-0     000824c2  _ADCC3_ISR                                      
-0     000824cc  _ADCC4_ISR                                      
-0     000824ae  _ADCC_EVT_ISR                                   
-0     000820da  _ADCD1_ISR                                      
-0     000824e0  _ADCD2_ISR                                      
-0     000824ea  _ADCD3_ISR                                      
-0     000824f4  _ADCD4_ISR                                      
-0     000824d6  _ADCD_EVT_ISR                                   
-0     00082530  _AUX_PLL_SLIP_ISR                               
+0     0008461f  C$$EXIT                                         
+0     00083c6a  LL$$DIV                                         
+0     00083ca6  LL$$MOD                                         
+0     0008470a  LL$$MPY                                         
+0     00084730  U$$DIV                                          
+0     00084735  U$$MOD                                          
+0     00083ce0  ULL$$DIV                                        
+0     00083d0f  ULL$$MOD                                        
+0     00081478  _ADCA1_ISR                                      
+0     000816f8  _ADCA2_ISR                                      
+0     00081702  _ADCA3_ISR                                      
+0     0008170c  _ADCA4_ISR                                      
+0     000816ee  _ADCA_EVT_ISR                                   
+0     00081482  _ADCB1_ISR                                      
+0     00081720  _ADCB2_ISR                                      
+0     0008172a  _ADCB3_ISR                                      
+0     00081734  _ADCB4_ISR                                      
+0     00081716  _ADCB_EVT_ISR                                   
+0     0008148c  _ADCC1_ISR                                      
+0     00081888  _ADCC2_ISR                                      
+0     00081892  _ADCC3_ISR                                      
+0     0008189c  _ADCC4_ISR                                      
+0     0008187e  _ADCC_EVT_ISR                                   
+0     000814aa  _ADCD1_ISR                                      
+0     000818b0  _ADCD2_ISR                                      
+0     000818ba  _ADCD3_ISR                                      
+0     000818c4  _ADCD4_ISR                                      
+0     000818a6  _ADCD_EVT_ISR                                   
+0     00081900  _AUX_PLL_SLIP_ISR                               
 1     0005f4c0  _AccessProtectionRegs                           
 1     00007400  _AdcaRegs                                       
 1     00000b00  _AdcaResultRegs                                 
@@ -1148,28 +1155,28 @@ page  address   name
 1     00007580  _AdcdRegs                                       
 1     00000b60  _AdcdResultRegs                                 
 1     0005d180  _AnalogSubsysRegs                               
-0     000829a8  _AuxAuxClkSel                                   
-0     00082992  _AuxIntOsc2Sel                                  
-0     0008299c  _AuxXtalOscSel                                  
-0     00084bb8  _BytePacker16bits                               
-0     00084b92  _BytePacker32bits                               
-0     00084b6f  _BytePackerInplace32bits                        
-0     000822f6  _CANA0_ISR                                      
-0     00082300  _CANA1_ISR                                      
-0     0008230a  _CANB0_ISR                                      
-0     00082314  _CANB1_ISR                                      
-1     0000f226  _CIPC0_INT_fptr                                 
-0     0008236e  _CLA1_1_ISR                                     
-0     00082378  _CLA1_2_ISR                                     
-0     00082382  _CLA1_3_ISR                                     
-0     0008238c  _CLA1_4_ISR                                     
-0     00082396  _CLA1_5_ISR                                     
-0     000823a0  _CLA1_6_ISR                                     
-0     000823aa  _CLA1_7_ISR                                     
-0     000823b4  _CLA1_8_ISR                                     
-0     0008253a  _CLA_OVERFLOW_ISR                               
-0     00082544  _CLA_UNDERFLOW_ISR                              
-0     000849ab  _CPU02toCPU01IPC0IntHandler                     
+0     00081d78  _AuxAuxClkSel                                   
+0     00081d62  _AuxIntOsc2Sel                                  
+0     00081d6c  _AuxXtalOscSel                                  
+0     00084044  _BytePacker16bits                               
+0     0008401e  _BytePacker32bits                               
+0     00083ffb  _BytePackerInplace32bits                        
+0     000816c6  _CANA0_ISR                                      
+0     000816d0  _CANA1_ISR                                      
+0     000816da  _CANB0_ISR                                      
+0     000816e4  _CANB1_ISR                                      
+1     0000e636  _CIPC0_INT_fptr                                 
+0     0008173e  _CLA1_1_ISR                                     
+0     00081748  _CLA1_2_ISR                                     
+0     00081752  _CLA1_3_ISR                                     
+0     0008175c  _CLA1_4_ISR                                     
+0     00081766  _CLA1_5_ISR                                     
+0     00081770  _CLA1_6_ISR                                     
+0     0008177a  _CLA1_7_ISR                                     
+0     00081784  _CLA1_8_ISR                                     
+0     0008190a  _CLA_OVERFLOW_ISR                               
+0     00081914  _CLA_UNDERFLOW_ISR                              
+0     00083d71  _CPU02toCPU01IPC0IntHandler                     
 1     00048000  _CanaRegs                                       
 1     0004a000  _CanbRegs                                       
 1     00001400  _Cla1Regs                                       
@@ -1195,74 +1202,74 @@ page  address   name
 1     00005d20  _Cmpss6Regs                                     
 1     00005d40  _Cmpss7Regs                                     
 1     00005d60  _Cmpss8Regs                                     
-0     00084da9  _ConfigCpuTimer                                 
-0     000829fc  _ConfigureTMXAnalogTrim                         
+0     00084239  _ConfigCpuTimer                                 
+0     00081dcc  _ConfigureTMXAnalogTrim                         
 1     0005d300  _CpuSysRegs                                     
-1     0000f0a8  _CpuTimer0                                      
+1     0000e58a  _CpuTimer0                                      
 1     00000c00  _CpuTimer0Regs                                  
-1     0000f0b0  _CpuTimer1                                      
+1     0000e592  _CpuTimer1                                      
 1     00000c08  _CpuTimer1Regs                                  
-1     0000f0b8  _CpuTimer2                                      
+1     0000e59a  _CpuTimer2                                      
 1     00000c10  _CpuTimer2Regs                                  
-0     0008293d  _CsmUnlock                                      
-0     00081ffe  _DATALOG_ISR                                    
-0     00082242  _DMA_CH1_ISR                                    
-0     0008224c  _DMA_CH2_ISR                                    
-0     00082256  _DMA_CH3_ISR                                    
-0     00082260  _DMA_CH4_ISR                                    
-0     0008226a  _DMA_CH5_ISR                                    
-0     00082274  _DMA_CH6_ISR                                    
+0     00081d0d  _CsmUnlock                                      
+0     000813ce  _DATALOG_ISR                                    
+0     00081612  _DMA_CH1_ISR                                    
+0     0008161c  _DMA_CH2_ISR                                    
+0     00081626  _DMA_CH3_ISR                                    
+0     00081630  _DMA_CH4_ISR                                    
+0     0008163a  _DMA_CH5_ISR                                    
+0     00081644  _DMA_CH6_ISR                                    
 1     00005c00  _DacaRegs                                       
 1     00005c10  _DacbRegs                                       
 1     00005c20  _DaccRegs                                       
 1     0005f070  _DcsmCommonRegs                                 
 1     0005f000  _DcsmZ1Regs                                     
 1     0005f040  _DcsmZ2Regs                                     
-0     0008380d  _DelayLoop                                      
+0     00082bda  _DelayLoop                                      
 1     0005d000  _DevCfgRegs                                     
-0     00082652  _DisableDog                                     
-0     00082613  _DisablePeripheralClocks                        
+0     00081a22  _DisableDog                                     
+0     000819e3  _DisablePeripheralClocks                        
 1     00007980  _DmaClaSrcSelRegs                               
 1     00001000  _DmaRegs                                        
-0     00082198  _ECAP1_ISR                                      
-0     000821a2  _ECAP2_ISR                                      
-0     000821ac  _ECAP3_ISR                                      
-0     000821b6  _ECAP4_ISR                                      
-0     000821c0  _ECAP5_ISR                                      
-0     000821ca  _ECAP6_ISR                                      
+0     00081568  _ECAP1_ISR                                      
+0     00081572  _ECAP2_ISR                                      
+0     0008157c  _ECAP3_ISR                                      
+0     00081586  _ECAP4_ISR                                      
+0     00081590  _ECAP5_ISR                                      
+0     0008159a  _ECAP6_ISR                                      
 1     00005000  _ECap1Regs                                      
 1     00005020  _ECap2Regs                                      
 1     00005040  _ECap3Regs                                      
 1     00005060  _ECap4Regs                                      
 1     00005080  _ECap5Regs                                      
 1     000050a0  _ECap6Regs                                      
-0     000824fe  _EMIF_ERROR_ISR                                 
-0     00082558  _EMPTY_ISR                                      
-0     00082012  _EMU_ISR                                        
-0     00082454  _EPWM10_ISR                                     
-0     0008242c  _EPWM10_TZ_ISR                                  
-0     0008245e  _EPWM11_ISR                                     
-0     00082436  _EPWM11_TZ_ISR                                  
-0     00082468  _EPWM12_ISR                                     
-0     00082440  _EPWM12_TZ_ISR                                  
-0     00082148  _EPWM1_ISR                                      
-0     000820f8  _EPWM1_TZ_ISR                                   
-0     00082152  _EPWM2_ISR                                      
-0     00082102  _EPWM2_TZ_ISR                                   
-0     0008215c  _EPWM3_ISR                                      
-0     0008210c  _EPWM3_TZ_ISR                                   
-0     00082166  _EPWM4_ISR                                      
-0     00082116  _EPWM4_TZ_ISR                                   
-0     00082170  _EPWM5_ISR                                      
-0     00082120  _EPWM5_TZ_ISR                                   
-0     0008217a  _EPWM6_ISR                                      
-0     0008212a  _EPWM6_TZ_ISR                                   
-0     00082184  _EPWM7_ISR                                      
-0     00082134  _EPWM7_TZ_ISR                                   
-0     0008218e  _EPWM8_ISR                                      
-0     0008213e  _EPWM8_TZ_ISR                                   
-0     0008244a  _EPWM9_ISR                                      
-0     00082422  _EPWM9_TZ_ISR                                   
+0     000818ce  _EMIF_ERROR_ISR                                 
+0     00081928  _EMPTY_ISR                                      
+0     000813e2  _EMU_ISR                                        
+0     00081824  _EPWM10_ISR                                     
+0     000817fc  _EPWM10_TZ_ISR                                  
+0     0008182e  _EPWM11_ISR                                     
+0     00081806  _EPWM11_TZ_ISR                                  
+0     00081838  _EPWM12_ISR                                     
+0     00081810  _EPWM12_TZ_ISR                                  
+0     00081518  _EPWM1_ISR                                      
+0     000814c8  _EPWM1_TZ_ISR                                   
+0     00081522  _EPWM2_ISR                                      
+0     000814d2  _EPWM2_TZ_ISR                                   
+0     0008152c  _EPWM3_ISR                                      
+0     000814dc  _EPWM3_TZ_ISR                                   
+0     00081536  _EPWM4_ISR                                      
+0     000814e6  _EPWM4_TZ_ISR                                   
+0     00081540  _EPWM5_ISR                                      
+0     000814f0  _EPWM5_TZ_ISR                                   
+0     0008154a  _EPWM6_ISR                                      
+0     000814fa  _EPWM6_TZ_ISR                                   
+0     00081554  _EPWM7_ISR                                      
+0     00081504  _EPWM7_TZ_ISR                                   
+0     0008155e  _EPWM8_ISR                                      
+0     0008150e  _EPWM8_TZ_ISR                                   
+0     0008181a  _EPWM9_ISR                                      
+0     000817f2  _EPWM9_TZ_ISR                                   
 1     00004900  _EPwm10Regs                                     
 1     00004a00  _EPwm11Regs                                     
 1     00004b00  _EPwm12Regs                                     
@@ -1276,9 +1283,9 @@ page  address   name
 1     00004700  _EPwm8Regs                                      
 1     00004800  _EPwm9Regs                                      
 1     00007a00  _EPwmXbarRegs                                   
-0     000821d4  _EQEP1_ISR                                      
-0     000821de  _EQEP2_ISR                                      
-0     000821e8  _EQEP3_ISR                                      
+0     000815a4  _EQEP1_ISR                                      
+0     000815ae  _EQEP2_ISR                                      
+0     000815b8  _EQEP3_ISR                                      
 1     00005100  _EQep1Regs                                      
 1     00005140  _EQep2Regs                                      
 1     00005180  _EQep3Regs                                      
@@ -1286,446 +1293,444 @@ page  address   name
 1     00047000  _Emif1Regs                                      
 1     0005f4a0  _Emif2ConfigRegs                                
 1     00047800  _Emif2Regs                                      
-0     00085186  _EnableInterrupts                               
-1     0000f224  _ErrorFlag                                      
+0     00084667  _EnableInterrupts                               
+1     0000e634  _ErrorFlag                                      
 0     000080a3  _F28x_usDelay                                   
-0     00082512  _FLASH_CORRECTABLE_ERROR_ISR                    
-0     000823e6  _FPU_OVERFLOW_ISR                               
-0     000823f0  _FPU_UNDERFLOW_ISR                              
+0     000818e2  _FLASH_CORRECTABLE_ERROR_ISR                    
+0     000817b6  _FPU_OVERFLOW_ISR                               
+0     000817c0  _FPU_UNDERFLOW_ISR                              
 1     0005f800  _Flash0CtrlRegs                                 
 1     0005fb00  _Flash0EccRegs                                  
 0     00008095  _FlashOff                                       
 1     00050024  _FlashPumpSemaphoreRegs                         
-0     00083ca8  _GPIO_EnableUnbondedIOPullups                   
-0     00083c83  _GPIO_EnableUnbondedIOPullupsFor100Pin          
-0     00083c6a  _GPIO_EnableUnbondedIOPullupsFor176Pin          
-0     00083cbe  _GPIO_ReadPin                                   
-0     00083c0f  _GPIO_SetupLock                                 
-0     00083aef  _GPIO_SetupPinMux                               
-0     00083b7b  _GPIO_SetupPinOptions                           
-0     00083c38  _GPIO_SetupXINT1Gpio                            
-0     00083c42  _GPIO_SetupXINT2Gpio                            
-0     00083c4c  _GPIO_SetupXINT3Gpio                            
-0     00083c56  _GPIO_SetupXINT4Gpio                            
-0     00083c60  _GPIO_SetupXINT5Gpio                            
-0     000850ee  _GPIO_TogglePin                                 
-0     00083cd5  _GPIO_WritePin                                  
-1     0000ec4d  _GPIO_oneTimeInit                               
+0     00083075  _GPIO_EnableUnbondedIOPullups                   
+0     00083050  _GPIO_EnableUnbondedIOPullupsFor100Pin          
+0     00083037  _GPIO_EnableUnbondedIOPullupsFor176Pin          
+0     0008308b  _GPIO_ReadPin                                   
+0     00082fdc  _GPIO_SetupLock                                 
+0     00082ebc  _GPIO_SetupPinMux                               
+0     00082f48  _GPIO_SetupPinOptions                           
+0     00083005  _GPIO_SetupXINT1Gpio                            
+0     0008300f  _GPIO_SetupXINT2Gpio                            
+0     00083019  _GPIO_SetupXINT3Gpio                            
+0     00083023  _GPIO_SetupXINT4Gpio                            
+0     0008302d  _GPIO_SetupXINT5Gpio                            
+0     000845cf  _GPIO_TogglePin                                 
+0     000830a2  _GPIO_WritePin                                  
+1     0000e700  _GPIO_oneTimeInit                               
 1     00007c00  _GpioCtrlRegs                                   
 1     00007f00  _GpioDataRegs                                   
-0     000829c6  _HALT                                           
-0     000829df  _HIB                                            
-0     00082288  _I2CA_FIFO_ISR                                  
-0     0008227e  _I2CA_ISR                                       
-0     0008229c  _I2CB_FIFO_ISR                                  
-0     00082292  _I2CB_ISR                                       
+0     00081d96  _HALT                                           
+0     00081daf  _HIB                                            
+0     00081658  _I2CA_FIFO_ISR                                  
+0     0008164e  _I2CA_ISR                                       
+0     0008166c  _I2CB_FIFO_ISR                                  
+0     00081662  _I2CB_ISR                                       
 1     00007300  _I2caRegs                                       
 1     00007340  _I2cbRegs                                       
-0     000829b2  _IDLE                                           
-0     00082026  _ILLEGAL_ISR                                    
-0     000823fa  _IPC0_ISR                                       
-0     00082404  _IPC1_ISR                                       
-0     0008240e  _IPC2_ISR                                       
-0     00082418  _IPC3_ISR                                       
-0     000835cc  _IPCLiteLtoRClearBits                           
-0     000835f6  _IPCLiteLtoRClearBits_Protected                 
-0     00083555  _IPCLiteLtoRDataRead                            
-0     00083620  _IPCLiteLtoRDataWrite                           
-0     00083645  _IPCLiteLtoRDataWrite_Protected                 
-0     0008366a  _IPCLiteLtoRFunctionCall                        
-0     0008353a  _IPCLiteLtoRGetResult                           
-0     00083578  _IPCLiteLtoRSetBits                             
-0     000835a2  _IPCLiteLtoRSetBits_Protected                   
-0     00083686  _IPCLiteReqMemAccess                            
-0     00083730  _IPCLiteRtoLClearBits                           
-0     00083760  _IPCLiteRtoLClearBits_Protected                 
-0     000836aa  _IPCLiteRtoLDataRead                            
-0     00083793  _IPCLiteRtoLDataWrite                           
-0     000837c0  _IPCLiteRtoLDataWrite_Protected                 
-0     000837f0  _IPCLiteRtoLFunctionCall                        
-0     000836d1  _IPCLiteRtoLSetBits                             
-0     000836ff  _IPCLiteRtoLSetBits_Protected                   
-0     0008284e  _InitAuxPll                                     
-0     00084d68  _InitCpuTimers                                  
+0     00081d82  _IDLE                                           
+0     000813f6  _ILLEGAL_ISR                                    
+0     000817ca  _IPC0_ISR                                       
+0     000817d4  _IPC1_ISR                                       
+0     000817de  _IPC2_ISR                                       
+0     000817e8  _IPC3_ISR                                       
+0     00082999  _IPCLiteLtoRClearBits                           
+0     000829c3  _IPCLiteLtoRClearBits_Protected                 
+0     00082922  _IPCLiteLtoRDataRead                            
+0     000829ed  _IPCLiteLtoRDataWrite                           
+0     00082a12  _IPCLiteLtoRDataWrite_Protected                 
+0     00082a37  _IPCLiteLtoRFunctionCall                        
+0     00082907  _IPCLiteLtoRGetResult                           
+0     00082945  _IPCLiteLtoRSetBits                             
+0     0008296f  _IPCLiteLtoRSetBits_Protected                   
+0     00082a53  _IPCLiteReqMemAccess                            
+0     00082afd  _IPCLiteRtoLClearBits                           
+0     00082b2d  _IPCLiteRtoLClearBits_Protected                 
+0     00082a77  _IPCLiteRtoLDataRead                            
+0     00082b60  _IPCLiteRtoLDataWrite                           
+0     00082b8d  _IPCLiteRtoLDataWrite_Protected                 
+0     00082bbd  _IPCLiteRtoLFunctionCall                        
+0     00082a9e  _IPCLiteRtoLSetBits                             
+0     00082acc  _IPCLiteRtoLSetBits_Protected                   
+0     00081c1e  _InitAuxPll                                     
+0     000841f8  _InitCpuTimers                                  
 0     0000806c  _InitFlash                                      
-0     00083aaf  _InitGpio                                       
-0     0008258f  _InitPeripheralClocks                           
-0     00085167  _InitPieCtrl                                    
-0     0008518f  _InitPieVectTable                               
-0     0008256f  _InitSysCtrl                                    
-0     00082660  _InitSysPll                                     
+0     00082e7c  _InitGpio                                       
+0     0008195f  _InitPeripheralClocks                           
+0     00084648  _InitPieCtrl                                    
+0     00084670  _InitPieVectTable                               
+0     0008193f  _InitSysCtrl                                    
+0     00081a30  _InitSysPll                                     
 1     00007900  _InputXbarRegs                                  
 1     00050000  _IpcRegs                                        
-1     0000f2ac  _IsrOverrun                                     
-0     0008221a  _MCBSPA_RX_ISR                                  
-0     00082224  _MCBSPA_TX_ISR                                  
-0     0008222e  _MCBSPB_RX_ISR                                  
-0     00082238  _MCBSPB_TX_ISR                                  
-1     0000ef1b  _MW_InterruptDisableLock                        
-0     00085313  _MW_RamfuncsLoadEnd                             
+1     0000e6ec  _IsrOverrun                                     
+0     000815ea  _MCBSPA_RX_ISR                                  
+0     000815f4  _MCBSPA_TX_ISR                                  
+0     000815fe  _MCBSPB_RX_ISR                                  
+0     00081608  _MCBSPB_TX_ISR                                  
+0     000842e3  _MW_ConfigureDACA                               
+0     00084304  _MW_ConfigureDACB                               
+0     00084326  _MW_ConfigureDACC                               
+1     0000e5ba  _MW_DAC_PTR                                     
+1     0000e701  _MW_InterruptDisableLock                        
+0     0008480b  _MW_RamfuncsLoadEnd                             
 abs   0000003f  _MW_RamfuncsLoadSize                            
-0     000852d4  _MW_RamfuncsLoadStart                           
+0     000847cc  _MW_RamfuncsLoadStart                           
 0     000080ab  _MW_RamfuncsRunEnd                              
 abs   0000003f  _MW_RamfuncsRunSize                             
 0     0000806c  _MW_RamfuncsRunStart                            
-1     0000f2b8  _MW_SCI_PTR                                     
+1     0000e6fa  _MW_SCI_PTR                                     
 1     00006000  _McbspaRegs                                     
 1     00006040  _McbspbRegs                                     
 1     0005f400  _MemCfgRegs                                     
 1     0005f500  _MemoryErrorRegs                                
-0     0008201c  _NMI_ISR                                        
-0     00082565  _NOTUSED_ISR                                    
+0     000813ec  _NMI_ISR                                        
+0     00081935  _NOTUSED_ISR                                    
 1     00007060  _NmiIntruptRegs                                 
-0     000850e3  _OneTimeGpioInit                                
+0     000845c4  _OneTimeGpioInit                                
 1     00007a80  _OutputXbarRegs                                 
-0     0008254e  _PIE_RESERVED_ISR                               
+0     0008191e  _PIE_RESERVED_ISR                               
 1     00000ce0  _PieCtrlRegs                                    
 1     00000d00  _PieVectTable                                   
-0     000855c8  _PieVectTableInit                               
-0     0008251c  _RAM_ACCESS_VIOLATION_ISR                       
-0     00082508  _RAM_CORRECTABLE_ERROR_ISR                      
-0     00082008  _RTOS_ISR                                       
-0     000852d4  _RamfuncsLoadEnd                                
+0     0008480c  _PieVectTableInit                               
+0     000818ec  _RAM_ACCESS_VIOLATION_ISR                       
+0     000818d8  _RAM_CORRECTABLE_ERROR_ISR                      
+0     000813d8  _RTOS_ISR                                       
+0     000847cc  _RamfuncsLoadEnd                                
 abs   0000006c  _RamfuncsLoadSize                               
-0     00085268  _RamfuncsLoadStart                              
+0     00084760  _RamfuncsLoadStart                              
 0     0000806c  _RamfuncsRunEnd                                 
 abs   0000006c  _RamfuncsRunSize                                
 0     00008000  _RamfuncsRunStart                               
-0     0008263a  _ReleaseFlashPump                               
+0     00081a0a  _ReleaseFlashPump                               
 1     0005e608  _RomPrefetchRegs                                
 1     0005f540  _RomWaitStateRegs                               
-0     000822ce  _SCIA_RX_ISR                                    
-0     000822d8  _SCIA_TX_ISR                                    
-0     000822e2  _SCIB_RX_ISR                                    
-0     000822ec  _SCIB_TX_ISR                                    
-0     000822a6  _SCIC_RX_ISR                                    
-0     000822b0  _SCIC_TX_ISR                                    
-0     000822ba  _SCID_RX_ISR                                    
-0     000822c4  _SCID_TX_ISR                                    
+0     0008169e  _SCIA_RX_ISR                                    
+0     000816a8  _SCIA_TX_ISR                                    
+0     000816b2  _SCIB_RX_ISR                                    
+0     000816bc  _SCIB_TX_ISR                                    
+0     00081676  _SCIC_RX_ISR                                    
+0     00081680  _SCIC_TX_ISR                                    
+0     0008168a  _SCID_RX_ISR                                    
+0     00081694  _SCID_TX_ISR                                    
 0     00008000  _SCIRXINT_isr                                   
-0     00082472  _SD1_ISR                                        
-0     0008247c  _SD2_ISR                                        
-0     000821f2  _SPIA_RX_ISR                                    
-0     000821fc  _SPIA_TX_ISR                                    
-0     00082206  _SPIB_RX_ISR                                    
-0     00082210  _SPIB_TX_ISR                                    
-0     00082486  _SPIC_RX_ISR                                    
-0     00082490  _SPIC_TX_ISR                                    
-0     000829bb  _STANDBY                                        
-0     00082526  _SYS_PLL_SLIP_ISR                               
+0     00081842  _SD1_ISR                                        
+0     0008184c  _SD2_ISR                                        
+0     000815c2  _SPIA_RX_ISR                                    
+0     000815cc  _SPIA_TX_ISR                                    
+0     000815d6  _SPIB_RX_ISR                                    
+0     000815e0  _SPIB_TX_ISR                                    
+0     00081856  _SPIC_RX_ISR                                    
+0     00081860  _SPIC_TX_ISR                                    
+0     00081d8b  _STANDBY                                        
+0     000818f6  _SYS_PLL_SLIP_ISR                               
 1     00007200  _SciaRegs                                       
 1     00007210  _ScibRegs                                       
 1     00007220  _ScicRegs                                       
 1     00007230  _ScidRegs                                       
 1     00005e00  _Sdfm1Regs                                      
 1     00005e80  _Sdfm2Regs                                      
-0     0008262b  _SeizeFlashPump                                 
-0     00082644  _ServiceDog                                     
-0     00085106  _Set_GPIOPin                                    
+0     000819fb  _SeizeFlashPump                                 
+0     00081a14  _ServiceDog                                     
+0     000845e7  _Set_GPIOPin                                    
 1     00006100  _SpiaRegs                                       
 1     00006110  _SpibRegs                                       
 1     00006120  _SpicRegs                                       
 1     00007940  _SyncSocRegs                                    
 0     000080a7  _SysCtl_delay                                   
-0     0008295e  _SysIntOsc1Sel                                  
-0     0008296e  _SysIntOsc2Sel                                  
-0     00082982  _SysXtalOscSel                                  
-0     000820e4  _TIMER0_ISR                                     
-0     00081fea  _TIMER1_ISR                                     
-0     00081ff4  _TIMER2_ISR                                     
-0     0008505b  _TINT0_isr                                      
-0     0008249a  _UPPA_ISR                                       
-0     000824a4  _USBA_ISR                                       
-0     0008208a  _USER10_ISR                                     
-0     00082094  _USER11_ISR                                     
-0     0008209e  _USER12_ISR                                     
-0     00082030  _USER1_ISR                                      
-0     0008203a  _USER2_ISR                                      
-0     00082044  _USER3_ISR                                      
-0     0008204e  _USER4_ISR                                      
-0     00082058  _USER5_ISR                                      
-0     00082062  _USER6_ISR                                      
-0     0008206c  _USER7_ISR                                      
-0     00082076  _USER8_ISR                                      
-0     00082080  _USER9_ISR                                      
+0     00081d2e  _SysIntOsc1Sel                                  
+0     00081d3e  _SysIntOsc2Sel                                  
+0     00081d52  _SysXtalOscSel                                  
+0     000814b4  _TIMER0_ISR                                     
+0     000813ba  _TIMER1_ISR                                     
+0     000813c4  _TIMER2_ISR                                     
+0     0008453c  _TINT0_isr                                      
+0     0008186a  _UPPA_ISR                                       
+0     00081874  _USBA_ISR                                       
+0     0008145a  _USER10_ISR                                     
+0     00081464  _USER11_ISR                                     
+0     0008146e  _USER12_ISR                                     
+0     00081400  _USER1_ISR                                      
+0     0008140a  _USER2_ISR                                      
+0     00081414  _USER3_ISR                                      
+0     0008141e  _USER4_ISR                                      
+0     00081428  _USER5_ISR                                      
+0     00081432  _USER6_ISR                                      
+0     0008143c  _USER7_ISR                                      
+0     00081446  _USER8_ISR                                      
+0     00081450  _USER9_ISR                                      
 1     00000002  _UidRegs                                        
 1     00006200  _UppRegs                                        
-0     000823dc  _VCU_ISR                                        
-0     000820ee  _WAKE_ISR                                       
+0     000817ac  _VCU_ISR                                        
+0     000814be  _WAKE_ISR                                       
 1     00007000  _WdRegs                                         
-0     000820c6  _XINT1_ISR                                      
-0     000820d0  _XINT2_ISR                                      
-0     000823be  _XINT3_ISR                                      
-0     000823c8  _XINT4_ISR                                      
-0     000823d2  _XINT5_ISR                                      
+0     00081496  _XINT1_ISR                                      
+0     000814a0  _XINT2_ISR                                      
+0     0008178e  _XINT3_ISR                                      
+0     00081798  _XINT4_ISR                                      
+0     000817a2  _XINT5_ISR                                      
 1     00007920  _XbarRegs                                       
 1     00007070  _XintRegs                                       
 1     00000522  __STACK_END                                     
 abs   00000400  __STACK_SIZE                                    
-1     0000f28a  ___TI_cleanup_ptr                               
-1     0000f28c  ___TI_dtors_ptr                                 
-1     0000f288  ___TI_enable_exit_profile_output                
+1     0000e6d6  ___TI_cleanup_ptr                               
+1     0000e6d8  ___TI_dtors_ptr                                 
+1     0000e6d4  ___TI_enable_exit_profile_output                
 abs   ffffffff  ___TI_pprof_out_hndl                            
 abs   ffffffff  ___TI_prof_data_size                            
 abs   ffffffff  ___TI_prof_data_start                           
 abs   ffffffff  ___binit__                                      
 abs   ffffffff  ___c_args__                                     
-0     00085314  ___cinit__                                      
-0     00085268  ___etext__                                      
+0     00084a58  ___cinit__                                      
+0     0008475d  ___etext__                                      
 abs   ffffffff  ___pinit__                                      
 0     00080004  ___text__                                       
-0     00085229  __args_main                                     
-1     0000f2b0  __lock                                          
-0     0008524e  __nop                                           
-0     0008524a  __register_lock                                 
-0     00085246  __register_unlock                               
+0     0008471e  __args_main                                     
+1     0000e6be  __lock                                          
+0     00084743  __nop                                           
+0     0008473f  __register_lock                                 
+0     0008473b  __register_unlock                               
 1     00000122  __stack                                         
-0     00085267  __system_post_cinit                             
-0     00085265  __system_pre_init                               
-1     0000f2b2  __unlock                                        
-0     0008513e  _abort                                          
-0     00084c01  _addElement                                     
-0     00083814  _c2000_flash_init                               
-0     00084fbd  _c_int00                                        
-0     00084f65  _ceil                                           
-0     00084f65  _ceilf                                          
-0     0008504d  _config_ePWMSyncSource                          
-0     00085013  _config_ePWM_GPIO                               
-0     00085045  _config_ePWM_TBSync                             
-0     00084de4  _configureTimer0                                
-0     000851b5  _copy_in                                        
+0     0008475c  __system_post_cinit                             
+0     0008475a  __system_pre_init                               
+1     0000e6f8  __unlock                                        
+0     0008461f  _abort                                          
+0     0008408d  _addElement                                     
+0     00082be1  _c2000_flash_init                               
+0     0008445a  _c_int00                                        
+0     000844f8  _config_QEP_eQEP2                               
+0     000844ea  _config_ePWMSyncSource                          
+0     000844b0  _config_ePWM_GPIO                               
+0     000844e2  _config_ePWM_TBSync                             
+0     00084274  _configureTimer0                                
+0     00084696  _copy_in                                        
 0     00008043  _deleteElement                                  
-0     00084e30  _disableTimer0Interrupt                         
-0     00084e26  _enableTimer0Interrupt                          
-0     00084795  _enable_interrupts_sci                          
-0     00085140  _exit                                           
-0     00084563  _extmodeBackgroundRun                           
-0     0008451c  _extmodeEvent                                   
-0     000845a9  _extmodeGetEventTriggerEnable                   
-0     0008458c  _extmodeGetFinalSimulationTime                  
-0     0008446f  _extmodeInit                                    
-0     00084468  _extmodeParseArgs                               
-0     0008456b  _extmodeReset                                   
-0     000845c3  _extmodeSetEventTriggerEnable                   
-0     000845a1  _extmodeSetFinalSimulationTime                  
-0     00084588  _extmodeSimulationComplete                      
-0     00084584  _extmodeStartRequested                          
-0     00084580  _extmodeStopRequested                           
-0     000844c9  _extmodeWaitForHostRequest                      
-0     00084f0c  _floor                                          
-0     00084f0c  _floorf                                         
-0     00082fba  _genericOutputPacketHandler                     
-0     00085221  _globalInterruptDisable                         
-0     00085215  _globalInterruptEnable                          
-0     00084bdb  _initQue                                        
-0     0008382d  _initSetGPIOIPC                                 
-0     00084c28  _init_board                                     
-0     000847a4  _init_sci_rtiostream                            
-0     00084be8  _isEmpty                                        
-0     00084bf4  _isFull                                         
-1     0000f2b4  _isRateRunning                                  
-0     00080059  _look1_binlcpw                                  
-0     00084908  _main                                           
-0     000851f8  _memcpy                                         
-0     00085257  _memcpy_fast                                    
-0     0008525e  _memset                                         
-1     0000f22a  _mwInitEnd                                      
-1     0000f228  _mwInitStart                                    
-1     0000f2b6  _need2runFlags                                  
-1     0000f2c0  _queRx                                          
-0     00084e48  _restoreTimer0Interrupt                         
-0     0008509f  _rtGetInf                                       
-0     000850b8  _rtGetInfF                                      
-0     000850c1  _rtGetMinusInf                                  
-0     000850da  _rtGetMinusInfF                                 
-0     00085114  _rtGetNaN                                       
-0     0008512d  _rtGetNaNF                                      
-0     0008475d  _rtIOStreamClose                                
-0     0008473f  _rtIOStreamOpen                                 
-0     0008477f  _rtIOStreamRecv                                 
-0     00084763  _rtIOStreamSend                                 
-0     00084771  _rtIOStreamSend8Bits                            
-1     0000ec6c  _rtInf                                          
-1     0000ec72  _rtInfF                                         
-0     00084cfe  _rtIsInf                                        
-0     00084d16  _rtIsInfF                                       
-0     00084d2e  _rtIsNaN                                        
-0     00084d51  _rtIsNaNF                                       
-1     0000ec6e  _rtMinusInf                                     
-1     0000ec74  _rtMinusInfF                                    
-1     0000ec70  _rtNaN                                          
-1     0000ec76  _rtNaNF                                         
-0     00084cd6  _rt_InitInfAndNaN                               
-0     00084890  _rt_OneStep                                     
-0     00080120  _rt_atan2d_snf                                  
-1     0000f2ae  _runModel                                       
-0     0008482d  _sci_rcv                                        
-0     0008486b  _sci_xmit_external_mode                         
-0     00083a3d  _setCLBXBARForCPU2                              
-0     000839e5  _setEpwmXBARForCPU2                             
-0     000838bc  _setGPIOForCPU2                                 
-0     0008390f  _setInXBARForCPU2                               
-0     00083978  _setOutXBARForCPU2                              
-0     00083a90  _setSyncSocRegsForCPU2                          
-1     0000f2ad  _stopRequested                                  
-0     00084e21  _stopTimer0                                     
-0     0008010d  _u_SwitchCaseActionSubsystem                    
-1     0000ef80  _untitled_B                                     
-1     0000f000  _untitled_DW                                    
-0     0008580e  _untitled_M                                     
-1     0000f0c0  _untitled_P                                     
-0     000800dd  _untitled_SetEventsForThisBaseStep              
-0     00080fbd  _untitled_initialize                            
-0     00080184  _untitled_step0                                 
-0     0008095a  _untitled_step1                                 
-0     000813bb  _untitled_terminate                             
-0     00084b62  _xcpCalibrationGetPacketLookup                  
-0     00084b5d  _xcpCalibrationInit                             
-0     00084b6e  _xcpCalibrationReset                            
-0     00084b66  _xcpCalibrationSetPacketLookup                  
-1     0000f08f  _xcpClassicTriggerArmRequest                    
-1     0000f090  _xcpClassicTriggerCancelRequest                 
-1     0000f0a2  _xcpClassicTriggerDelay                         
-1     0000f08e  _xcpClassicTriggerDirection                     
-1     0000f09e  _xcpClassicTriggerDuration                      
-1     0000f08c  _xcpClassicTriggerEventId                       
-1     0000f0a0  _xcpClassicTriggerHoldOff                       
-1     0000f09c  _xcpClassicTriggerLevel                         
-1     0000f092  _xcpClassicTriggerMode                          
-1     0000f09a  _xcpClassicTriggerSignalAddress                 
-1     0000f08d  _xcpClassicTriggerSignalAddressExtension        
-1     0000f091  _xcpClassicTriggerSource                        
-1     0000f093  _xcpClassicTriggerStatus                        
-1     0000f29c  _xcpCurrentSimulationTimeInTicks                
-0     00081dd7  _xcpDaqEvent                                    
-0     00081e2a  _xcpDaqEventsFlush                              
-0     00081fe8  _xcpDaqExtendedInit                             
-0     00081fe9  _xcpDaqExtendedReset                            
-0     00081fc7  _xcpDaqGetCustomPoolMemoryManager               
-0     00081c43  _xcpDaqGetPacketLookup                          
-0     00081c33  _xcpDaqInit                                     
-0     00081efd  _xcpDaqLock                                     
-0     00081fa8  _xcpDaqReset                                    
-0     00081fb1  _xcpDaqSetCustomPoolMemoryManager               
-0     00081c47  _xcpDaqSetPacketLookup                          
-0     00081f06  _xcpDaqUnlock                                   
-0     00084724  _xcpDrvClose                                    
-0     000845f1  _xcpDrvIoctl                                    
-0     000845d7  _xcpDrvOpen                                     
-0     00084673  _xcpDrvRecv                                     
-0     000846e1  _xcpDrvRecvUnknownSize                          
-0     00084605  _xcpDrvSend                                     
-1     0000ef2e  _xcpDummyDoubleVariable                         
-0     00083137  _xcpEvent                                       
-0     0008314d  _xcpEventExternalTimestamp                      
-0     0008315f  _xcpEventNotificationReq                        
-0     00084263  _xcpExtModeClassicTriggerEnabled                
-0     000842c3  _xcpExtModeClassicTriggerForceEnableStatusUpdate
-0     00084254  _xcpExtModeClassicTriggerInit                   
-0     000842a3  _xcpExtModeClassicTriggerReset                  
-0     00084395  _xcpExtModeGetSimulationTime                    
-0     00084377  _xcpExtModeGetUpdatedTimestamp                  
-0     0008439c  _xcpExtModeInit                                 
-0     000851d9  _xcpExtModeParseArgs                            
-0     00084422  _xcpExtModeReset                                
-0     000843c4  _xcpExtModeRunBackground                        
-0     00084370  _xcpExtModeUpdateTime                           
-1     0000ef2c  _xcpExtmodeFinalSimulationTime                  
-1     0000ef1f  _xcpExtmodeSimulationComplete                   
-0     00084e6b  _xcpFifoDequeue                                 
-0     00084ea3  _xcpFifoEmpty                                   
-0     00084e5c  _xcpFifoEnqueue                                 
-0     00084e7e  _xcpFifoEnqueueHead                             
-0     00084e53  _xcpFifoInit                                    
-0     00084eac  _xcpFifoReset                                   
-0     00084e8d  _xcpFifoSpliceHead                              
-0     00083058  _xcpFindPacket                                  
-0     00084063  _xcpFrameCreateMsg                              
-0     00084091  _xcpFrameExtractPacket                          
-0     000840ff  _xcpFrameHeaderSize                             
-0     00083f42  _xcpFrameInit                                   
-0     00084107  _xcpFrameMaxCtoSize                             
-0     00084103  _xcpFrameMaxDtoSize                             
-0     00083fda  _xcpFrameMsgRecv                                
-0     00083f5c  _xcpFrameMsgSend                                
-0     00084117  _xcpFrameReset                                  
-0     00084109  _xcpFrameRestart                                
-0     00084110  _xcpFrameSetCtoReservedMemPoolId                
-0     00084101  _xcpFrameTailSize                               
-0     00083231  _xcpGetCustomPoolMemoryManager                  
-0     000851eb  _xcpGetInitParameters                           
-0     00083215  _xcpGetStatus                                   
-0     0008437e  _xcpGetTimestamp                                
-0     0008307c  _xcpInit                                        
-0     00082b0a  _xcpMemAlloc                                    
-0     00082dda  _xcpMemAllocFromPool                            
-0     00082d51  _xcpMemCustomPoolCreate                         
-0     00082da9  _xcpMemCustomPoolDestroy                        
-0     00082b75  _xcpMemFree                                     
-0     00082a4a  _xcpMemInit                                     
-0     00082c06  _xcpMemReservedPoolCreate                       
-0     00082ccd  _xcpMemReservedPoolDestroy                      
-0     00082e77  _xcpMemReset                                    
-1     0000ef22  _xcpModelChecksum0                              
-1     0000ef24  _xcpModelChecksum1                              
-1     0000ef26  _xcpModelChecksum2                              
-1     0000ef28  _xcpModelChecksum3                              
-1     0000ef2a  _xcpModelIntegerCode                            
-1     0000ef1c  _xcpModelStartRequest                           
-1     0000ef1e  _xcpModelStatus                                 
-1     0000ef1d  _xcpModelStopRequest                            
-0     00083244  _xcpPackedModeEventReset                        
-0     0008323d  _xcpPackedModeEventsFlush                       
-0     000831ba  _xcpRemoteServiceReq                            
-0     00083219  _xcpReset                                       
-0     00081f0a  _xcpResetDaqListStatus                          
-0     00082fa7  _xcpResourceProtectionClearMask                 
-0     00082f9d  _xcpResourceProtectionSetMask                   
-0     00082f92  _xcpResourceProtectionStatusGet                 
-0     00082f96  _xcpResourceProtectionStatusSet                 
-0     000830a2  _xcpRun                                         
-0     00082faf  _xcpSessionConfigurationIdGet                   
-0     00082fb3  _xcpSessionConfigurationIdSet                   
-0     00082f8a  _xcpSessionStatusClearMask                      
-0     00082f75  _xcpSessionStatusGet                            
-0     00082f79  _xcpSessionStatusSet                            
-0     00082f80  _xcpSessionStatusSetMask                        
-0     00083228  _xcpSetCustomPoolMemoryManager                  
-0     00084eb2  _xcpSortArray                                   
-0     00083f1b  _xcpStandardExtendedInit                        
-0     00083f1c  _xcpStandardExtendedReset                       
-0     00083ef0  _xcpStandardGetAddressFromMta                   
-0     00083f06  _xcpStandardGetMta                              
-0     00083ede  _xcpStandardGetPacketLookup                     
-0     00083f12  _xcpStandardIncrementMta                        
-0     00083ed7  _xcpStandardInit                                
-0     00083eea  _xcpStandardReset                               
-0     00083ef4  _xcpStandardSetMta                              
-0     00083ee2  _xcpStandardSetPacketLookup                     
-0     00082f6a  _xcpStatusGet                                   
-0     00082f6e  _xcpStatusSet                                   
-0     00083f27  _xcpSxiChecksum                                 
-0     000834f6  _xcpTransportCtoReservedMemPoolId               
-0     000851de  _xcpTransportGetInitParameters                  
-0     000832b6  _xcpTransportInit                               
-0     000834d9  _xcpTransportMaxCtoSize                         
-0     000834d6  _xcpTransportMaxDtoSize                         
-0     000834ad  _xcpTransportMsgBufferSize                      
-0     000834a1  _xcpTransportPacketOffset                       
-0     000834fa  _xcpTransportReset                              
-0     000834dc  _xcpTransportRestart                            
-0     000834ea  _xcpTransportResynch                            
-0     00083403  _xcpTransportRx                                 
-0     0008343a  _xcpTransportRxPacketGet                        
-0     00083388  _xcpTransportTx                                 
-0     0008331c  _xcpTransportTxPacketSet                        
-0     00083310  _xcpTransportTxReady                            
-0     00083316  _xcpTransportTxTrigger                          
-0     000842e2  _xcp_void_printf                                
+0     000842c0  _disableTimer0Interrupt                         
+0     000842b6  _enableTimer0Interrupt                          
+0     00083b6f  _enable_interrupts_sci                          
+0     00084621  _exit                                           
+0     0008393d  _extmodeBackgroundRun                           
+0     000838f6  _extmodeEvent                                   
+0     00083983  _extmodeGetEventTriggerEnable                   
+0     00083966  _extmodeGetFinalSimulationTime                  
+0     00083849  _extmodeInit                                    
+0     00083842  _extmodeParseArgs                               
+0     00083945  _extmodeReset                                   
+0     0008399d  _extmodeSetEventTriggerEnable                   
+0     0008397b  _extmodeSetFinalSimulationTime                  
+0     00083962  _extmodeSimulationComplete                      
+0     0008395e  _extmodeStartRequested                          
+0     0008395a  _extmodeStopRequested                           
+0     000838a3  _extmodeWaitForHostRequest                      
+0     00084401  _floor                                          
+0     00084401  _floorf                                         
+0     00082387  _genericOutputPacketHandler                     
+0     00084702  _globalInterruptDisable                         
+0     000846f6  _globalInterruptEnable                          
+0     00084067  _initQue                                        
+0     00082bfa  _initSetGPIOIPC                                 
+0     000840b4  _init_board                                     
+0     00083b7e  _init_sci_rtiostream                            
+0     00080c88  _intrp1d_s16s32s32u32u64n48l_f                  
+0     00084074  _isEmpty                                        
+0     00084080  _isFull                                         
+0     00083f58  _main                                           
+0     000846d9  _memcpy                                         
+0     0008474c  _memcpy_fast                                    
+0     00084753  _memset                                         
+1     0000e63a  _mwInitEnd                                      
+1     0000e638  _mwInitStart                                    
+0     00080c58  _plook_u32u16u64n48_evenc_gf                    
+1     0000e640  _queRx                                          
+0     000842d8  _restoreTimer0Interrupt                         
+0     00084580  _rtGetInf                                       
+0     00084599  _rtGetInfF                                      
+0     000845a2  _rtGetMinusInf                                  
+0     000845bb  _rtGetMinusInfF                                 
+0     000845f5  _rtGetNaN                                       
+0     0008460e  _rtGetNaNF                                      
+0     00083b37  _rtIOStreamClose                                
+0     00083b19  _rtIOStreamOpen                                 
+0     00083b59  _rtIOStreamRecv                                 
+0     00083b3d  _rtIOStreamSend                                 
+0     00083b4b  _rtIOStreamSend8Bits                            
+1     0000e434  _rtInf                                          
+1     0000e43a  _rtInfF                                         
+0     0008418e  _rtIsInf                                        
+0     000841a6  _rtIsInfF                                       
+0     000841be  _rtIsNaN                                        
+0     000841e1  _rtIsNaNF                                       
+1     0000e436  _rtMinusInf                                     
+1     0000e43c  _rtMinusInfF                                    
+1     0000e438  _rtNaN                                          
+1     0000e43e  _rtNaNF                                         
+0     00084166  _rt_InitInfAndNaN                               
+0     00083f35  _rt_OneStep                                     
+1     0000e6ef  _runModel                                       
+0     00083c07  _sci_rcv                                        
+0     00083c45  _sci_xmit_external_mode                         
+0     00082e0a  _setCLBXBARForCPU2                              
+0     00082db2  _setEpwmXBARForCPU2                             
+0     00082c89  _setGPIOForCPU2                                 
+0     00082cdc  _setInXBARForCPU2                               
+0     00082d45  _setOutXBARForCPU2                              
+0     00082e5d  _setSyncSocRegsForCPU2                          
+1     0000e6ee  _stopRequested                                  
+0     000842b1  _stopTimer0                                     
+1     0000e5ca  _untitled_B                                     
+1     0000e600  _untitled_DW                                    
+0     00084a52  _untitled_M                                     
+1     0000e500  _untitled_P                                     
+0     00081154  _untitled_initialize                            
+0     00080ca7  _untitled_step                                  
+0     000813b9  _untitled_terminate                             
+0     00083f28  _xcpCalibrationGetPacketLookup                  
+0     00083f23  _xcpCalibrationInit                             
+0     00083f34  _xcpCalibrationReset                            
+0     00083f2c  _xcpCalibrationSetPacketLookup                  
+1     0000e4db  _xcpClassicTriggerArmRequest                    
+1     0000e4dc  _xcpClassicTriggerCancelRequest                 
+1     0000e4ee  _xcpClassicTriggerDelay                         
+1     0000e4da  _xcpClassicTriggerDirection                     
+1     0000e4ea  _xcpClassicTriggerDuration                      
+1     0000e4d8  _xcpClassicTriggerEventId                       
+1     0000e4ec  _xcpClassicTriggerHoldOff                       
+1     0000e4e8  _xcpClassicTriggerLevel                         
+1     0000e4de  _xcpClassicTriggerMode                          
+1     0000e4e6  _xcpClassicTriggerSignalAddress                 
+1     0000e4d9  _xcpClassicTriggerSignalAddressExtension        
+1     0000e4dd  _xcpClassicTriggerSource                        
+1     0000e4df  _xcpClassicTriggerStatus                        
+1     0000e63c  _xcpCurrentSimulationTimeInTicks                
+0     00080a1a  _xcpDaqEvent                                    
+0     00080a6d  _xcpDaqEventsFlush                              
+0     00080c29  _xcpDaqExtendedInit                             
+0     00080c2a  _xcpDaqExtendedReset                            
+0     00080c08  _xcpDaqGetCustomPoolMemoryManager               
+0     00080886  _xcpDaqGetPacketLookup                          
+0     00080876  _xcpDaqInit                                     
+0     00080b40  _xcpDaqLock                                     
+0     00080be9  _xcpDaqReset                                    
+0     00080bf2  _xcpDaqSetCustomPoolMemoryManager               
+0     0008088a  _xcpDaqSetPacketLookup                          
+0     00080b49  _xcpDaqUnlock                                   
+0     00083afe  _xcpDrvClose                                    
+0     000839cb  _xcpDrvIoctl                                    
+0     000839b1  _xcpDrvOpen                                     
+0     00083a4d  _xcpDrvRecv                                     
+0     00083abb  _xcpDrvRecvUnknownSize                          
+0     000839df  _xcpDrvSend                                     
+1     0000e428  _xcpDummyDoubleVariable                         
+0     00082504  _xcpEvent                                       
+0     0008251a  _xcpEventExternalTimestamp                      
+0     0008252c  _xcpEventNotificationReq                        
+0     00083630  _xcpExtModeClassicTriggerEnabled                
+0     00083690  _xcpExtModeClassicTriggerForceEnableStatusUpdate
+0     00083621  _xcpExtModeClassicTriggerInit                   
+0     00083670  _xcpExtModeClassicTriggerReset                  
+0     0008376f  _xcpExtModeGetSimulationTime                    
+0     00083751  _xcpExtModeGetUpdatedTimestamp                  
+0     00083776  _xcpExtModeInit                                 
+0     000846ba  _xcpExtModeParseArgs                            
+0     000837fc  _xcpExtModeReset                                
+0     0008379e  _xcpExtModeRunBackground                        
+0     0008374a  _xcpExtModeUpdateTime                           
+1     0000e426  _xcpExtmodeFinalSimulationTime                  
+1     0000e419  _xcpExtmodeSimulationComplete                   
+0     00084360  _xcpFifoDequeue                                 
+0     00084398  _xcpFifoEmpty                                   
+0     00084351  _xcpFifoEnqueue                                 
+0     00084373  _xcpFifoEnqueueHead                             
+0     00084348  _xcpFifoInit                                    
+0     000843a1  _xcpFifoReset                                   
+0     00084382  _xcpFifoSpliceHead                              
+0     00082425  _xcpFindPacket                                  
+0     00083430  _xcpFrameCreateMsg                              
+0     0008345e  _xcpFrameExtractPacket                          
+0     000834cc  _xcpFrameHeaderSize                             
+0     0008330f  _xcpFrameInit                                   
+0     000834d4  _xcpFrameMaxCtoSize                             
+0     000834d0  _xcpFrameMaxDtoSize                             
+0     000833a7  _xcpFrameMsgRecv                                
+0     00083329  _xcpFrameMsgSend                                
+0     000834e4  _xcpFrameReset                                  
+0     000834d6  _xcpFrameRestart                                
+0     000834dd  _xcpFrameSetCtoReservedMemPoolId                
+0     000834ce  _xcpFrameTailSize                               
+0     000825fe  _xcpGetCustomPoolMemoryManager                  
+0     000846cc  _xcpGetInitParameters                           
+0     000825e2  _xcpGetStatus                                   
+0     00083758  _xcpGetTimestamp                                
+0     00082449  _xcpInit                                        
+0     00081eda  _xcpMemAlloc                                    
+0     000821aa  _xcpMemAllocFromPool                            
+0     00082121  _xcpMemCustomPoolCreate                         
+0     00082179  _xcpMemCustomPoolDestroy                        
+0     00081f45  _xcpMemFree                                     
+0     00081e1a  _xcpMemInit                                     
+0     00081fd6  _xcpMemReservedPoolCreate                       
+0     0008209d  _xcpMemReservedPoolDestroy                      
+0     00082247  _xcpMemReset                                    
+1     0000e41c  _xcpModelChecksum0                              
+1     0000e41e  _xcpModelChecksum1                              
+1     0000e420  _xcpModelChecksum2                              
+1     0000e422  _xcpModelChecksum3                              
+1     0000e424  _xcpModelIntegerCode                            
+1     0000e416  _xcpModelStartRequest                           
+1     0000e418  _xcpModelStatus                                 
+1     0000e417  _xcpModelStopRequest                            
+0     00082611  _xcpPackedModeEventReset                        
+0     0008260a  _xcpPackedModeEventsFlush                       
+0     00082587  _xcpRemoteServiceReq                            
+0     000825e6  _xcpReset                                       
+0     00080b4d  _xcpResetDaqListStatus                          
+0     00082374  _xcpResourceProtectionClearMask                 
+0     0008236a  _xcpResourceProtectionSetMask                   
+0     0008235f  _xcpResourceProtectionStatusGet                 
+0     00082363  _xcpResourceProtectionStatusSet                 
+0     0008246f  _xcpRun                                         
+0     0008237c  _xcpSessionConfigurationIdGet                   
+0     00082380  _xcpSessionConfigurationIdSet                   
+0     00082357  _xcpSessionStatusClearMask                      
+0     00082342  _xcpSessionStatusGet                            
+0     00082346  _xcpSessionStatusSet                            
+0     0008234d  _xcpSessionStatusSetMask                        
+0     000825f5  _xcpSetCustomPoolMemoryManager                  
+0     000843a7  _xcpSortArray                                   
+0     000832e8  _xcpStandardExtendedInit                        
+0     000832e9  _xcpStandardExtendedReset                       
+0     000832bd  _xcpStandardGetAddressFromMta                   
+0     000832d3  _xcpStandardGetMta                              
+0     000832ab  _xcpStandardGetPacketLookup                     
+0     000832df  _xcpStandardIncrementMta                        
+0     000832a4  _xcpStandardInit                                
+0     000832b7  _xcpStandardReset                               
+0     000832c1  _xcpStandardSetMta                              
+0     000832af  _xcpStandardSetPacketLookup                     
+0     00082337  _xcpStatusGet                                   
+0     0008233b  _xcpStatusSet                                   
+0     000832f4  _xcpSxiChecksum                                 
+0     000828c3  _xcpTransportCtoReservedMemPoolId               
+0     000846bf  _xcpTransportGetInitParameters                  
+0     00082683  _xcpTransportInit                               
+0     000828a6  _xcpTransportMaxCtoSize                         
+0     000828a3  _xcpTransportMaxDtoSize                         
+0     0008287a  _xcpTransportMsgBufferSize                      
+0     0008286e  _xcpTransportPacketOffset                       
+0     000828c7  _xcpTransportReset                              
+0     000828a9  _xcpTransportRestart                            
+0     000828b7  _xcpTransportResynch                            
+0     000827d0  _xcpTransportRx                                 
+0     00082807  _xcpTransportRxPacketGet                        
+0     00082755  _xcpTransportTx                                 
+0     000826e9  _xcpTransportTxPacketSet                        
+0     000826dd  _xcpTransportTxReady                            
+0     000826e3  _xcpTransportTxTrigger                          
+0     000836af  _xcp_void_printf                                
 abs   ffffffff  binit                                           
-0     00085314  cinit                                           
+0     00084a58  cinit                                           
 0     00080000  code_start                                      
-0     00085268  etext                                           
+0     0008475d  etext                                           
 abs   ffffffff  pinit                                           
 
 
@@ -1746,429 +1751,433 @@ page  address   name
 0     00080000  code_start                                      
 0     00080004  .text                                           
 0     00080004  ___text__                                       
-0     00080059  _look1_binlcpw                                  
-0     000800dd  _untitled_SetEventsForThisBaseStep              
-0     0008010d  _u_SwitchCaseActionSubsystem                    
-0     00080120  _rt_atan2d_snf                                  
-0     00080184  _untitled_step0                                 
-0     0008095a  _untitled_step1                                 
-0     00080fbd  _untitled_initialize                            
-0     000813bb  _untitled_terminate                             
-0     00081c33  _xcpDaqInit                                     
-0     00081c43  _xcpDaqGetPacketLookup                          
-0     00081c47  _xcpDaqSetPacketLookup                          
-0     00081dd7  _xcpDaqEvent                                    
-0     00081e2a  _xcpDaqEventsFlush                              
-0     00081efd  _xcpDaqLock                                     
-0     00081f06  _xcpDaqUnlock                                   
-0     00081f0a  _xcpResetDaqListStatus                          
-0     00081fa8  _xcpDaqReset                                    
-0     00081fb1  _xcpDaqSetCustomPoolMemoryManager               
-0     00081fc7  _xcpDaqGetCustomPoolMemoryManager               
-0     00081fe8  _xcpDaqExtendedInit                             
-0     00081fe9  _xcpDaqExtendedReset                            
-0     00081fea  _TIMER1_ISR                                     
-0     00081ff4  _TIMER2_ISR                                     
-0     00081ffe  _DATALOG_ISR                                    
-0     00082008  _RTOS_ISR                                       
-0     00082012  _EMU_ISR                                        
-0     0008201c  _NMI_ISR                                        
-0     00082026  _ILLEGAL_ISR                                    
-0     00082030  _USER1_ISR                                      
-0     0008203a  _USER2_ISR                                      
-0     00082044  _USER3_ISR                                      
-0     0008204e  _USER4_ISR                                      
-0     00082058  _USER5_ISR                                      
-0     00082062  _USER6_ISR                                      
-0     0008206c  _USER7_ISR                                      
-0     00082076  _USER8_ISR                                      
-0     00082080  _USER9_ISR                                      
-0     0008208a  _USER10_ISR                                     
-0     00082094  _USER11_ISR                                     
-0     0008209e  _USER12_ISR                                     
-0     000820a8  _ADCA1_ISR                                      
-0     000820b2  _ADCB1_ISR                                      
-0     000820bc  _ADCC1_ISR                                      
-0     000820c6  _XINT1_ISR                                      
-0     000820d0  _XINT2_ISR                                      
-0     000820da  _ADCD1_ISR                                      
-0     000820e4  _TIMER0_ISR                                     
-0     000820ee  _WAKE_ISR                                       
-0     000820f8  _EPWM1_TZ_ISR                                   
-0     00082102  _EPWM2_TZ_ISR                                   
-0     0008210c  _EPWM3_TZ_ISR                                   
-0     00082116  _EPWM4_TZ_ISR                                   
-0     00082120  _EPWM5_TZ_ISR                                   
-0     0008212a  _EPWM6_TZ_ISR                                   
-0     00082134  _EPWM7_TZ_ISR                                   
-0     0008213e  _EPWM8_TZ_ISR                                   
-0     00082148  _EPWM1_ISR                                      
-0     00082152  _EPWM2_ISR                                      
-0     0008215c  _EPWM3_ISR                                      
-0     00082166  _EPWM4_ISR                                      
-0     00082170  _EPWM5_ISR                                      
-0     0008217a  _EPWM6_ISR                                      
-0     00082184  _EPWM7_ISR                                      
-0     0008218e  _EPWM8_ISR                                      
-0     00082198  _ECAP1_ISR                                      
-0     000821a2  _ECAP2_ISR                                      
-0     000821ac  _ECAP3_ISR                                      
-0     000821b6  _ECAP4_ISR                                      
-0     000821c0  _ECAP5_ISR                                      
-0     000821ca  _ECAP6_ISR                                      
-0     000821d4  _EQEP1_ISR                                      
-0     000821de  _EQEP2_ISR                                      
-0     000821e8  _EQEP3_ISR                                      
-0     000821f2  _SPIA_RX_ISR                                    
-0     000821fc  _SPIA_TX_ISR                                    
-0     00082206  _SPIB_RX_ISR                                    
-0     00082210  _SPIB_TX_ISR                                    
-0     0008221a  _MCBSPA_RX_ISR                                  
-0     00082224  _MCBSPA_TX_ISR                                  
-0     0008222e  _MCBSPB_RX_ISR                                  
-0     00082238  _MCBSPB_TX_ISR                                  
-0     00082242  _DMA_CH1_ISR                                    
-0     0008224c  _DMA_CH2_ISR                                    
-0     00082256  _DMA_CH3_ISR                                    
-0     00082260  _DMA_CH4_ISR                                    
-0     0008226a  _DMA_CH5_ISR                                    
-0     00082274  _DMA_CH6_ISR                                    
-0     0008227e  _I2CA_ISR                                       
-0     00082288  _I2CA_FIFO_ISR                                  
-0     00082292  _I2CB_ISR                                       
-0     0008229c  _I2CB_FIFO_ISR                                  
-0     000822a6  _SCIC_RX_ISR                                    
-0     000822b0  _SCIC_TX_ISR                                    
-0     000822ba  _SCID_RX_ISR                                    
-0     000822c4  _SCID_TX_ISR                                    
-0     000822ce  _SCIA_RX_ISR                                    
-0     000822d8  _SCIA_TX_ISR                                    
-0     000822e2  _SCIB_RX_ISR                                    
-0     000822ec  _SCIB_TX_ISR                                    
-0     000822f6  _CANA0_ISR                                      
-0     00082300  _CANA1_ISR                                      
-0     0008230a  _CANB0_ISR                                      
-0     00082314  _CANB1_ISR                                      
-0     0008231e  _ADCA_EVT_ISR                                   
-0     00082328  _ADCA2_ISR                                      
-0     00082332  _ADCA3_ISR                                      
-0     0008233c  _ADCA4_ISR                                      
-0     00082346  _ADCB_EVT_ISR                                   
-0     00082350  _ADCB2_ISR                                      
-0     0008235a  _ADCB3_ISR                                      
-0     00082364  _ADCB4_ISR                                      
-0     0008236e  _CLA1_1_ISR                                     
-0     00082378  _CLA1_2_ISR                                     
-0     00082382  _CLA1_3_ISR                                     
-0     0008238c  _CLA1_4_ISR                                     
-0     00082396  _CLA1_5_ISR                                     
-0     000823a0  _CLA1_6_ISR                                     
-0     000823aa  _CLA1_7_ISR                                     
-0     000823b4  _CLA1_8_ISR                                     
-0     000823be  _XINT3_ISR                                      
-0     000823c8  _XINT4_ISR                                      
-0     000823d2  _XINT5_ISR                                      
-0     000823dc  _VCU_ISR                                        
-0     000823e6  _FPU_OVERFLOW_ISR                               
-0     000823f0  _FPU_UNDERFLOW_ISR                              
-0     000823fa  _IPC0_ISR                                       
-0     00082404  _IPC1_ISR                                       
-0     0008240e  _IPC2_ISR                                       
-0     00082418  _IPC3_ISR                                       
-0     00082422  _EPWM9_TZ_ISR                                   
-0     0008242c  _EPWM10_TZ_ISR                                  
-0     00082436  _EPWM11_TZ_ISR                                  
-0     00082440  _EPWM12_TZ_ISR                                  
-0     0008244a  _EPWM9_ISR                                      
-0     00082454  _EPWM10_ISR                                     
-0     0008245e  _EPWM11_ISR                                     
-0     00082468  _EPWM12_ISR                                     
-0     00082472  _SD1_ISR                                        
-0     0008247c  _SD2_ISR                                        
-0     00082486  _SPIC_RX_ISR                                    
-0     00082490  _SPIC_TX_ISR                                    
-0     0008249a  _UPPA_ISR                                       
-0     000824a4  _USBA_ISR                                       
-0     000824ae  _ADCC_EVT_ISR                                   
-0     000824b8  _ADCC2_ISR                                      
-0     000824c2  _ADCC3_ISR                                      
-0     000824cc  _ADCC4_ISR                                      
-0     000824d6  _ADCD_EVT_ISR                                   
-0     000824e0  _ADCD2_ISR                                      
-0     000824ea  _ADCD3_ISR                                      
-0     000824f4  _ADCD4_ISR                                      
-0     000824fe  _EMIF_ERROR_ISR                                 
-0     00082508  _RAM_CORRECTABLE_ERROR_ISR                      
-0     00082512  _FLASH_CORRECTABLE_ERROR_ISR                    
-0     0008251c  _RAM_ACCESS_VIOLATION_ISR                       
-0     00082526  _SYS_PLL_SLIP_ISR                               
-0     00082530  _AUX_PLL_SLIP_ISR                               
-0     0008253a  _CLA_OVERFLOW_ISR                               
-0     00082544  _CLA_UNDERFLOW_ISR                              
-0     0008254e  _PIE_RESERVED_ISR                               
-0     00082558  _EMPTY_ISR                                      
-0     00082565  _NOTUSED_ISR                                    
-0     0008256f  _InitSysCtrl                                    
-0     0008258f  _InitPeripheralClocks                           
-0     00082613  _DisablePeripheralClocks                        
-0     0008262b  _SeizeFlashPump                                 
-0     0008263a  _ReleaseFlashPump                               
-0     00082644  _ServiceDog                                     
-0     00082652  _DisableDog                                     
-0     00082660  _InitSysPll                                     
-0     0008284e  _InitAuxPll                                     
-0     0008293d  _CsmUnlock                                      
-0     0008295e  _SysIntOsc1Sel                                  
-0     0008296e  _SysIntOsc2Sel                                  
-0     00082982  _SysXtalOscSel                                  
-0     00082992  _AuxIntOsc2Sel                                  
-0     0008299c  _AuxXtalOscSel                                  
-0     000829a8  _AuxAuxClkSel                                   
-0     000829b2  _IDLE                                           
-0     000829bb  _STANDBY                                        
-0     000829c6  _HALT                                           
-0     000829df  _HIB                                            
-0     000829fc  _ConfigureTMXAnalogTrim                         
-0     00082a4a  _xcpMemInit                                     
-0     00082b0a  _xcpMemAlloc                                    
-0     00082b75  _xcpMemFree                                     
-0     00082c06  _xcpMemReservedPoolCreate                       
-0     00082ccd  _xcpMemReservedPoolDestroy                      
-0     00082d51  _xcpMemCustomPoolCreate                         
-0     00082da9  _xcpMemCustomPoolDestroy                        
-0     00082dda  _xcpMemAllocFromPool                            
-0     00082e77  _xcpMemReset                                    
-0     00082f6a  _xcpStatusGet                                   
-0     00082f6e  _xcpStatusSet                                   
-0     00082f75  _xcpSessionStatusGet                            
-0     00082f79  _xcpSessionStatusSet                            
-0     00082f80  _xcpSessionStatusSetMask                        
-0     00082f8a  _xcpSessionStatusClearMask                      
-0     00082f92  _xcpResourceProtectionStatusGet                 
-0     00082f96  _xcpResourceProtectionStatusSet                 
-0     00082f9d  _xcpResourceProtectionSetMask                   
-0     00082fa7  _xcpResourceProtectionClearMask                 
-0     00082faf  _xcpSessionConfigurationIdGet                   
-0     00082fb3  _xcpSessionConfigurationIdSet                   
-0     00082fba  _genericOutputPacketHandler                     
-0     00083058  _xcpFindPacket                                  
-0     0008307c  _xcpInit                                        
-0     000830a2  _xcpRun                                         
-0     00083137  _xcpEvent                                       
-0     0008314d  _xcpEventExternalTimestamp                      
-0     0008315f  _xcpEventNotificationReq                        
-0     000831ba  _xcpRemoteServiceReq                            
-0     00083215  _xcpGetStatus                                   
-0     00083219  _xcpReset                                       
-0     00083228  _xcpSetCustomPoolMemoryManager                  
-0     00083231  _xcpGetCustomPoolMemoryManager                  
-0     0008323d  _xcpPackedModeEventsFlush                       
-0     00083244  _xcpPackedModeEventReset                        
-0     000832b6  _xcpTransportInit                               
-0     00083310  _xcpTransportTxReady                            
-0     00083316  _xcpTransportTxTrigger                          
-0     0008331c  _xcpTransportTxPacketSet                        
-0     00083388  _xcpTransportTx                                 
-0     00083403  _xcpTransportRx                                 
-0     0008343a  _xcpTransportRxPacketGet                        
-0     000834a1  _xcpTransportPacketOffset                       
-0     000834ad  _xcpTransportMsgBufferSize                      
-0     000834d6  _xcpTransportMaxDtoSize                         
-0     000834d9  _xcpTransportMaxCtoSize                         
-0     000834dc  _xcpTransportRestart                            
-0     000834ea  _xcpTransportResynch                            
-0     000834f6  _xcpTransportCtoReservedMemPoolId               
-0     000834fa  _xcpTransportReset                              
-0     0008353a  _IPCLiteLtoRGetResult                           
-0     00083555  _IPCLiteLtoRDataRead                            
-0     00083578  _IPCLiteLtoRSetBits                             
-0     000835a2  _IPCLiteLtoRSetBits_Protected                   
-0     000835cc  _IPCLiteLtoRClearBits                           
-0     000835f6  _IPCLiteLtoRClearBits_Protected                 
-0     00083620  _IPCLiteLtoRDataWrite                           
-0     00083645  _IPCLiteLtoRDataWrite_Protected                 
-0     0008366a  _IPCLiteLtoRFunctionCall                        
-0     00083686  _IPCLiteReqMemAccess                            
-0     000836aa  _IPCLiteRtoLDataRead                            
-0     000836d1  _IPCLiteRtoLSetBits                             
-0     000836ff  _IPCLiteRtoLSetBits_Protected                   
-0     00083730  _IPCLiteRtoLClearBits                           
-0     00083760  _IPCLiteRtoLClearBits_Protected                 
-0     00083793  _IPCLiteRtoLDataWrite                           
-0     000837c0  _IPCLiteRtoLDataWrite_Protected                 
-0     000837f0  _IPCLiteRtoLFunctionCall                        
-0     0008380d  _DelayLoop                                      
-0     00083814  _c2000_flash_init                               
-0     0008382d  _initSetGPIOIPC                                 
-0     000838bc  _setGPIOForCPU2                                 
-0     0008390f  _setInXBARForCPU2                               
-0     00083978  _setOutXBARForCPU2                              
-0     000839e5  _setEpwmXBARForCPU2                             
-0     00083a3d  _setCLBXBARForCPU2                              
-0     00083a90  _setSyncSocRegsForCPU2                          
-0     00083aaf  _InitGpio                                       
-0     00083aef  _GPIO_SetupPinMux                               
-0     00083b7b  _GPIO_SetupPinOptions                           
-0     00083c0f  _GPIO_SetupLock                                 
-0     00083c38  _GPIO_SetupXINT1Gpio                            
-0     00083c42  _GPIO_SetupXINT2Gpio                            
-0     00083c4c  _GPIO_SetupXINT3Gpio                            
-0     00083c56  _GPIO_SetupXINT4Gpio                            
-0     00083c60  _GPIO_SetupXINT5Gpio                            
-0     00083c6a  _GPIO_EnableUnbondedIOPullupsFor176Pin          
-0     00083c83  _GPIO_EnableUnbondedIOPullupsFor100Pin          
-0     00083ca8  _GPIO_EnableUnbondedIOPullups                   
-0     00083cbe  _GPIO_ReadPin                                   
-0     00083cd5  _GPIO_WritePin                                  
-0     00083ed7  _xcpStandardInit                                
-0     00083ede  _xcpStandardGetPacketLookup                     
-0     00083ee2  _xcpStandardSetPacketLookup                     
-0     00083eea  _xcpStandardReset                               
-0     00083ef0  _xcpStandardGetAddressFromMta                   
-0     00083ef4  _xcpStandardSetMta                              
-0     00083f06  _xcpStandardGetMta                              
-0     00083f12  _xcpStandardIncrementMta                        
-0     00083f1b  _xcpStandardExtendedInit                        
-0     00083f1c  _xcpStandardExtendedReset                       
-0     00083f27  _xcpSxiChecksum                                 
-0     00083f42  _xcpFrameInit                                   
-0     00083f5c  _xcpFrameMsgSend                                
-0     00083fda  _xcpFrameMsgRecv                                
-0     00084063  _xcpFrameCreateMsg                              
-0     00084091  _xcpFrameExtractPacket                          
-0     000840ff  _xcpFrameHeaderSize                             
-0     00084101  _xcpFrameTailSize                               
-0     00084103  _xcpFrameMaxDtoSize                             
-0     00084107  _xcpFrameMaxCtoSize                             
-0     00084109  _xcpFrameRestart                                
-0     00084110  _xcpFrameSetCtoReservedMemPoolId                
-0     00084117  _xcpFrameReset                                  
-0     00084254  _xcpExtModeClassicTriggerInit                   
-0     00084263  _xcpExtModeClassicTriggerEnabled                
-0     000842a3  _xcpExtModeClassicTriggerReset                  
-0     000842c3  _xcpExtModeClassicTriggerForceEnableStatusUpdate
-0     000842e2  _xcp_void_printf                                
-0     00084370  _xcpExtModeUpdateTime                           
-0     00084377  _xcpExtModeGetUpdatedTimestamp                  
-0     0008437e  _xcpGetTimestamp                                
-0     00084395  _xcpExtModeGetSimulationTime                    
-0     0008439c  _xcpExtModeInit                                 
-0     000843c4  _xcpExtModeRunBackground                        
-0     00084422  _xcpExtModeReset                                
-0     00084468  _extmodeParseArgs                               
-0     0008446f  _extmodeInit                                    
-0     000844c9  _extmodeWaitForHostRequest                      
-0     0008451c  _extmodeEvent                                   
-0     00084563  _extmodeBackgroundRun                           
-0     0008456b  _extmodeReset                                   
-0     00084580  _extmodeStopRequested                           
-0     00084584  _extmodeStartRequested                          
-0     00084588  _extmodeSimulationComplete                      
-0     0008458c  _extmodeGetFinalSimulationTime                  
-0     000845a1  _extmodeSetFinalSimulationTime                  
-0     000845a9  _extmodeGetEventTriggerEnable                   
-0     000845c3  _extmodeSetEventTriggerEnable                   
-0     000845d7  _xcpDrvOpen                                     
-0     000845f1  _xcpDrvIoctl                                    
-0     00084605  _xcpDrvSend                                     
-0     00084673  _xcpDrvRecv                                     
-0     000846e1  _xcpDrvRecvUnknownSize                          
-0     00084724  _xcpDrvClose                                    
-0     0008473f  _rtIOStreamOpen                                 
-0     0008475d  _rtIOStreamClose                                
-0     00084763  _rtIOStreamSend                                 
-0     00084771  _rtIOStreamSend8Bits                            
-0     0008477f  _rtIOStreamRecv                                 
-0     00084795  _enable_interrupts_sci                          
-0     000847a4  _init_sci_rtiostream                            
-0     0008482d  _sci_rcv                                        
-0     0008486b  _sci_xmit_external_mode                         
-0     00084890  _rt_OneStep                                     
-0     00084908  _main                                           
-0     000849ab  _CPU02toCPU01IPC0IntHandler                     
-0     00084b5d  _xcpCalibrationInit                             
-0     00084b62  _xcpCalibrationGetPacketLookup                  
-0     00084b66  _xcpCalibrationSetPacketLookup                  
-0     00084b6e  _xcpCalibrationReset                            
-0     00084b6f  _BytePackerInplace32bits                        
-0     00084b92  _BytePacker32bits                               
-0     00084bb8  _BytePacker16bits                               
-0     00084bdb  _initQue                                        
-0     00084be8  _isEmpty                                        
-0     00084bf4  _isFull                                         
-0     00084c01  _addElement                                     
-0     00084c28  _init_board                                     
-0     00084cd6  _rt_InitInfAndNaN                               
-0     00084cfe  _rtIsInf                                        
-0     00084d16  _rtIsInfF                                       
-0     00084d2e  _rtIsNaN                                        
-0     00084d51  _rtIsNaNF                                       
-0     00084d68  _InitCpuTimers                                  
-0     00084da9  _ConfigCpuTimer                                 
-0     00084de4  _configureTimer0                                
-0     00084e21  _stopTimer0                                     
-0     00084e26  _enableTimer0Interrupt                          
-0     00084e30  _disableTimer0Interrupt                         
-0     00084e48  _restoreTimer0Interrupt                         
-0     00084e53  _xcpFifoInit                                    
-0     00084e5c  _xcpFifoEnqueue                                 
-0     00084e6b  _xcpFifoDequeue                                 
-0     00084e7e  _xcpFifoEnqueueHead                             
-0     00084e8d  _xcpFifoSpliceHead                              
-0     00084ea3  _xcpFifoEmpty                                   
-0     00084eac  _xcpFifoReset                                   
-0     00084eb2  _xcpSortArray                                   
-0     00084f0c  _floor                                          
-0     00084f0c  _floorf                                         
-0     00084f65  _ceil                                           
-0     00084f65  _ceilf                                          
-0     00084fbd  _c_int00                                        
-0     00085013  _config_ePWM_GPIO                               
-0     00085045  _config_ePWM_TBSync                             
-0     0008504d  _config_ePWMSyncSource                          
-0     0008505b  _TINT0_isr                                      
-0     0008509f  _rtGetInf                                       
-0     000850b8  _rtGetInfF                                      
-0     000850c1  _rtGetMinusInf                                  
-0     000850da  _rtGetMinusInfF                                 
-0     000850e3  _OneTimeGpioInit                                
-0     000850ee  _GPIO_TogglePin                                 
-0     00085106  _Set_GPIOPin                                    
-0     00085114  _rtGetNaN                                       
-0     0008512d  _rtGetNaNF                                      
-0     0008513e  C$$EXIT                                         
-0     0008513e  _abort                                          
-0     00085140  _exit                                           
-0     00085167  _InitPieCtrl                                    
-0     00085186  _EnableInterrupts                               
-0     0008518f  _InitPieVectTable                               
-0     000851b5  _copy_in                                        
-0     000851d9  _xcpExtModeParseArgs                            
-0     000851de  _xcpTransportGetInitParameters                  
-0     000851eb  _xcpGetInitParameters                           
-0     000851f8  _memcpy                                         
-0     00085215  _globalInterruptEnable                          
-0     00085221  _globalInterruptDisable                         
-0     00085229  __args_main                                     
-0     0008523b  U$$DIV                                          
-0     00085240  U$$MOD                                          
-0     00085246  __register_unlock                               
-0     0008524a  __register_lock                                 
-0     0008524e  __nop                                           
-0     00085257  _memcpy_fast                                    
-0     0008525e  _memset                                         
-0     00085265  __system_pre_init                               
-0     00085267  __system_post_cinit                             
-0     00085268  _RamfuncsLoadStart                              
-0     00085268  ___etext__                                      
-0     00085268  etext                                           
-0     000852d4  _MW_RamfuncsLoadStart                           
-0     000852d4  _RamfuncsLoadEnd                                
-0     00085313  _MW_RamfuncsLoadEnd                             
-0     00085314  ___cinit__                                      
-0     00085314  cinit                                           
-0     000855c8  _PieVectTableInit                               
-0     0008580e  _untitled_M                                     
+0     00080876  _xcpDaqInit                                     
+0     00080886  _xcpDaqGetPacketLookup                          
+0     0008088a  _xcpDaqSetPacketLookup                          
+0     00080a1a  _xcpDaqEvent                                    
+0     00080a6d  _xcpDaqEventsFlush                              
+0     00080b40  _xcpDaqLock                                     
+0     00080b49  _xcpDaqUnlock                                   
+0     00080b4d  _xcpResetDaqListStatus                          
+0     00080be9  _xcpDaqReset                                    
+0     00080bf2  _xcpDaqSetCustomPoolMemoryManager               
+0     00080c08  _xcpDaqGetCustomPoolMemoryManager               
+0     00080c29  _xcpDaqExtendedInit                             
+0     00080c2a  _xcpDaqExtendedReset                            
+0     00080c58  _plook_u32u16u64n48_evenc_gf                    
+0     00080c88  _intrp1d_s16s32s32u32u64n48l_f                  
+0     00080ca7  _untitled_step                                  
+0     00081154  _untitled_initialize                            
+0     000813b9  _untitled_terminate                             
+0     000813ba  _TIMER1_ISR                                     
+0     000813c4  _TIMER2_ISR                                     
+0     000813ce  _DATALOG_ISR                                    
+0     000813d8  _RTOS_ISR                                       
+0     000813e2  _EMU_ISR                                        
+0     000813ec  _NMI_ISR                                        
+0     000813f6  _ILLEGAL_ISR                                    
+0     00081400  _USER1_ISR                                      
+0     0008140a  _USER2_ISR                                      
+0     00081414  _USER3_ISR                                      
+0     0008141e  _USER4_ISR                                      
+0     00081428  _USER5_ISR                                      
+0     00081432  _USER6_ISR                                      
+0     0008143c  _USER7_ISR                                      
+0     00081446  _USER8_ISR                                      
+0     00081450  _USER9_ISR                                      
+0     0008145a  _USER10_ISR                                     
+0     00081464  _USER11_ISR                                     
+0     0008146e  _USER12_ISR                                     
+0     00081478  _ADCA1_ISR                                      
+0     00081482  _ADCB1_ISR                                      
+0     0008148c  _ADCC1_ISR                                      
+0     00081496  _XINT1_ISR                                      
+0     000814a0  _XINT2_ISR                                      
+0     000814aa  _ADCD1_ISR                                      
+0     000814b4  _TIMER0_ISR                                     
+0     000814be  _WAKE_ISR                                       
+0     000814c8  _EPWM1_TZ_ISR                                   
+0     000814d2  _EPWM2_TZ_ISR                                   
+0     000814dc  _EPWM3_TZ_ISR                                   
+0     000814e6  _EPWM4_TZ_ISR                                   
+0     000814f0  _EPWM5_TZ_ISR                                   
+0     000814fa  _EPWM6_TZ_ISR                                   
+0     00081504  _EPWM7_TZ_ISR                                   
+0     0008150e  _EPWM8_TZ_ISR                                   
+0     00081518  _EPWM1_ISR                                      
+0     00081522  _EPWM2_ISR                                      
+0     0008152c  _EPWM3_ISR                                      
+0     00081536  _EPWM4_ISR                                      
+0     00081540  _EPWM5_ISR                                      
+0     0008154a  _EPWM6_ISR                                      
+0     00081554  _EPWM7_ISR                                      
+0     0008155e  _EPWM8_ISR                                      
+0     00081568  _ECAP1_ISR                                      
+0     00081572  _ECAP2_ISR                                      
+0     0008157c  _ECAP3_ISR                                      
+0     00081586  _ECAP4_ISR                                      
+0     00081590  _ECAP5_ISR                                      
+0     0008159a  _ECAP6_ISR                                      
+0     000815a4  _EQEP1_ISR                                      
+0     000815ae  _EQEP2_ISR                                      
+0     000815b8  _EQEP3_ISR                                      
+0     000815c2  _SPIA_RX_ISR                                    
+0     000815cc  _SPIA_TX_ISR                                    
+0     000815d6  _SPIB_RX_ISR                                    
+0     000815e0  _SPIB_TX_ISR                                    
+0     000815ea  _MCBSPA_RX_ISR                                  
+0     000815f4  _MCBSPA_TX_ISR                                  
+0     000815fe  _MCBSPB_RX_ISR                                  
+0     00081608  _MCBSPB_TX_ISR                                  
+0     00081612  _DMA_CH1_ISR                                    
+0     0008161c  _DMA_CH2_ISR                                    
+0     00081626  _DMA_CH3_ISR                                    
+0     00081630  _DMA_CH4_ISR                                    
+0     0008163a  _DMA_CH5_ISR                                    
+0     00081644  _DMA_CH6_ISR                                    
+0     0008164e  _I2CA_ISR                                       
+0     00081658  _I2CA_FIFO_ISR                                  
+0     00081662  _I2CB_ISR                                       
+0     0008166c  _I2CB_FIFO_ISR                                  
+0     00081676  _SCIC_RX_ISR                                    
+0     00081680  _SCIC_TX_ISR                                    
+0     0008168a  _SCID_RX_ISR                                    
+0     00081694  _SCID_TX_ISR                                    
+0     0008169e  _SCIA_RX_ISR                                    
+0     000816a8  _SCIA_TX_ISR                                    
+0     000816b2  _SCIB_RX_ISR                                    
+0     000816bc  _SCIB_TX_ISR                                    
+0     000816c6  _CANA0_ISR                                      
+0     000816d0  _CANA1_ISR                                      
+0     000816da  _CANB0_ISR                                      
+0     000816e4  _CANB1_ISR                                      
+0     000816ee  _ADCA_EVT_ISR                                   
+0     000816f8  _ADCA2_ISR                                      
+0     00081702  _ADCA3_ISR                                      
+0     0008170c  _ADCA4_ISR                                      
+0     00081716  _ADCB_EVT_ISR                                   
+0     00081720  _ADCB2_ISR                                      
+0     0008172a  _ADCB3_ISR                                      
+0     00081734  _ADCB4_ISR                                      
+0     0008173e  _CLA1_1_ISR                                     
+0     00081748  _CLA1_2_ISR                                     
+0     00081752  _CLA1_3_ISR                                     
+0     0008175c  _CLA1_4_ISR                                     
+0     00081766  _CLA1_5_ISR                                     
+0     00081770  _CLA1_6_ISR                                     
+0     0008177a  _CLA1_7_ISR                                     
+0     00081784  _CLA1_8_ISR                                     
+0     0008178e  _XINT3_ISR                                      
+0     00081798  _XINT4_ISR                                      
+0     000817a2  _XINT5_ISR                                      
+0     000817ac  _VCU_ISR                                        
+0     000817b6  _FPU_OVERFLOW_ISR                               
+0     000817c0  _FPU_UNDERFLOW_ISR                              
+0     000817ca  _IPC0_ISR                                       
+0     000817d4  _IPC1_ISR                                       
+0     000817de  _IPC2_ISR                                       
+0     000817e8  _IPC3_ISR                                       
+0     000817f2  _EPWM9_TZ_ISR                                   
+0     000817fc  _EPWM10_TZ_ISR                                  
+0     00081806  _EPWM11_TZ_ISR                                  
+0     00081810  _EPWM12_TZ_ISR                                  
+0     0008181a  _EPWM9_ISR                                      
+0     00081824  _EPWM10_ISR                                     
+0     0008182e  _EPWM11_ISR                                     
+0     00081838  _EPWM12_ISR                                     
+0     00081842  _SD1_ISR                                        
+0     0008184c  _SD2_ISR                                        
+0     00081856  _SPIC_RX_ISR                                    
+0     00081860  _SPIC_TX_ISR                                    
+0     0008186a  _UPPA_ISR                                       
+0     00081874  _USBA_ISR                                       
+0     0008187e  _ADCC_EVT_ISR                                   
+0     00081888  _ADCC2_ISR                                      
+0     00081892  _ADCC3_ISR                                      
+0     0008189c  _ADCC4_ISR                                      
+0     000818a6  _ADCD_EVT_ISR                                   
+0     000818b0  _ADCD2_ISR                                      
+0     000818ba  _ADCD3_ISR                                      
+0     000818c4  _ADCD4_ISR                                      
+0     000818ce  _EMIF_ERROR_ISR                                 
+0     000818d8  _RAM_CORRECTABLE_ERROR_ISR                      
+0     000818e2  _FLASH_CORRECTABLE_ERROR_ISR                    
+0     000818ec  _RAM_ACCESS_VIOLATION_ISR                       
+0     000818f6  _SYS_PLL_SLIP_ISR                               
+0     00081900  _AUX_PLL_SLIP_ISR                               
+0     0008190a  _CLA_OVERFLOW_ISR                               
+0     00081914  _CLA_UNDERFLOW_ISR                              
+0     0008191e  _PIE_RESERVED_ISR                               
+0     00081928  _EMPTY_ISR                                      
+0     00081935  _NOTUSED_ISR                                    
+0     0008193f  _InitSysCtrl                                    
+0     0008195f  _InitPeripheralClocks                           
+0     000819e3  _DisablePeripheralClocks                        
+0     000819fb  _SeizeFlashPump                                 
+0     00081a0a  _ReleaseFlashPump                               
+0     00081a14  _ServiceDog                                     
+0     00081a22  _DisableDog                                     
+0     00081a30  _InitSysPll                                     
+0     00081c1e  _InitAuxPll                                     
+0     00081d0d  _CsmUnlock                                      
+0     00081d2e  _SysIntOsc1Sel                                  
+0     00081d3e  _SysIntOsc2Sel                                  
+0     00081d52  _SysXtalOscSel                                  
+0     00081d62  _AuxIntOsc2Sel                                  
+0     00081d6c  _AuxXtalOscSel                                  
+0     00081d78  _AuxAuxClkSel                                   
+0     00081d82  _IDLE                                           
+0     00081d8b  _STANDBY                                        
+0     00081d96  _HALT                                           
+0     00081daf  _HIB                                            
+0     00081dcc  _ConfigureTMXAnalogTrim                         
+0     00081e1a  _xcpMemInit                                     
+0     00081eda  _xcpMemAlloc                                    
+0     00081f45  _xcpMemFree                                     
+0     00081fd6  _xcpMemReservedPoolCreate                       
+0     0008209d  _xcpMemReservedPoolDestroy                      
+0     00082121  _xcpMemCustomPoolCreate                         
+0     00082179  _xcpMemCustomPoolDestroy                        
+0     000821aa  _xcpMemAllocFromPool                            
+0     00082247  _xcpMemReset                                    
+0     00082337  _xcpStatusGet                                   
+0     0008233b  _xcpStatusSet                                   
+0     00082342  _xcpSessionStatusGet                            
+0     00082346  _xcpSessionStatusSet                            
+0     0008234d  _xcpSessionStatusSetMask                        
+0     00082357  _xcpSessionStatusClearMask                      
+0     0008235f  _xcpResourceProtectionStatusGet                 
+0     00082363  _xcpResourceProtectionStatusSet                 
+0     0008236a  _xcpResourceProtectionSetMask                   
+0     00082374  _xcpResourceProtectionClearMask                 
+0     0008237c  _xcpSessionConfigurationIdGet                   
+0     00082380  _xcpSessionConfigurationIdSet                   
+0     00082387  _genericOutputPacketHandler                     
+0     00082425  _xcpFindPacket                                  
+0     00082449  _xcpInit                                        
+0     0008246f  _xcpRun                                         
+0     00082504  _xcpEvent                                       
+0     0008251a  _xcpEventExternalTimestamp                      
+0     0008252c  _xcpEventNotificationReq                        
+0     00082587  _xcpRemoteServiceReq                            
+0     000825e2  _xcpGetStatus                                   
+0     000825e6  _xcpReset                                       
+0     000825f5  _xcpSetCustomPoolMemoryManager                  
+0     000825fe  _xcpGetCustomPoolMemoryManager                  
+0     0008260a  _xcpPackedModeEventsFlush                       
+0     00082611  _xcpPackedModeEventReset                        
+0     00082683  _xcpTransportInit                               
+0     000826dd  _xcpTransportTxReady                            
+0     000826e3  _xcpTransportTxTrigger                          
+0     000826e9  _xcpTransportTxPacketSet                        
+0     00082755  _xcpTransportTx                                 
+0     000827d0  _xcpTransportRx                                 
+0     00082807  _xcpTransportRxPacketGet                        
+0     0008286e  _xcpTransportPacketOffset                       
+0     0008287a  _xcpTransportMsgBufferSize                      
+0     000828a3  _xcpTransportMaxDtoSize                         
+0     000828a6  _xcpTransportMaxCtoSize                         
+0     000828a9  _xcpTransportRestart                            
+0     000828b7  _xcpTransportResynch                            
+0     000828c3  _xcpTransportCtoReservedMemPoolId               
+0     000828c7  _xcpTransportReset                              
+0     00082907  _IPCLiteLtoRGetResult                           
+0     00082922  _IPCLiteLtoRDataRead                            
+0     00082945  _IPCLiteLtoRSetBits                             
+0     0008296f  _IPCLiteLtoRSetBits_Protected                   
+0     00082999  _IPCLiteLtoRClearBits                           
+0     000829c3  _IPCLiteLtoRClearBits_Protected                 
+0     000829ed  _IPCLiteLtoRDataWrite                           
+0     00082a12  _IPCLiteLtoRDataWrite_Protected                 
+0     00082a37  _IPCLiteLtoRFunctionCall                        
+0     00082a53  _IPCLiteReqMemAccess                            
+0     00082a77  _IPCLiteRtoLDataRead                            
+0     00082a9e  _IPCLiteRtoLSetBits                             
+0     00082acc  _IPCLiteRtoLSetBits_Protected                   
+0     00082afd  _IPCLiteRtoLClearBits                           
+0     00082b2d  _IPCLiteRtoLClearBits_Protected                 
+0     00082b60  _IPCLiteRtoLDataWrite                           
+0     00082b8d  _IPCLiteRtoLDataWrite_Protected                 
+0     00082bbd  _IPCLiteRtoLFunctionCall                        
+0     00082bda  _DelayLoop                                      
+0     00082be1  _c2000_flash_init                               
+0     00082bfa  _initSetGPIOIPC                                 
+0     00082c89  _setGPIOForCPU2                                 
+0     00082cdc  _setInXBARForCPU2                               
+0     00082d45  _setOutXBARForCPU2                              
+0     00082db2  _setEpwmXBARForCPU2                             
+0     00082e0a  _setCLBXBARForCPU2                              
+0     00082e5d  _setSyncSocRegsForCPU2                          
+0     00082e7c  _InitGpio                                       
+0     00082ebc  _GPIO_SetupPinMux                               
+0     00082f48  _GPIO_SetupPinOptions                           
+0     00082fdc  _GPIO_SetupLock                                 
+0     00083005  _GPIO_SetupXINT1Gpio                            
+0     0008300f  _GPIO_SetupXINT2Gpio                            
+0     00083019  _GPIO_SetupXINT3Gpio                            
+0     00083023  _GPIO_SetupXINT4Gpio                            
+0     0008302d  _GPIO_SetupXINT5Gpio                            
+0     00083037  _GPIO_EnableUnbondedIOPullupsFor176Pin          
+0     00083050  _GPIO_EnableUnbondedIOPullupsFor100Pin          
+0     00083075  _GPIO_EnableUnbondedIOPullups                   
+0     0008308b  _GPIO_ReadPin                                   
+0     000830a2  _GPIO_WritePin                                  
+0     000832a4  _xcpStandardInit                                
+0     000832ab  _xcpStandardGetPacketLookup                     
+0     000832af  _xcpStandardSetPacketLookup                     
+0     000832b7  _xcpStandardReset                               
+0     000832bd  _xcpStandardGetAddressFromMta                   
+0     000832c1  _xcpStandardSetMta                              
+0     000832d3  _xcpStandardGetMta                              
+0     000832df  _xcpStandardIncrementMta                        
+0     000832e8  _xcpStandardExtendedInit                        
+0     000832e9  _xcpStandardExtendedReset                       
+0     000832f4  _xcpSxiChecksum                                 
+0     0008330f  _xcpFrameInit                                   
+0     00083329  _xcpFrameMsgSend                                
+0     000833a7  _xcpFrameMsgRecv                                
+0     00083430  _xcpFrameCreateMsg                              
+0     0008345e  _xcpFrameExtractPacket                          
+0     000834cc  _xcpFrameHeaderSize                             
+0     000834ce  _xcpFrameTailSize                               
+0     000834d0  _xcpFrameMaxDtoSize                             
+0     000834d4  _xcpFrameMaxCtoSize                             
+0     000834d6  _xcpFrameRestart                                
+0     000834dd  _xcpFrameSetCtoReservedMemPoolId                
+0     000834e4  _xcpFrameReset                                  
+0     00083621  _xcpExtModeClassicTriggerInit                   
+0     00083630  _xcpExtModeClassicTriggerEnabled                
+0     00083670  _xcpExtModeClassicTriggerReset                  
+0     00083690  _xcpExtModeClassicTriggerForceEnableStatusUpdate
+0     000836af  _xcp_void_printf                                
+0     0008374a  _xcpExtModeUpdateTime                           
+0     00083751  _xcpExtModeGetUpdatedTimestamp                  
+0     00083758  _xcpGetTimestamp                                
+0     0008376f  _xcpExtModeGetSimulationTime                    
+0     00083776  _xcpExtModeInit                                 
+0     0008379e  _xcpExtModeRunBackground                        
+0     000837fc  _xcpExtModeReset                                
+0     00083842  _extmodeParseArgs                               
+0     00083849  _extmodeInit                                    
+0     000838a3  _extmodeWaitForHostRequest                      
+0     000838f6  _extmodeEvent                                   
+0     0008393d  _extmodeBackgroundRun                           
+0     00083945  _extmodeReset                                   
+0     0008395a  _extmodeStopRequested                           
+0     0008395e  _extmodeStartRequested                          
+0     00083962  _extmodeSimulationComplete                      
+0     00083966  _extmodeGetFinalSimulationTime                  
+0     0008397b  _extmodeSetFinalSimulationTime                  
+0     00083983  _extmodeGetEventTriggerEnable                   
+0     0008399d  _extmodeSetEventTriggerEnable                   
+0     000839b1  _xcpDrvOpen                                     
+0     000839cb  _xcpDrvIoctl                                    
+0     000839df  _xcpDrvSend                                     
+0     00083a4d  _xcpDrvRecv                                     
+0     00083abb  _xcpDrvRecvUnknownSize                          
+0     00083afe  _xcpDrvClose                                    
+0     00083b19  _rtIOStreamOpen                                 
+0     00083b37  _rtIOStreamClose                                
+0     00083b3d  _rtIOStreamSend                                 
+0     00083b4b  _rtIOStreamSend8Bits                            
+0     00083b59  _rtIOStreamRecv                                 
+0     00083b6f  _enable_interrupts_sci                          
+0     00083b7e  _init_sci_rtiostream                            
+0     00083c07  _sci_rcv                                        
+0     00083c45  _sci_xmit_external_mode                         
+0     00083c6a  LL$$DIV                                         
+0     00083ca6  LL$$MOD                                         
+0     00083ce0  ULL$$DIV                                        
+0     00083d0f  ULL$$MOD                                        
+0     00083d71  _CPU02toCPU01IPC0IntHandler                     
+0     00083f23  _xcpCalibrationInit                             
+0     00083f28  _xcpCalibrationGetPacketLookup                  
+0     00083f2c  _xcpCalibrationSetPacketLookup                  
+0     00083f34  _xcpCalibrationReset                            
+0     00083f35  _rt_OneStep                                     
+0     00083f58  _main                                           
+0     00083ffb  _BytePackerInplace32bits                        
+0     0008401e  _BytePacker32bits                               
+0     00084044  _BytePacker16bits                               
+0     00084067  _initQue                                        
+0     00084074  _isEmpty                                        
+0     00084080  _isFull                                         
+0     0008408d  _addElement                                     
+0     000840b4  _init_board                                     
+0     00084166  _rt_InitInfAndNaN                               
+0     0008418e  _rtIsInf                                        
+0     000841a6  _rtIsInfF                                       
+0     000841be  _rtIsNaN                                        
+0     000841e1  _rtIsNaNF                                       
+0     000841f8  _InitCpuTimers                                  
+0     00084239  _ConfigCpuTimer                                 
+0     00084274  _configureTimer0                                
+0     000842b1  _stopTimer0                                     
+0     000842b6  _enableTimer0Interrupt                          
+0     000842c0  _disableTimer0Interrupt                         
+0     000842d8  _restoreTimer0Interrupt                         
+0     000842e3  _MW_ConfigureDACA                               
+0     00084304  _MW_ConfigureDACB                               
+0     00084326  _MW_ConfigureDACC                               
+0     00084348  _xcpFifoInit                                    
+0     00084351  _xcpFifoEnqueue                                 
+0     00084360  _xcpFifoDequeue                                 
+0     00084373  _xcpFifoEnqueueHead                             
+0     00084382  _xcpFifoSpliceHead                              
+0     00084398  _xcpFifoEmpty                                   
+0     000843a1  _xcpFifoReset                                   
+0     000843a7  _xcpSortArray                                   
+0     00084401  _floor                                          
+0     00084401  _floorf                                         
+0     0008445a  _c_int00                                        
+0     000844b0  _config_ePWM_GPIO                               
+0     000844e2  _config_ePWM_TBSync                             
+0     000844ea  _config_ePWMSyncSource                          
+0     000844f8  _config_QEP_eQEP2                               
+0     0008453c  _TINT0_isr                                      
+0     00084580  _rtGetInf                                       
+0     00084599  _rtGetInfF                                      
+0     000845a2  _rtGetMinusInf                                  
+0     000845bb  _rtGetMinusInfF                                 
+0     000845c4  _OneTimeGpioInit                                
+0     000845cf  _GPIO_TogglePin                                 
+0     000845e7  _Set_GPIOPin                                    
+0     000845f5  _rtGetNaN                                       
+0     0008460e  _rtGetNaNF                                      
+0     0008461f  C$$EXIT                                         
+0     0008461f  _abort                                          
+0     00084621  _exit                                           
+0     00084648  _InitPieCtrl                                    
+0     00084667  _EnableInterrupts                               
+0     00084670  _InitPieVectTable                               
+0     00084696  _copy_in                                        
+0     000846ba  _xcpExtModeParseArgs                            
+0     000846bf  _xcpTransportGetInitParameters                  
+0     000846cc  _xcpGetInitParameters                           
+0     000846d9  _memcpy                                         
+0     000846f6  _globalInterruptEnable                          
+0     00084702  _globalInterruptDisable                         
+0     0008470a  LL$$MPY                                         
+0     0008471e  __args_main                                     
+0     00084730  U$$DIV                                          
+0     00084735  U$$MOD                                          
+0     0008473b  __register_unlock                               
+0     0008473f  __register_lock                                 
+0     00084743  __nop                                           
+0     0008474c  _memcpy_fast                                    
+0     00084753  _memset                                         
+0     0008475a  __system_pre_init                               
+0     0008475c  __system_post_cinit                             
+0     0008475d  ___etext__                                      
+0     0008475d  etext                                           
+0     00084760  _RamfuncsLoadStart                              
+0     000847cc  _MW_RamfuncsLoadStart                           
+0     000847cc  _RamfuncsLoadEnd                                
+0     0008480b  _MW_RamfuncsLoadEnd                             
+0     0008480c  _PieVectTableInit                               
+0     00084a52  _untitled_M                                     
+0     00084a58  ___cinit__                                      
+0     00084a58  cinit                                           
 1     00000002  _UidRegs                                        
 1     00000122  __stack                                         
 1     00000522  __STACK_END                                     
@@ -2257,61 +2266,60 @@ page  address   name
 1     00007a80  _OutputXbarRegs                                 
 1     00007c00  _GpioCtrlRegs                                   
 1     00007f00  _GpioDataRegs                                   
-1     0000ec4d  _GPIO_oneTimeInit                               
-1     0000ec6c  _rtInf                                          
-1     0000ec6e  _rtMinusInf                                     
-1     0000ec70  _rtNaN                                          
-1     0000ec72  _rtInfF                                         
-1     0000ec74  _rtMinusInfF                                    
-1     0000ec76  _rtNaNF                                         
-1     0000ef1b  _MW_InterruptDisableLock                        
-1     0000ef1c  _xcpModelStartRequest                           
-1     0000ef1d  _xcpModelStopRequest                            
-1     0000ef1e  _xcpModelStatus                                 
-1     0000ef1f  _xcpExtmodeSimulationComplete                   
-1     0000ef22  _xcpModelChecksum0                              
-1     0000ef24  _xcpModelChecksum1                              
-1     0000ef26  _xcpModelChecksum2                              
-1     0000ef28  _xcpModelChecksum3                              
-1     0000ef2a  _xcpModelIntegerCode                            
-1     0000ef2c  _xcpExtmodeFinalSimulationTime                  
-1     0000ef2e  _xcpDummyDoubleVariable                         
-1     0000ef80  _untitled_B                                     
-1     0000f000  _untitled_DW                                    
-1     0000f08c  _xcpClassicTriggerEventId                       
-1     0000f08d  _xcpClassicTriggerSignalAddressExtension        
-1     0000f08e  _xcpClassicTriggerDirection                     
-1     0000f08f  _xcpClassicTriggerArmRequest                    
-1     0000f090  _xcpClassicTriggerCancelRequest                 
-1     0000f091  _xcpClassicTriggerSource                        
-1     0000f092  _xcpClassicTriggerMode                          
-1     0000f093  _xcpClassicTriggerStatus                        
-1     0000f09a  _xcpClassicTriggerSignalAddress                 
-1     0000f09c  _xcpClassicTriggerLevel                         
-1     0000f09e  _xcpClassicTriggerDuration                      
-1     0000f0a0  _xcpClassicTriggerHoldOff                       
-1     0000f0a2  _xcpClassicTriggerDelay                         
-1     0000f0a8  _CpuTimer0                                      
-1     0000f0b0  _CpuTimer1                                      
-1     0000f0b8  _CpuTimer2                                      
-1     0000f0c0  _untitled_P                                     
-1     0000f224  _ErrorFlag                                      
-1     0000f226  _CIPC0_INT_fptr                                 
-1     0000f228  _mwInitStart                                    
-1     0000f22a  _mwInitEnd                                      
-1     0000f288  ___TI_enable_exit_profile_output                
-1     0000f28a  ___TI_cleanup_ptr                               
-1     0000f28c  ___TI_dtors_ptr                                 
-1     0000f29c  _xcpCurrentSimulationTimeInTicks                
-1     0000f2ac  _IsrOverrun                                     
-1     0000f2ad  _stopRequested                                  
-1     0000f2ae  _runModel                                       
-1     0000f2b0  __lock                                          
-1     0000f2b2  __unlock                                        
-1     0000f2b4  _isRateRunning                                  
-1     0000f2b6  _need2runFlags                                  
-1     0000f2b8  _MW_SCI_PTR                                     
-1     0000f2c0  _queRx                                          
+1     0000e416  _xcpModelStartRequest                           
+1     0000e417  _xcpModelStopRequest                            
+1     0000e418  _xcpModelStatus                                 
+1     0000e419  _xcpExtmodeSimulationComplete                   
+1     0000e41c  _xcpModelChecksum0                              
+1     0000e41e  _xcpModelChecksum1                              
+1     0000e420  _xcpModelChecksum2                              
+1     0000e422  _xcpModelChecksum3                              
+1     0000e424  _xcpModelIntegerCode                            
+1     0000e426  _xcpExtmodeFinalSimulationTime                  
+1     0000e428  _xcpDummyDoubleVariable                         
+1     0000e434  _rtInf                                          
+1     0000e436  _rtMinusInf                                     
+1     0000e438  _rtNaN                                          
+1     0000e43a  _rtInfF                                         
+1     0000e43c  _rtMinusInfF                                    
+1     0000e43e  _rtNaNF                                         
+1     0000e4d8  _xcpClassicTriggerEventId                       
+1     0000e4d9  _xcpClassicTriggerSignalAddressExtension        
+1     0000e4da  _xcpClassicTriggerDirection                     
+1     0000e4db  _xcpClassicTriggerArmRequest                    
+1     0000e4dc  _xcpClassicTriggerCancelRequest                 
+1     0000e4dd  _xcpClassicTriggerSource                        
+1     0000e4de  _xcpClassicTriggerMode                          
+1     0000e4df  _xcpClassicTriggerStatus                        
+1     0000e4e6  _xcpClassicTriggerSignalAddress                 
+1     0000e4e8  _xcpClassicTriggerLevel                         
+1     0000e4ea  _xcpClassicTriggerDuration                      
+1     0000e4ec  _xcpClassicTriggerHoldOff                       
+1     0000e4ee  _xcpClassicTriggerDelay                         
+1     0000e500  _untitled_P                                     
+1     0000e58a  _CpuTimer0                                      
+1     0000e592  _CpuTimer1                                      
+1     0000e59a  _CpuTimer2                                      
+1     0000e5ba  _MW_DAC_PTR                                     
+1     0000e5ca  _untitled_B                                     
+1     0000e600  _untitled_DW                                    
+1     0000e634  _ErrorFlag                                      
+1     0000e636  _CIPC0_INT_fptr                                 
+1     0000e638  _mwInitStart                                    
+1     0000e63a  _mwInitEnd                                      
+1     0000e63c  _xcpCurrentSimulationTimeInTicks                
+1     0000e640  _queRx                                          
+1     0000e6be  __lock                                          
+1     0000e6d4  ___TI_enable_exit_profile_output                
+1     0000e6d6  ___TI_cleanup_ptr                               
+1     0000e6d8  ___TI_dtors_ptr                                 
+1     0000e6ec  _IsrOverrun                                     
+1     0000e6ee  _stopRequested                                  
+1     0000e6ef  _runModel                                       
+1     0000e6f8  __unlock                                        
+1     0000e6fa  _MW_SCI_PTR                                     
+1     0000e700  _GPIO_oneTimeInit                               
+1     0000e701  _MW_InterruptDisableLock                        
 1     00047000  _Emif1Regs                                      
 1     00047800  _Emif2Regs                                      
 1     00048000  _CanaRegs                                       
@@ -2348,4 +2356,4 @@ abs   ffffffff  ___pinit__
 abs   ffffffff  binit                                           
 abs   ffffffff  pinit                                           
 
-[614 symbols]
+[617 symbols]

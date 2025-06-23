@@ -3,7 +3,7 @@
 
 MCP2515 mcp2515(5); // Assuming CS pin is connected to ESP32 GPIO 5
 unsigned long previousMillis = 0;
-const long interval = 500;  // 500 milliseconds
+const long interval = 200;  // 500 milliseconds
 unsigned long previousMillis2 = 0;
 const long interval2 = 200;  // 500 milliseconds
  struct can_frame sendMsg;

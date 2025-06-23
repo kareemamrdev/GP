@@ -85,6 +85,10 @@ void init_board (void)
 
   EALLOW;
 
+  /* Assign used ADC modules to CPU1 */
+  DevCfgRegs.CPUSEL11.bit.ADC_B = 0U;
+  DevCfgRegs.CPUSEL11.bit.ADC_C = 0U;
+
 #ifdef MW_DAC_CHANNEL_A
 
   DevCfgRegs.CPUSEL14.bit.DAC_A = 0U;
@@ -132,6 +136,9 @@ void init_board (void)
   DevCfgRegs.CPUSEL0.bit.EPWM1 = 0U;
   DevCfgRegs.CPUSEL0.bit.EPWM2 = 0U;
   DevCfgRegs.CPUSEL0.bit.EPWM3 = 0U;
+
+  /* Assign used eQEP modules to CPU1 */
+  DevCfgRegs.CPUSEL2.bit.EQEP2 = 0U;
 
   /* Assign used SPI modules to CPU1 */
 #ifdef MW_SPI_A

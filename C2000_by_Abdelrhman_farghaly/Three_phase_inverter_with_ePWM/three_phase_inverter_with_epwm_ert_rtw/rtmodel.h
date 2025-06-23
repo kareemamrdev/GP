@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'three_phase_inverter_with_epwm'.
  *
- * Model version                  : 1.8
+ * Model version                  : 1.10
  * Simulink Coder version         : 24.1 (R2024a) 19-Nov-2023
- * C/C++ source code generated on : Wed Jun 18 19:31:34 2025
+ * C/C++ source code generated on : Fri Jun 20 16:25:24 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
